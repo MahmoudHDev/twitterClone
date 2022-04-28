@@ -25,12 +25,11 @@ class MessagesViewController: UIViewController {
     
     @IBAction func settingsBtn(_ sender: UIBarButtonItem) {
         // Present the settings
-//        present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        
     }
     
     func updateSideMenu(){
         menu?.leftSide = true
-        // CHANGE THIS
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }

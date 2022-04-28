@@ -39,7 +39,9 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func newTweetBtn(_ sender: UIButton) {
-        // to make it circular
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "createATweet")
+        present(vc, animated: true)
         
     }
     func updateSideMenu(){
@@ -49,6 +51,8 @@ class HomeViewController: UIViewController {
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
 }
+//MARK:- TableView DataSource, and Delegate
+
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

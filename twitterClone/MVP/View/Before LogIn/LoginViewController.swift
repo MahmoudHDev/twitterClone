@@ -7,15 +7,21 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
+    //MARK:- Properties
+
     @IBOutlet weak var signIn: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
     
+    //MARK:- Methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
         signIn.layer.cornerRadius = 5
     }
     

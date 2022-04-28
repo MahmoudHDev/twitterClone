@@ -10,17 +10,21 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
-    // Properties
+   //MARK:- Properties
     
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordSTxtField: UITextField!
     @IBOutlet weak var passwordFTxtField: UITextField!
     @IBOutlet weak var signUpBtn: UIButton!
     
-    // Methods
+    
+    //MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // to hide the keyboard
+        let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
+
         signUpBtn.layer.cornerRadius = 5
     }
     

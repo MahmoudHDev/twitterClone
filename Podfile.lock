@@ -102,6 +102,7 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
   - SideMenu (6.5.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - FaveButton
@@ -110,6 +111,7 @@ DEPENDENCIES:
   - FirebaseDatabase
   - FirebaseStorage
   - SideMenu
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -130,6 +132,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SideMenu
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
@@ -149,7 +152,8 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 768ad1166a846d1b318b9c000e6c9e7438eb674d
+PODFILE CHECKSUM: 5ba875c7522a448a2df790dabc6937ab75c7444d
 
 COCOAPODS: 1.11.2
