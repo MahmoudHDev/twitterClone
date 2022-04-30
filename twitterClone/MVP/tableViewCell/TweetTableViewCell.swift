@@ -54,7 +54,7 @@ class TweetTableViewCell: UITableViewCell {
             print("Commented")
         case 3:
             if toggleButton == false  {
-                retweetBtn.tintColor = .systemGreen
+                retweetBtn.tintColor = .green
                 toggleButton = true
             }else {
                 retweetBtn.tintColor = .link
@@ -64,16 +64,13 @@ class TweetTableViewCell: UITableViewCell {
             print("Retweeted")
         case 4:
             if toggleButton == false  {
-                likeBtn.tintColor = .systemRed
-                likeBtn.imageView?.image = UIImage(systemName: "Heart.fill")
                 toggleButton = true
                 print("Liked")
             }else {
                 likeBtn.tintColor = .link
-                likeBtn.imageView?.image = UIImage(systemName: "Heart")
+                likeBtn.imageView?.image = UIImage(systemName: "heart")
                 toggleButton = false
                 print("Unliked")
-
             }
             print(toggleButton)
             print("Liked")

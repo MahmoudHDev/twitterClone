@@ -7,7 +7,7 @@ target 'twitterClone' do
 
   # Pods for twitterClone
   pod 'SideMenu'
-  pod 'Firebase'
+  pod 'Firebase/Firestore'
   pod 'FirebaseAuth'
   pod 'FirebaseDatabase'
   pod 'FirebaseStorage'

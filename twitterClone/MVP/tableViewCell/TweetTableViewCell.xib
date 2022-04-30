@@ -76,7 +76,7 @@
                             <constraint firstAttribute="height" constant="40" id="shO-KF-le9"/>
                         </constraints>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ksd-bP-DoH">
+                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ksd-bP-DoH">
                         <rect key="frame" x="30" y="162" width="261" height="20"/>
                         <subviews>
                             <button opaque="NO" tag="4" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhl-Ne-Epx" userLabel="like" customClass="FaveButton" customModule="FaveButton">
@@ -93,22 +93,8 @@
                                     <action selector="tweetButtons:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0lL-xu-Mri"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPl-Ti-ByC" userLabel="share" customClass="FaveButton" customModule="FaveButton">
-                                <rect key="frame" x="30" y="0.0" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="mZY-HW-lqf"/>
-                                    <constraint firstAttribute="height" constant="20" id="xfg-UQ-q1X"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" image="square.and.arrow.up" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
-                                </state>
-                                <connections>
-                                    <action selector="tweetButtons:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hg3-TB-hXF"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha9-1C-roe" userLabel="comment" customClass="FaveButton" customModule="FaveButton">
-                                <rect key="frame" x="60" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="70" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="33X-1A-cSd"/>
                                     <constraint firstAttribute="height" constant="20" id="w6X-9X-bPK"/>
@@ -122,7 +108,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrv-kc-p8B" userLabel="retweet" customClass="FaveButton" customModule="FaveButton">
-                                <rect key="frame" x="241" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="140" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="bro-IC-5t3"/>
                                     <constraint firstAttribute="width" constant="20" id="s8G-As-Ru1"/>
@@ -133,6 +119,20 @@
                                 </state>
                                 <connections>
                                     <action selector="tweetButtons:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IbK-9w-vdK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPl-Ti-ByC" userLabel="share" customClass="FaveButton" customModule="FaveButton">
+                                <rect key="frame" x="241" y="0.0" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="mZY-HW-lqf"/>
+                                    <constraint firstAttribute="height" constant="20" id="xfg-UQ-q1X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="square.and.arrow.up" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="tweetButtons:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hg3-TB-hXF"/>
                                 </connections>
                             </button>
                         </subviews>
