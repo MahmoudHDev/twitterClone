@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0C2EBA282464E100A2AE10 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */; };
+		1E31F9EA282201D300FB18D6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9E9282201D300FB18D6 /* HomePresenter.swift */; };
+		1E31F9F1282202C700FB18D6 /* NewTweetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9F0282202C700FB18D6 /* NewTweetPresenter.swift */; };
+		1E31F9F92822046C00FB18D6 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */; };
+		1E31FA012822065B00FB18D6 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31FA002822065B00FB18D6 /* NotificationPresenter.swift */; };
+		1E31FA10282207C500FB18D6 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31FA0F282207C500FB18D6 /* SettingsPresenter.swift */; };
 		1E694318281847DC00894579 /* CreateATweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E694317281847DC00894579 /* CreateATweetViewController.swift */; };
 		1E6DD0342816E93400673F76 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DD0322816E93400673F76 /* TweetTableViewCell.swift */; };
 		1E6DD0352816E93400673F76 /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6DD0332816E93400673F76 /* TweetTableViewCell.xib */; };
@@ -22,7 +28,6 @@
 		1E7DE1B22812FA23003CEE5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */; };
 		1E7DE1C62813058A003CEE5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DE1C52813058A003CEE5D /* LoginViewController.swift */; };
 		1E7DE1C928130596003CEE5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DE1C828130596003CEE5D /* SignUpViewController.swift */; };
-		1ECBFC6A28143C6300ABE9D6 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6928143C6300ABE9D6 /* Presenter.swift */; };
 		1ECBFC6D28143CAC00ABE9D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */; };
 		1ECBFC7028143F2000ABE9D6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */; };
 		1ECBFC7328143F2C00ABE9D6 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */; };
@@ -33,6 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		1E31F9E9282201D300FB18D6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		1E31F9F0282202C700FB18D6 /* NewTweetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetPresenter.swift; sourceTree = "<group>"; };
+		1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		1E31FA002822065B00FB18D6 /* NotificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
+		1E31FA0F282207C500FB18D6 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		1E694317281847DC00894579 /* CreateATweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateATweetViewController.swift; sourceTree = "<group>"; };
 		1E6DD0322816E93400673F76 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		1E6DD0332816E93400673F76 /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
@@ -50,7 +61,6 @@
 		1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E7DE1C52813058A003CEE5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1E7DE1C828130596003CEE5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		1ECBFC6928143C6300ABE9D6 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -74,36 +84,282 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E1568C02815AFD200D7C605 /* Before LogIn */ = {
+		1E0C2EE3282470F900A2AE10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1E7DE1A52812F940003CEE5D /* Assets.xcassets */,
+				1E7DE1A72812F940003CEE5D /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1E1568C02815AFD200D7C605 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1E7DE1A02812F93C003CEE5D /* ViewController.swift */,
 				1E7DE1C52813058A003CEE5D /* LoginViewController.swift */,
 				1E7DE1C828130596003CEE5D /* SignUpViewController.swift */,
 			);
-			path = "Before LogIn";
+			path = View;
 			sourceTree = "<group>";
 		};
-		1E1568C32815B01B00D7C605 /* After Login */ = {
+		1E31F9DA2821F11D00FB18D6 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				1E31F9DD2821F19F00FB18D6 /* Presenter */,
+				1E31F9DC2821F19300FB18D6 /* Model */,
+				1E1568C02815AFD200D7C605 /* View */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		1E31F9DC2821F19300FB18D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E31F9DD2821F19F00FB18D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E31F9E22821FD7E00FB18D6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1E31F9E52821FDB200FB18D6 /* Model */,
+				1E31F9E42821FDA600FB18D6 /* View */,
+				1E31F9E62821FDBB00FB18D6 /* Presenter */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1E31F9E42821FDA600FB18D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */,
-				1E694317281847DC00894579 /* CreateATweetViewController.swift */,
-				1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */,
-				1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */,
-				1ECBFC7428143F3900ABE9D6 /* MessagesViewController.swift */,
-			);
-			path = "After Login";
-			sourceTree = "<group>";
-		};
-		1E6DD0382816F05000673F76 /* tableViewCell */ = {
-			isa = PBXGroup;
-			children = (
 				1E6DD0322816E93400673F76 /* TweetTableViewCell.swift */,
 				1E6DD0332816E93400673F76 /* TweetTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E31F9E52821FDB200FB18D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E504B281ADC3D0054FEA8 /* Tweets.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E31F9E62821FDBB00FB18D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1E31F9E9282201D300FB18D6 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E31F9ED2822028B00FB18D6 /* Create A Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				1E31F9F3282202EA00FB18D6 /* Model */,
+				1E31F9EE282202A400FB18D6 /* View */,
+				1E31F9EF282202B600FB18D6 /* Presenter */,
+			);
+			path = "Create A Tweet";
+			sourceTree = "<group>";
+		};
+		1E31F9EE282202A400FB18D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E694317281847DC00894579 /* CreateATweetViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E31F9EF282202B600FB18D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1E31F9F0282202C700FB18D6 /* NewTweetPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E31F9F3282202EA00FB18D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E31F9F42822042D00FB18D6 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1E31F9F52822043A00FB18D6 /* Model */,
+				1E31F9F62822044600FB18D6 /* View */,
+				1E31F9F72822044D00FB18D6 /* Presenter */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1E31F9F52822043A00FB18D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E31F9F62822044600FB18D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E31F9F72822044D00FB18D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E31F9FC2822060300FB18D6 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				1E31F9FF2822063F00FB18D6 /* Presenter */,
+				1E31F9FE2822063A00FB18D6 /* Model */,
+				1E31F9FD2822061200FB18D6 /* View */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		1E31F9FD2822061200FB18D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E31F9FE2822063A00FB18D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E31F9FF2822063F00FB18D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1E31FA002822065B00FB18D6 /* NotificationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E31FA03282206B500FB18D6 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				1E31FA06282206D900FB18D6 /* Presenter */,
+				1E31FA05282206D400FB18D6 /* View */,
+				1E31FA04282206CD00FB18D6 /* Model */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		1E31FA04282206CD00FB18D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E5062281AE3C00054FEA8 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E31FA05282206D400FB18D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ECBFC7428143F3900ABE9D6 /* MessagesViewController.swift */,
 				1E6E5065281AE6180054FEA8 /* MessagesTableViewCell.swift */,
 			);
-			path = tableViewCell;
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E31FA06282206D900FB18D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E31FA072822076000FB18D6 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1E31FA0A2822078100FB18D6 /* Presenter */,
+				1E31FA092822077B00FB18D6 /* Model */,
+				1E31FA082822076D00FB18D6 /* View */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		1E31FA082822076D00FB18D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ECBFC782814415500ABE9D6 /* RootSideMenuTVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E31FA092822077B00FB18D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E31FA0A2822078100FB18D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E31FA0B2822079500FB18D6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1E31FA0C2822079C00FB18D6 /* Model */,
+				1E31FA0D282207A200FB18D6 /* View */,
+				1E31FA0E282207A600FB18D6 /* Presenter */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1E31FA0C2822079C00FB18D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E31FA0D282207A200FB18D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ECBFC832814511000ABE9D6 /* SettingsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E31FA0E282207A600FB18D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1E31FA0F282207C500FB18D6 /* SettingsPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		1E7DE1902812F93C003CEE5D = {
@@ -127,55 +383,22 @@
 		1E7DE19B2812F93C003CEE5D /* twitterClone */ = {
 			isa = PBXGroup;
 			children = (
-				1ECBFC6428143C0F00ABE9D6 /* MVP */,
+				1E0C2EE3282470F900A2AE10 /* Resources */,
+				1E31F9DA2821F11D00FB18D6 /* login */,
+				1E31F9E22821FD7E00FB18D6 /* Home */,
+				1E31F9ED2822028B00FB18D6 /* Create A Tweet */,
+				1E31FA0B2822079500FB18D6 /* Settings */,
+				1E31FA03282206B500FB18D6 /* Messages */,
+				1E31F9F42822042D00FB18D6 /* Search */,
+				1E31F9FC2822060300FB18D6 /* Notification */,
+				1E31FA072822076000FB18D6 /* SideMenu */,
 				1E7DE19C2812F93C003CEE5D /* AppDelegate.swift */,
 				1E7DE19E2812F93C003CEE5D /* SceneDelegate.swift */,
-				1E7DE1A22812F93C003CEE5D /* Main.storyboard */,
-				1E7DE1A52812F940003CEE5D /* Assets.xcassets */,
-				1E7DE1A72812F940003CEE5D /* LaunchScreen.storyboard */,
 				1E7DE1AA2812F940003CEE5D /* Info.plist */,
 				1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */,
+				1E7DE1A22812F93C003CEE5D /* Main.storyboard */,
 			);
 			path = twitterClone;
-			sourceTree = "<group>";
-		};
-		1ECBFC6428143C0F00ABE9D6 /* MVP */ = {
-			isa = PBXGroup;
-			children = (
-				1ECBFC6528143C1C00ABE9D6 /* Model */,
-				1ECBFC6628143C2400ABE9D6 /* View */,
-				1E6DD0382816F05000673F76 /* tableViewCell */,
-				1ECBFC6828143C3000ABE9D6 /* Presenter */,
-			);
-			path = MVP;
-			sourceTree = "<group>";
-		};
-		1ECBFC6528143C1C00ABE9D6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1E6E504B281ADC3D0054FEA8 /* Tweets.swift */,
-				1E6E5062281AE3C00054FEA8 /* Message.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1ECBFC6628143C2400ABE9D6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1E1568C02815AFD200D7C605 /* Before LogIn */,
-				1E1568C32815B01B00D7C605 /* After Login */,
-				1ECBFC782814415500ABE9D6 /* RootSideMenuTVC.swift */,
-				1ECBFC832814511000ABE9D6 /* SettingsViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		1ECBFC6828143C3000ABE9D6 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				1ECBFC6928143C6300ABE9D6 /* Presenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		808697150A89619916CE5941 /* Frameworks */ = {
@@ -312,17 +535,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E7DE1C62813058A003CEE5D /* LoginViewController.swift in Sources */,
-				1ECBFC6A28143C6300ABE9D6 /* Presenter.swift in Sources */,
 				1E6E5066281AE6180054FEA8 /* MessagesTableViewCell.swift in Sources */,
+				1E31F9F92822046C00FB18D6 /* SearchPresenter.swift in Sources */,
 				1E694318281847DC00894579 /* CreateATweetViewController.swift in Sources */,
+				1E0C2EBA282464E100A2AE10 /* LoginPresenter.swift in Sources */,
 				1E7DE1A12812F93C003CEE5D /* ViewController.swift in Sources */,
 				1ECBFC7028143F2000ABE9D6 /* SearchViewController.swift in Sources */,
 				1ECBFC6D28143CAC00ABE9D6 /* HomeViewController.swift in Sources */,
+				1E31FA10282207C500FB18D6 /* SettingsPresenter.swift in Sources */,
 				1ECBFC7328143F2C00ABE9D6 /* NotificationsViewController.swift in Sources */,
 				1ECBFC792814415500ABE9D6 /* RootSideMenuTVC.swift in Sources */,
+				1E31F9F1282202C700FB18D6 /* NewTweetPresenter.swift in Sources */,
 				1E6E504C281ADC3D0054FEA8 /* Tweets.swift in Sources */,
 				1E6DD0342816E93400673F76 /* TweetTableViewCell.swift in Sources */,
 				1E7DE19D2812F93C003CEE5D /* AppDelegate.swift in Sources */,
+				1E31FA012822065B00FB18D6 /* NotificationPresenter.swift in Sources */,
+				1E31F9EA282201D300FB18D6 /* HomePresenter.swift in Sources */,
 				1E7DE19F2812F93C003CEE5D /* SceneDelegate.swift in Sources */,
 				1ECBFC7528143F3900ABE9D6 /* MessagesViewController.swift in Sources */,
 				1E6E5063281AE3C00054FEA8 /* Message.swift in Sources */,

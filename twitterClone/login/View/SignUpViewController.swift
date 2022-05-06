@@ -18,7 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
     
     
-    //MARK:- Methods
+    //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // to hide the keyboard
@@ -27,7 +27,11 @@ class SignUpViewController: UIViewController {
 
         signUpBtn.layer.cornerRadius = 5
     }
+    //MARK:- Methods
+
     
+    //MARK:- Actions
+
     @IBAction func signUpBtn(_ sender: UIButton) {
         
         Auth.auth().createUser(withEmail: emailTxtField.text!, password: passwordFTxtField.text!) { [weak self] (authResult, error) in

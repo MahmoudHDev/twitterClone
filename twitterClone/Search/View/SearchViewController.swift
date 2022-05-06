@@ -8,12 +8,12 @@
 import UIKit
 import SideMenu
 class SearchViewController: UIViewController {
+    //MARK:- Properties
 
     var menu: SideMenuNavigationController?
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTxtField: UITextField!
-    
+    //MARK:- view LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
@@ -21,7 +21,11 @@ class SearchViewController: UIViewController {
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         updateSideMenu()
     }
-        
+    //MARK:- Methods
+
+    
+    //MARK:- Actions
+
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
         present(menu!, animated: true)
 
@@ -38,6 +42,9 @@ class SearchViewController: UIViewController {
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
 }
+
+//MARK:- UITableView DataSource
+
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0

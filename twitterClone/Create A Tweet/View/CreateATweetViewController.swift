@@ -14,7 +14,7 @@ class CreateATweetViewController: UIViewController {
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var remainingLbl: UILabel!
     var maxCount = 280
-    //MARK:- Methods
+    //MARK:- View LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,12 @@ class CreateATweetViewController: UIViewController {
         super.viewWillAppear(true)
         navigationController?.navigationBar.backgroundColor = .none
     }
+    //MARK:- Methods
+
+    
+    
+    //MARK:- Actions
+
     
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

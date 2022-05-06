@@ -16,8 +16,7 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var timeOfTweet: UILabel!
     @IBOutlet weak var tweetContent: UITextView!
-    // FaveButtons
-    // Notes:       FaveButtons needs an edit with the size of the image
+    
     let faveButton = FaveButton()
     @IBOutlet weak var likeBtn   :FaveButton!
     @IBOutlet weak var shareBtn  :FaveButton!
@@ -26,7 +25,8 @@ class TweetTableViewCell: UITableViewCell {
     
     var toggleButton = false
     
-    // Methods
+    //MARK:- View LifeCycles
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code          like the viewDidLoad
@@ -40,7 +40,8 @@ class TweetTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    //MARK:- Actions
+
     @IBAction func tweetButtons(_ sender: Any) {
         // each button has to do a specific func
         

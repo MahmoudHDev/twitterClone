@@ -9,14 +9,15 @@ import UIKit
 import SideMenu
 
 class HomeViewController: UIViewController {
-
-    // Properties
+    //MARK:- Properties
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTweetBrn: UIButton!
     var menu: SideMenuNavigationController?
     
     
-    // Methods
+    //MARK:- View LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
@@ -27,7 +28,11 @@ class HomeViewController: UIViewController {
         newTweetBrn.layer.cornerRadius = 0.5 * newTweetBrn.bounds.size.width
         newTweetBrn.clipsToBounds = true
     }
+    //MARK:- Methods
+
     
+    //MARK:- Actions
+
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
         
         present(menu!, animated: true)

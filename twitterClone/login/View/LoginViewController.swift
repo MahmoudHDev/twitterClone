@@ -7,17 +7,16 @@
 
 import UIKit
 import Firebase
-import SVProgressHUD
 
 class LoginViewController: UIViewController {
-    //MARK:- Properties
 
+    
+    //MARK:- Properties
     @IBOutlet weak var signIn: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
-    
-    //MARK:- Methods
 
+    //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
@@ -25,6 +24,12 @@ class LoginViewController: UIViewController {
         signIn.layer.cornerRadius = 5
     }
     
+    //MARK:- Methods
+    
+
+    
+    //MARK:- Actions
+
     @IBAction func loginBtn(_ sender: UIButton) {
         guard let email = emailTxtField.text, let password = passwordTxtField.text else {return}
         
@@ -56,3 +61,13 @@ class LoginViewController: UIViewController {
     }
     
 }
+//MARK:- Login Presenter Protocol
+extension LoginViewController: LoginPresenterProtocol {
+    
+    func login(email: String, password: String) {
+        <#code#>
+    }
+    
+    
+}
+

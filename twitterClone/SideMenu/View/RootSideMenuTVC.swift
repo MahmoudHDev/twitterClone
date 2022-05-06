@@ -9,23 +9,21 @@ import UIKit
 
 class RootSideMenuTVC: UITableViewController {
 
-    //Properties
+    //MARK:- Properties
     var arrTitles = ["Profile", "Lists", "Bookmarks", "Moments"]
     var arrImgs   : [UIImage] = []
     
-    // Methods
-    
+    //MARK:- View LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(profilePhotoTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(optionTapped))
-        
         appendImages()
         
     }
-    
+    //MARK:- Methods
     func appendImages() {
         arrImgs.append(SFSymbols.home!)
         arrImgs.append(SFSymbols.lists!)
@@ -38,10 +36,17 @@ class RootSideMenuTVC: UITableViewController {
         print("profile Photo must be here")
     }
 
-    
     @objc func optionTapped(){
         print("accountsIcon")
     }
+    enum SFSymbols: CaseIterable {
+        static let home = UIImage(systemName: "person")
+        static let lists = UIImage(systemName: "note.text")
+        static let bookmarks = UIImage(systemName: "bookmark")
+        static let moments = UIImage(systemName: "bolt")
+    }
+    
+    //MARK:- Actions
 
     // MARK: - Table view data source
 
@@ -59,17 +64,9 @@ class RootSideMenuTVC: UITableViewController {
         
         return cell
     }
-    
-    
-    enum SFSymbols: CaseIterable {
-        static let home = UIImage(systemName: "person")
-        static let lists = UIImage(systemName: "note.text")
-        static let bookmarks = UIImage(systemName: "bookmark")
-        static let moments = UIImage(systemName: "bolt")
-    }
+
     
     //MARK:- TableView Delegate
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

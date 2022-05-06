@@ -9,12 +9,12 @@ import UIKit
 
 class MessagesTableViewCell: UITableViewCell {
     
-    // Properties
+    //MARK:- Properties
     @IBOutlet weak var senderImage: UIImageView!
     @IBOutlet weak var senderUsername: UILabel!
     @IBOutlet weak var senderMessage: UILabel!
     
-    // Methods
+    //MARK:- View LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
