@@ -10,11 +10,11 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
-    
     //MARK:- Properties
     @IBOutlet weak var signIn: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
+    lazy var presenter = LoginPresenter(view: self)
 
     //MARK:- View LifeCycle
     override func viewDidLoad() {
@@ -32,40 +32,25 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginBtn(_ sender: UIButton) {
         guard let email = emailTxtField.text, let password = passwordTxtField.text else {return}
-        
-        Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
-            guard let result = authResult else {return}
-            
-            if let error = error as NSError? {
-                switch AuthErrorCode(rawValue: error.code) {
-                case .operationNotAllowed:
-                    print("Emails and accounts are not enabled")
-                case .userDisabled:
-                    print("the user account has been disabled")
-                case .wrongPassword:
-                    print("The passwrod is invalid")
-                case .invalidEmail:
-                    print("the email is malformed")
-                default:
-                    print(" the localized Error --> \(error.localizedDescription)")
-                }
-            }else{
-                // Array that contains the user
-                print("Login successfullu as \(result.user.email!)")
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "HomeTabBar")
-                self.dismiss(animated: true, completion: nil)
-                self.present(vc, animated: true)
-            }
+        presenter.login(email: email, password: password)
+
         }
     }
     
-}
 //MARK:- Login Presenter Protocol
+
 extension LoginViewController: LoginPresenterProtocol {
+    func showError(error: String) {
+        // Error
+        print(error)
+    }
+    
+
+
+    
     
     func login(email: String, password: String) {
-        <#code#>
+        // Do something
     }
     
     
