@@ -12,15 +12,14 @@ protocol SignUpPresenterView: class {
     
     func signUpSuccess(username: String, email: String)
     func signUpError(error: String)
-    
 }
 
 class SignUpPresenter {
     
     //MARK:- Properties
     private weak var view: SignUpPresenterView?
-    private let databaseRef = Database.database().reference()
-    
+    let db = Firestore.firestore()
+    private weak var ref: DocumentReference? = nil
     //MARK:- Init
     init(view: SignUpPresenterView) {
         self.view = view
@@ -29,7 +28,9 @@ class SignUpPresenter {
     //MARK:- Methods
     func registerUser(name: String, email: String, password: String) {
             Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+                
                 if let er = error as NSError? {
+                    
                     switch AuthErrorCode(rawValue: er.code) {
                     case .weakPassword:
                         print("Weak Password!")
@@ -49,10 +50,18 @@ class SignUpPresenter {
                     default:
                         print(" the localized Error --> \(er.localizedDescription)")
                         self.view?.signUpError(error: "Error! \(er.localizedDescription)")
-
                     }
                 }else{
                     // Array that contains the user
+                    do{
+                        self.ref = self.db.collection("users").addDocument(data: [
+                                                                    "userName" : name,
+                                                                            "email" : email])
+                        print("Successfully sent to the DB")
+                    }catch let error{
+                        print(error.localizedDescription)
+                    }
+
                     guard let userInformation = authResult else { return }
                     self.view?.signUpSuccess(username: "\(userInformation.user.providerID)", email: "\(userInformation.user.email!)")
                     print("Login successfullu as \(userInformation.user.email!)")

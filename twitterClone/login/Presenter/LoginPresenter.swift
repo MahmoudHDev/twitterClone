@@ -7,11 +7,16 @@
 
 import Foundation
 import Firebase
+
+//MARK:- Presenter Protocol
+
 protocol LoginPresenterProtocol: NSObjectProtocol {
     
     func login(email: String)
     func showError(error: String)
 }
+
+//MARK:- LoginPresenter
 
 class LoginPresenter {
     //MARK:- Properties
@@ -52,7 +57,6 @@ class LoginPresenter {
                 self.view?.login(email: userInformation.user.email!)
             }
         }
-        
     }
     
 }

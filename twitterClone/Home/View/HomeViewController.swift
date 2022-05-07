@@ -14,12 +14,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTweetBrn: UIButton!
     var menu: SideMenuNavigationController?
-    
+    var arrTweets = [Tweets]()     // empty arr of tweets
+    lazy var presenter = HomePresenter(view: self)
     
     //MARK:- View LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.readTweets()
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         // SideMenu Configuration
         updateSideMenu()
@@ -28,11 +29,15 @@ class HomeViewController: UIViewController {
         newTweetBrn.layer.cornerRadius = 0.5 * newTweetBrn.bounds.size.width
         newTweetBrn.clipsToBounds = true
     }
+    
     //MARK:- Methods
-
+    func updateSideMenu(){
+        menu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+    }
     
     //MARK:- Actions
-
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
         
         present(menu!, animated: true)
@@ -47,33 +52,21 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "createATweet")
         present(vc, animated: true)
-        
-    }
-    func updateSideMenu(){
-        menu?.leftSide = true
-        // CHANGE THIS
-        SideMenuManager.default.leftMenuNavigationController = menu
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
 }
-//MARK:- TableView DataSource, and Delegate
 
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+//MARK:- Presenter
+extension HomeViewController: HomePresenterView  {
+    func tweetsError(error: Error) {
+        print("Err HomeViewController :=> \(error.localizedDescription)")
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
-            cell.newTweet(nameLbl: "Mahmoud", usernameLbl: "@Mahmoud", timeOfTweet: "1m", tweetContent: "Save the world!")
-            
-            return cell
+    func showTweets() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
-        return TweetTableViewCell()
+        print("Tweets")
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+    
     
 }

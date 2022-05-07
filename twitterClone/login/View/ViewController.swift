@@ -8,11 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    // this viewController responsible for the fade and animation of the launch screen but still need some functions
     //MARK:- Properties
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var signUpBtn: UIButton!
-    
     let imageView: UIImageView = {
        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         imageView.image = UIImage(named: "twitter-WhiteIcon")
@@ -20,6 +19,7 @@ class ViewController: UIViewController {
     }()     // parenthess a structure
     
     //MARK:- LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(imageView)
@@ -34,7 +34,8 @@ class ViewController: UIViewController {
             self.animate()
         }
     }
-    
+    //MARK:- Methods
+
     private func animate() {
         UIView.animate(withDuration: 0.5) {
             let size = self.view.frame.size.width * 3

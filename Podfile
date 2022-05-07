@@ -12,5 +12,5 @@ target 'twitterClone' do
   pod 'FirebaseDatabase'
   pod 'FirebaseStorage'
   pod 'FaveButton'
-  pod 'SVProgressHUD'
+  pod 'IQKeyboardManagerSwift'
 end

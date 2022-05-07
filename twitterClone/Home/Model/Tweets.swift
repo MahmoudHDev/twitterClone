@@ -7,12 +7,10 @@
 
 import Foundation
 
-struct Tweets{
+struct Tweets: Codable{
     // Properties
-    var tweet        = String()
-    var username     = String()
-    var name         = String()
-    var profilePhoto = String()
-    var time         = String()
-
+    var tweet        : String
+    var email        : String
+    var profilePhoto : String
+    var time         : String
 }

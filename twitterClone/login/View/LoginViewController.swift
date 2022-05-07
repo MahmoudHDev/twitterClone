@@ -35,32 +35,8 @@ class LoginViewController: UIViewController {
         presenter.login(email: emailTxtField.text!, password: passwordTxtField.text!)
         }
     }
-//MARK:- TextField Delegate
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switchBasedNextTextField(textField)
-        return true
-    }
-    
-    private func textFieldDelegate() {
-        passwordTxtField.delegate = self
-        emailTxtField.delegate    = self
-    }
-    
-    private func switchBasedNextTextField(_ textField: UITextField){
-        switch textField {
-        case passwordTxtField:
-            self.emailTxtField.becomeFirstResponder()
-        default:
-            signIn.becomeFirstResponder()
-            self.view.endEditing(true)
-        }
-    }
-    
-}
 
 //MARK:- Login Presenter Protocol
-
 extension LoginViewController: LoginPresenterProtocol {
     func showError(error: String) {
         // Show The Error
