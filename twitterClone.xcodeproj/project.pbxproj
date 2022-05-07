@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E0C2EBA282464E100A2AE10 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */; };
+		1E26D8C32825AE9900BDC7B5 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26D8C22825AE9900BDC7B5 /* SignUpPresenter.swift */; };
 		1E31F9EA282201D300FB18D6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9E9282201D300FB18D6 /* HomePresenter.swift */; };
 		1E31F9F1282202C700FB18D6 /* NewTweetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9F0282202C700FB18D6 /* NewTweetPresenter.swift */; };
 		1E31F9F92822046C00FB18D6 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		1E26D8C22825AE9900BDC7B5 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		1E31F9E9282201D300FB18D6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		1E31F9F0282202C700FB18D6 /* NewTweetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetPresenter.swift; sourceTree = "<group>"; };
 		1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */,
+				1E26D8C22825AE9900BDC7B5 /* SignUpPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				1E7DE19B2812F93C003CEE5D /* twitterClone */,
+				1E0C2EE3282470F900A2AE10 /* Resources */,
 				1E7DE19A2812F93C003CEE5D /* Products */,
 				C0E990A4DEB0ABC0D6E3FC7D /* Pods */,
 				808697150A89619916CE5941 /* Frameworks */,
@@ -383,7 +387,6 @@
 		1E7DE19B2812F93C003CEE5D /* twitterClone */ = {
 			isa = PBXGroup;
 			children = (
-				1E0C2EE3282470F900A2AE10 /* Resources */,
 				1E31F9DA2821F11D00FB18D6 /* login */,
 				1E31F9E22821FD7E00FB18D6 /* Home */,
 				1E31F9ED2822028B00FB18D6 /* Create A Tweet */,
@@ -392,11 +395,11 @@
 				1E31F9F42822042D00FB18D6 /* Search */,
 				1E31F9FC2822060300FB18D6 /* Notification */,
 				1E31FA072822076000FB18D6 /* SideMenu */,
+				1E7DE1A22812F93C003CEE5D /* Main.storyboard */,
 				1E7DE19C2812F93C003CEE5D /* AppDelegate.swift */,
 				1E7DE19E2812F93C003CEE5D /* SceneDelegate.swift */,
 				1E7DE1AA2812F940003CEE5D /* Info.plist */,
 				1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */,
-				1E7DE1A22812F93C003CEE5D /* Main.storyboard */,
 			);
 			path = twitterClone;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E7DE1C62813058A003CEE5D /* LoginViewController.swift in Sources */,
+				1E26D8C32825AE9900BDC7B5 /* SignUpPresenter.swift in Sources */,
 				1E6E5066281AE6180054FEA8 /* MessagesTableViewCell.swift in Sources */,
 				1E31F9F92822046C00FB18D6 /* SearchPresenter.swift in Sources */,
 				1E694318281847DC00894579 /* CreateATweetViewController.swift in Sources */,

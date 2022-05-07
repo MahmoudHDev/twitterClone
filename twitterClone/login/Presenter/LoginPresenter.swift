@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 protocol LoginPresenterProtocol: NSObjectProtocol {
     
-    func login(email: String, password: String)
+    func login(email: String)
     func showError(error: String)
 }
 
@@ -30,12 +30,16 @@ class LoginPresenter {
             if let er = error as NSError? {
                 switch AuthErrorCode(rawValue: er.code) {
                 case .operationNotAllowed:
+                    self.view?.showError(error: "Emails and accounts are not enabled")
                     print("Emails and accounts are not enabled")
                 case .userDisabled:
+                    self.view?.showError(error: "the user account has been disabled")
                     print("the user account has been disabled")
                 case .wrongPassword:
+                    self.view?.showError(error: "The passwrod is invalid")
                     print("The passwrod is invalid")
                 case .invalidEmail:
+                    self.view?.showError(error: "the email is malformed")
                     print("the email is malformed")
                 default:
                     print(" the localized Error --> \(er.localizedDescription)")
@@ -43,12 +47,9 @@ class LoginPresenter {
                 }
             }else{
                 // Array that contains the user
-                print("Login successfullu as \(authResult?.user.displayName!)")
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "HomeTabBar")
-                
-//                self.dismiss(animated: true, completion: nil)
-//                self.present(vc, animated: true)
+                guard let userInformation = authResult else { return }
+                print("Login successfullu as \(userInformation.user.email!)")
+                self.view?.login(email: userInformation.user.email!)
             }
         }
         
