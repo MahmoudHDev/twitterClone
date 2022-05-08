@@ -6,19 +6,20 @@
 //
 
 import UIKit
-
+import Kingfisher
 //MARK:- TableView DataSource, and Delegate
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return arrTweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
-            cell.newTweet(nameLbl: "Mahmoud", usernameLbl: "@Mahmoud", timeOfTweet: "1m", tweetContent: "Save the world!")
-            
+            let tweets = arrTweets[indexPath.row]
+            cell.newTweet(email: tweets.email, usernameLbl: tweets.username, timeOfTweet: "tweets.time", tweetContent: tweets.tweet)
+            cell.profileImg.kf.setImage(with: URL(string: tweets.profilePhoto))
             return cell
         }
         return TweetTableViewCell()

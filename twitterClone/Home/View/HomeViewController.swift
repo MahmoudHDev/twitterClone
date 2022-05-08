@@ -59,6 +59,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomePresenterView  {
     func appendTweets(TwitteContent: Tweets) {
         arrTweets.append(TwitteContent)
+        tableView.reloadData()
         print(arrTweets)
     }
     

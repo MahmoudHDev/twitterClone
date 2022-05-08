@@ -13,4 +13,5 @@ target 'twitterClone' do
   pod 'FirebaseStorage'
   pod 'FaveButton'
   pod 'IQKeyboardManagerSwift'
+  pod 'Kingfisher'
 end

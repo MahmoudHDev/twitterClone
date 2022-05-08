@@ -82,12 +82,11 @@ class TweetTableViewCell: UITableViewCell {
         }
     }
 
-    func newTweet(nameLbl: String, usernameLbl: String,timeOfTweet: String ,tweetContent:String){
-        self.nameLbl.text = nameLbl
+    func newTweet(email: String, usernameLbl: String,timeOfTweet: String ,tweetContent:String){
+        self.nameLbl.text = email
         self.usernameLbl.text = usernameLbl
         self.timeOfTweet.text = timeOfTweet
         self.tweetContent.text = tweetContent
-
     }
     
 }
