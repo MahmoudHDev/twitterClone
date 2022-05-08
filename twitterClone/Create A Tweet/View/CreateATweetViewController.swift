@@ -13,14 +13,14 @@ class CreateATweetViewController: UIViewController {
     @IBOutlet weak var profilePhoto : UIImageView!
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var remainingLbl : UILabel!
-    
     lazy var presenter = NewTweetPresenter(view: self)
     var maxCount = 280
     
     //MARK:- View LifeCycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
         profilePhoto.layer.cornerRadius = 15
@@ -42,7 +42,7 @@ class CreateATweetViewController: UIViewController {
     
     @IBAction func tweetBtn(_ sender: Any) {
         // Firebase             // add the presenter
-        presenter.sendTweet(tweetContent: tweetTextView.text)
+        presenter.sendTweet(tweetContent: tweetTextView.text!)
         print("tweetBtn Tapped")
     }
     
@@ -60,6 +60,18 @@ extension CreateATweetViewController: NewTweetPresenterView {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dissmiss", style: .cancel, handler: nil))
         print(error)
+    }
+}
+
+//MARK:- Date Extension:
+
+extension Date {
+    init(_ dateString: String) {
+        let dateStrningFormatter = DateFormatter()
+        dateStrningFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        dateStrningFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
+        let date = dateStrningFormatter.date(from: dateString)!
+        self.init(timeInterval: 0, since: date)
     }
 }
 

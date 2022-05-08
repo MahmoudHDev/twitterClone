@@ -18,7 +18,7 @@ class NewTweetPresenter {
     //MARK:- Properties
     var view: NewTweetPresenterView?
     var imageUrl : String = "https://via.placeholder.com/150.png"
-    let time : Date = Date()
+    let time = Date()
     let db = Firestore.firestore()
     private weak var ref: DocumentReference? = nil
     
@@ -35,9 +35,10 @@ class NewTweetPresenter {
 //        let currentUser = Auth.auth().currentUser
         ref = self.db.collection("userTweets").addDocument(data: [
                                                             "email" : "Demo Email",
-                                                                "username": "Mahmoud",
-                                                                "time": time.timeIntervalSinceNow,
-                                                                "profilePhoto": imageUrl]) { err in
+                                                            "username": "Mahmoud",
+                                                            "time": time,
+                                                            "profilePhoto": imageUrl,
+                                                            "tweet":tweetContent]) { err in
                 if let err = err {
                     print("Error From the presenter")
                     self.view?.tweetError(error: err)

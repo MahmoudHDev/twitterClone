@@ -6,11 +6,12 @@
 //
 
 import Foundation
-
-struct Tweets: Codable{
+import Firebase
+struct Tweets{
     // Properties
+    var time         : Timestamp
     var tweet        : String
     var email        : String
     var profilePhoto : String
-    var time         : String
+    var username     : String
 }

@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTweetBrn: UIButton!
     var menu: SideMenuNavigationController?
-    var arrTweets = [Tweets]()     // empty arr of tweets
+    var arrTweets: [Tweets] = []     // empty arr of tweets
     lazy var presenter = HomePresenter(view: self)
     
     //MARK:- View LifeCycle
@@ -57,6 +57,11 @@ class HomeViewController: UIViewController {
 
 //MARK:- Presenter
 extension HomeViewController: HomePresenterView  {
+    func appendTweets(TwitteContent: Tweets) {
+        arrTweets.append(TwitteContent)
+        print(arrTweets)
+    }
+    
     func tweetsError(error: Error) {
         print("Err HomeViewController :=> \(error.localizedDescription)")
     }
