@@ -31,8 +31,6 @@ extension CreateATweetViewController: UITextViewDelegate {
             remainingLbl.text = "\(maxCount) Max Charachters"
             remainingLbl.textColor = UIColor.red
         }
-        print(textView.text)
-        print("DidChange")
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -59,7 +57,6 @@ extension CreateATweetViewController: UITextViewDelegate {
             textView.textColor = UIColor.lightGray
         }
         print("DidEndEditing")
-        print(textView.text)
     }
 
     

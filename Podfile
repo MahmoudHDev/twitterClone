@@ -6,6 +6,7 @@ target 'twitterClone' do
   use_frameworks!
 
   # Pods for twitterClone
+  pod 'SVProgressHUD'
   pod 'SideMenu'
   pod 'Firebase/Firestore'
   pod 'FirebaseAuth'

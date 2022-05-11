@@ -9,11 +9,12 @@ import Foundation
 import Firebase
 
 protocol HomePresenterView {
-    func showTweets()
     func appendTweets(TwitteContent: Tweets)
+    func emptyTheArray()
     func tweetsError(error: Error)
 }
 //MARK:- Home Presenter
+
 class HomePresenter {
     
     //MARK:- Properties
@@ -25,20 +26,21 @@ class HomePresenter {
     init(view: HomePresenterView) {
         self.view = view
     }
-    
     //MARK:- Methods
-    // read Tweets from the database
-    // reload tableView data
-    // show errors
-    
+
     func readTweets(){
+        // getDocuments             For only one time
+        // addSnapshotListener      for real time updates
         // Read data by Firestore
-        db.collection("userTweets").getDocuments() { (querySnapshot, err) in
+        db.collection("userTweets").addSnapshotListener { (querySnapshot, err) in
             if let err = err {
                 self.view?.tweetsError(error: err)
                 print("Error has been ocured while fetchin data ")
             }else {
                 if let snapShotDocument = querySnapshot?.documents {
+                    self.view?.emptyTheArray()
+                    print("done Empty")
+                    // empty the array
                     for doc in snapShotDocument {
                         let data = doc.data()
                         if let email = data[K.Tweet.email] as? String,
@@ -49,20 +51,14 @@ class HomePresenter {
                             // we need to put the variables into thier places in class
                             let newTweets = Tweets(time: time, tweet: tweet, email: email, profilePhoto: profilePhoto, username: username)
                             self.view?.appendTweets(TwitteContent: newTweets)
-                            print("Successfully Fetched and added")
-                            
+                            print("Finally: Successfully Fetched and Appended")
                         }else{
-                            
-                            print("Error during fetching the data")
+                            print("Sorry: Error during fetching the data")
                         }
-                           
+                        
                     }
-                    
-
                 }
-                
             }
         }
-    }
-
+    }       // END IF
 }

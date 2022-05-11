@@ -7,8 +7,8 @@
 
 import UIKit
 import Firebase
+
 class CreateATweetViewController: UIViewController {
-    
     //MARK:- Properties
     @IBOutlet weak var profilePhoto : UIImageView!
     @IBOutlet weak var tweetTextView: UITextView!
@@ -19,8 +19,8 @@ class CreateATweetViewController: UIViewController {
     //MARK:- View LifeCycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
-
+        super.viewDidLoad()
+        tweetTextView.becomeFirstResponder()
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
         profilePhoto.layer.cornerRadius = 15
@@ -31,47 +31,39 @@ class CreateATweetViewController: UIViewController {
         super.viewWillAppear(true)
         navigationController?.navigationBar.backgroundColor = .none
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        print("View Disappeared")
+    }
     //MARK:- Methods
     
     
     //MARK:- Actions
+    
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
     }
     
     @IBAction func tweetBtn(_ sender: Any) {
-        // Firebase             // add the presenter
         presenter.sendTweet(tweetContent: tweetTextView.text!)
         print("tweetBtn Tapped")
     }
-    
 }
+
 //MARK:- Presenter Protocol
 extension CreateATweetViewController: NewTweetPresenterView {
     
     func tweetSuccess(Tweet: String) {
         self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("newDataNotif"), object: nil)
         print("Tweet Has Been Sent")
     }
-    
     
     func tweetError(error: Error) {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dissmiss", style: .cancel, handler: nil))
         print(error)
     }
+    
 }
-
-//MARK:- Date Extension:
-
-extension Date {
-    init(_ dateString: String) {
-        let dateStrningFormatter = DateFormatter()
-        dateStrningFormatter.dateFormat = "yyyy/MM/dd HH:mm"
-        dateStrningFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-        let date = dateStrningFormatter.date(from: dateString)!
-        self.init(timeInterval: 0, since: date)
-    }
-}
-

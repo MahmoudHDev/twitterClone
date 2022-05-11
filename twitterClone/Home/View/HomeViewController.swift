@@ -7,10 +7,8 @@
 
 import UIKit
 import SideMenu
-
 class HomeViewController: UIViewController {
     //MARK:- Properties
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTweetBrn: UIButton!
     var menu: SideMenuNavigationController?
@@ -20,7 +18,8 @@ class HomeViewController: UIViewController {
     //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.readTweets()
+        print("Home View did Load")
+        loadTweets()      // fetch the data from network
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         // SideMenu Configuration
         updateSideMenu()
@@ -30,24 +29,31 @@ class HomeViewController: UIViewController {
         newTweetBrn.clipsToBounds = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        print("The View of HomeVC Disappear")
+    }
+    
     //MARK:- Methods
     func updateSideMenu(){
         menu?.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
-    
+    func loadTweets() {
+
+        print("loading the tweets")
+        presenter.readTweets()
+    }
     //MARK:- Actions
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
-        
         present(menu!, animated: true)
-
     }
+    
     @IBAction func topTweetBtn(_ sender: UIBarButtonItem) {
         // Settings ViewController
         
     }
-    
     @IBAction func newTweetBtn(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "createATweet")
@@ -57,22 +63,18 @@ class HomeViewController: UIViewController {
 
 //MARK:- Presenter
 extension HomeViewController: HomePresenterView  {
+    func emptyTheArray() {
+        //Empty the Array
+        arrTweets = []
+        print("The array is Empty")
+    }
+    // Presenter Succeded
     func appendTweets(TwitteContent: Tweets) {
         arrTweets.append(TwitteContent)
         tableView.reloadData()
-        print(arrTweets)
     }
-    
+    // Presenter Faild
     func tweetsError(error: Error) {
-        print("Err HomeViewController :=> \(error.localizedDescription)")
+        print("Err HomeViewController : => \(error.localizedDescription)")
     }
-    
-    func showTweets() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        print("Tweets")
-    }
-    
-    
 }
