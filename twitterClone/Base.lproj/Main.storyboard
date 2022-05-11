@@ -223,10 +223,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUf-t8-EFG">
-                                <rect key="frame" x="325" y="568" width="40" height="40"/>
+                                <rect key="frame" x="305" y="548" width="60" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYY-E1-agb">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.13714063169999999" green="0.53951340910000001" blue="0.92610400920000002" alpha="0.80995826199999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="square.and.pencil" catalog="system">
@@ -239,13 +239,13 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="sYY-E1-agb" secondAttribute="trailing" id="5lg-UR-At4"/>
-                                    <constraint firstAttribute="height" constant="40" id="9t9-yA-xB5"/>
+                                    <constraint firstAttribute="height" constant="60" id="9t9-yA-xB5"/>
                                     <constraint firstItem="sYY-E1-agb" firstAttribute="centerY" secondItem="eUf-t8-EFG" secondAttribute="centerY" id="LuX-GE-7R9"/>
                                     <constraint firstItem="sYY-E1-agb" firstAttribute="centerX" secondItem="eUf-t8-EFG" secondAttribute="centerX" id="TPk-n0-eZC"/>
                                     <constraint firstAttribute="bottom" secondItem="sYY-E1-agb" secondAttribute="bottom" id="hJY-QO-4vR"/>
                                     <constraint firstItem="sYY-E1-agb" firstAttribute="leading" secondItem="eUf-t8-EFG" secondAttribute="leading" id="tn7-VQ-stH"/>
                                     <constraint firstItem="sYY-E1-agb" firstAttribute="top" secondItem="eUf-t8-EFG" secondAttribute="top" id="xsW-pd-uXf"/>
-                                    <constraint firstAttribute="width" constant="40" id="ysH-BS-MVv"/>
+                                    <constraint firstAttribute="width" constant="60" id="ysH-BS-MVv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -581,31 +581,6 @@
             </objects>
             <point key="canvasLocation" x="5209" y="-13"/>
         </scene>
-        <!--Settings & Privacy-->
-        <scene sceneID="aO9-zh-SmG">
-            <objects>
-                <viewController id="cET-PU-NHj" customClass="SettingsViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5bd-Tk-as6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxj-sn-M7O">
-                                <rect key="frame" x="61" y="294" width="252" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="oza-ts-xz0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings &amp; Privacy" id="Beg-Za-4FD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sz5-kK-jRZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6823" y="-287"/>
-        </scene>
         <!--create new tweet-->
         <scene sceneID="8PA-sb-Any">
             <objects>
@@ -666,6 +641,7 @@
                     <connections>
                         <outlet property="profilePhoto" destination="dho-hd-n08" id="9eL-BS-gSS"/>
                         <outlet property="remainingLbl" destination="PkK-d2-bcU" id="KfB-1v-o8w"/>
+                        <outlet property="tweetBttn" destination="2s1-ti-OE8" id="Tnl-Yp-OwG"/>
                         <outlet property="tweetTextView" destination="7py-2u-8Mv" id="yFE-yG-IyN"/>
                     </connections>
                 </viewController>
@@ -922,24 +898,6 @@
             <point key="canvasLocation" x="5998" y="430"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="M9H-xp-NqQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KLB-tx-YKA" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QXY-qq-b0o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cET-PU-NHj" kind="relationship" relationship="rootViewController" id="HLR-nU-tTp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2B1-CK-vRa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5999" y="-287"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="8bb-b5-9Bg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hKQ-MM-7Zz" sceneMemberID="viewController">
@@ -956,6 +914,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXF-p4-c2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5997.6000000000004" y="1127.5862068965519"/>
+        </scene>
+        <!--goToSettings-->
+        <scene sceneID="mWe-W9-FYX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="goToSettings" id="Br3-u4-0pz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35R-t0-R6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5787" y="-876"/>
         </scene>
     </scenes>
     <resources>

@@ -15,7 +15,7 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var timeOfTweet: UILabel!
-    @IBOutlet weak var tweetContent: UITextView!
+    @IBOutlet weak var tweetContent: UILabel!
     
     let faveButton = FaveButton()
     @IBOutlet weak var likeBtn   :FaveButton!
@@ -30,7 +30,7 @@ class TweetTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code          like the viewDidLoad
-
+        profileImg.layer.cornerRadius = 0.5 * profileImg.bounds.size.width
         faveButton.scalesLargeContentImage = false
         faveButton.delegate = self
     }

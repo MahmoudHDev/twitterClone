@@ -10,9 +10,11 @@ import Firebase
 
 class CreateATweetViewController: UIViewController {
     //MARK:- Properties
+    @IBOutlet weak var tweetBttn    : UIBarButtonItem!
     @IBOutlet weak var profilePhoto : UIImageView!
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var remainingLbl : UILabel!
+    let barButtonApperance = UIBarButtonItemAppearance()
     lazy var presenter = NewTweetPresenter(view: self)
     var maxCount = 280
     
@@ -46,6 +48,7 @@ class CreateATweetViewController: UIViewController {
     }
     
     @IBAction func tweetBtn(_ sender: Any) {
+        tweetBttn.isEnabled = false
         presenter.sendTweet(tweetContent: tweetTextView.text!)
         print("tweetBtn Tapped")
     }

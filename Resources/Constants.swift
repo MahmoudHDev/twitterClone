@@ -22,5 +22,9 @@ struct K {
         static let profilePhoto = "profilePhoto"
         static let time = "time"
     }
+    enum Colors{
+        static let blueColor = "00BBF2"
+        
+    }
 
 }

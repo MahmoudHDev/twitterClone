@@ -21,6 +21,11 @@ extension CreateATweetViewController: UITextViewDelegate {
     
     
     func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            tweetBttn.isEnabled = false
+        }else{
+            tweetBttn.isEnabled = true
+        }
         let r = tweetTextView.text.precomposedStringWithCanonicalMapping.unicodeScalars.count
         if r < maxCount {
             maxCount -= 1
@@ -53,8 +58,11 @@ extension CreateATweetViewController: UITextViewDelegate {
 
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
+            tweetBttn.isEnabled = false
             textView.text = "What's happening?"
             textView.textColor = UIColor.lightGray
+        }else{
+            tweetBttn.isEnabled = true
         }
         print("DidEndEditing")
     }
