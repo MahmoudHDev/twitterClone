@@ -46,6 +46,7 @@ class HomeViewController: UIViewController {
         presenter.readTweets()
     }
     //MARK:- Actions
+    
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
         present(menu!, animated: true)
     }
@@ -55,7 +56,7 @@ class HomeViewController: UIViewController {
         
     }
     @IBAction func newTweetBtn(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: "CreateATweet", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "createATweet")
         present(vc, animated: true)
     }

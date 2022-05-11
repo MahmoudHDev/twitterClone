@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+//MARK:- Home Protocol
 
 protocol HomePresenterView {
     func appendTweets(TwitteContent: Tweets)
