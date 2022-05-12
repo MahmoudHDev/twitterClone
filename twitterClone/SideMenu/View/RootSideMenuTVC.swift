@@ -23,14 +23,8 @@ class RootSideMenuTVC: UITableViewController {
         appendImages()
         
     }
-    //MARK:- Methods
-    func appendImages() {
-        arrImgs.append(SFSymbols.home!)
-        arrImgs.append(SFSymbols.lists!)
-        arrImgs.append(SFSymbols.bookmarks!)
-        arrImgs.append(SFSymbols.moments!)
-    }
     
+    //MARK:- Methods
     @objc func profilePhotoTapped() {
         // Profile Photo Configurations
         print("profile Photo must be here")
@@ -39,6 +33,13 @@ class RootSideMenuTVC: UITableViewController {
     @objc func optionTapped(){
         print("accountsIcon")
     }
+
+    func appendImages() {
+        arrImgs.append(SFSymbols.home!)
+        arrImgs.append(SFSymbols.lists!)
+        arrImgs.append(SFSymbols.bookmarks!)
+        arrImgs.append(SFSymbols.moments!)
+    }
     enum SFSymbols: CaseIterable {
         static let home = UIImage(systemName: "person")
         static let lists = UIImage(systemName: "note.text")
@@ -46,28 +47,36 @@ class RootSideMenuTVC: UITableViewController {
         static let moments = UIImage(systemName: "bolt")
     }
     
-    //MARK:- Actions
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
         return arrTitles.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = arrTitles[indexPath.row]
         cell.imageView?.image = arrImgs[indexPath.row]
-        
         return cell
     }
-
     
     //MARK:- TableView Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            print("Show Profile")
+            let storyBoard = UIStoryboard(name: "Profile", bundle: nil)
+            let vc = storyBoard.instantiateViewController(identifier: "showProfile")
+            present(vc, animated: true, completion: nil)
+            
+        case 1:
+            print("Show Lists")
+        case 2:
+            print("Show Bookmarks")
+        default:
+            print("Show Moments")
+        }
+        
     }
 }

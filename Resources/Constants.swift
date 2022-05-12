@@ -9,21 +9,23 @@ import Foundation
 
 
 struct K {
-    // statics
     
-    enum tableViewCell {
-        static let cellIdentifier = "cell"
+    static let appName = "Twitter"
+    static let cellNibName      = "MessagePopTableViewCell"
+    static let cellIdentifier   = "cell"
+    
+    struct Tweet{
+        static let username         = "username"
+        static let tweet            = "tweet"
+        static let email            = "email"
+        static let profilePhoto     = "profilePhoto"
+        static let time             = "time"
     }
     
-    enum Tweet{
-        static let username = "username"
-        static let tweet = "tweet"
-        static let email = "email"
-        static let profilePhoto = "profilePhoto"
-        static let time = "time"
-    }
-    enum Colors{
-        static let blueColor = "00BBF2"
+    struct BrandColors{
+        static let blueColor        = "BrandPurple"
+        static let lghtPurple       = "BrandLightPurple"
+        static let blue             = "BrandLightBlue"
         
     }
 

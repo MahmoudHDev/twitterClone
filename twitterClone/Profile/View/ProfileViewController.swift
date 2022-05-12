@@ -9,23 +9,23 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     //MARK:- Properties
-    @IBOutlet weak var coverPhoto: UIImageView!
-    @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var nameOfTheUser: UILabel!
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var userBio: UILabel!
-    @IBOutlet weak var joinedDate: UILabel!
-    @IBOutlet weak var followers: UILabel!
-    @IBOutlet weak var following: UILabel!
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var navigateProfile: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var imagePicker: UIImagePickerController!
     lazy var presenter = ProfilePresenter(view: self)
+    @IBOutlet weak var coverPhoto       :UIImageView!
+    @IBOutlet weak var profilePhoto     :UIImageView!
+    @IBOutlet weak var nameOfTheUser    :UILabel!
+    @IBOutlet weak var username         :UILabel!
+    @IBOutlet weak var userBio          :UILabel!
+    @IBOutlet weak var joinedDate       :UILabel!
+    @IBOutlet weak var followers        :UILabel!
+    @IBOutlet weak var following        :UILabel!
+    @IBOutlet weak var editButton       :UIButton!
+    @IBOutlet weak var navigateProfile  :UISegmentedControl!
+    @IBOutlet weak var tableView        :UITableView!
+    
     //MARK:- App LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
@@ -37,25 +37,12 @@ class ProfileViewController: UIViewController {
         // go to edit EditProfileVC
     }
     
-
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 //MARK:- Presenter
-
 extension ProfileViewController: ProfilePresenterView {
     // Methods
-}
-//MARK:- TableViewDataSource
-
-extension ProfileViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.tableViewCell.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = "Test"
-        return cell
-    }
-    
-    
 }

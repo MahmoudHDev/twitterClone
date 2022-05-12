@@ -11,7 +11,7 @@
         <!--Name Of the User-->
         <scene sceneID="OGK-x3-h56">
             <objects>
-                <viewController id="Azs-Fm-mC3" customClass="ProfileViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Azs-Fm-mC3" customClass="ProfileViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ILl-kx-lVJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +132,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Azs-Fm-mC3" id="YH7-JE-Hxw"/>
+                                    <outlet property="delegate" destination="Azs-Fm-mC3" id="RXY-Dt-MlN"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Bt-a3-P5l"/>
@@ -154,7 +158,13 @@
                             <constraint firstItem="5Bt-a3-P5l" firstAttribute="trailing" secondItem="RFh-kI-fdr" secondAttribute="trailing" id="xJv-F6-3GB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Name Of the User" id="9Q8-Lj-vak"/>
+                    <navigationItem key="navigationItem" title="Name Of the User" id="9Q8-Lj-vak">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="rl4-Zh-Gz5">
+                            <connections>
+                                <action selector="backButton:" destination="Azs-Fm-mC3" id="9bu-Ic-n9s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="coverPhoto" destination="jac-xR-APE" id="lJ2-bl-XAR"/>
                         <outlet property="editButton" destination="ieZ-Io-DpP" id="hPS-6R-CSh"/>
@@ -176,7 +186,7 @@
         <!--Navigation Controller-->
         <scene sceneID="LE3-Qu-cop">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X17-rU-vX8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="showProfile" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="X17-rU-vX8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YA3-eO-hgx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
