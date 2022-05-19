@@ -20,9 +20,9 @@ class TweetDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Tweet"
         tableView.register(UINib(nibName: "TweetDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
-        replyButton.layer.cornerRadius = 10
         self.modalPresentationStyle = .currentContext
         // Do any additional setup after loading the view.
     }
