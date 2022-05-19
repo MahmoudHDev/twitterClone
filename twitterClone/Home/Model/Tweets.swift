@@ -6,12 +6,15 @@
 //
 
 import Foundation
-import Firebase
+
 struct Tweets{
+    
     // Properties
-    var time         : Timestamp
-    var tweet        : String
-    var email        : String
-    var profilePhoto : String
-    var username     : String
+    let time         : String
+    let tweet        : String
+    let email        : String
+    let profilePhoto : String
+    let username     : String
+
 }
+

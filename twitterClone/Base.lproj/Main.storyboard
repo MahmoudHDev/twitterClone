@@ -579,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ju-4B-His" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5209" y="-13"/>
+            <point key="canvasLocation" x="4481" y="809"/>
         </scene>
         <!--goToNewTweet-->
         <scene sceneID="jeG-PP-iSX">
@@ -588,6 +588,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1I-Ac-cmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5765" y="-414"/>
+        </scene>
+        <!--TweetDetails-->
+        <scene sceneID="mHH-0y-y5s">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TweetDetails" id="1bV-jm-DDq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MId-aO-A2T"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nBR-Qt-y3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5190" y="-80"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="Oq5-pX-GQy">
@@ -664,6 +674,7 @@
                                             <outlet property="senderImage" destination="tA4-Fl-U3r" id="0R5-Fd-vHN"/>
                                             <outlet property="senderMessage" destination="DHp-DE-j0Z" id="5z0-I1-HFG"/>
                                             <outlet property="senderUsername" destination="4ZA-hT-M6N" id="r8q-c5-std"/>
+                                            <segue destination="GqL-Y9-BCX" kind="show" identifier="goToChatMessage" id="9ki-FZ-gCG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -695,13 +706,15 @@
             </objects>
             <point key="canvasLocation" x="5208.8000000000002" y="809.14542728635683"/>
         </scene>
-        <!--goToChatMessage-->
+        <!--ChatMessages-->
         <scene sceneID="Ehr-BN-UwT">
             <objects>
-                <viewControllerPlaceholder storyboardName="ChatMessages" referencedIdentifier="goToChatMessage" id="GqL-Y9-BCX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ChatMessages" id="GqL-Y9-BCX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="28v-7V-c4e"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xZ-1T-ZeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5900" y="419"/>
+            <point key="canvasLocation" x="5850" y="582"/>
         </scene>
         <!--goToProfile-->
         <scene sceneID="Gmg-xH-c95">
@@ -709,7 +722,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="goToProfile" id="yGX-a7-3dN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUV-zr-wSG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5763" y="-517"/>
+            <point key="canvasLocation" x="5756" y="-533"/>
         </scene>
         <!--goToEditProfile-->
         <scene sceneID="2tG-YA-ZKS">

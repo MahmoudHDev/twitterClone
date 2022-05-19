@@ -12,12 +12,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTweetBrn: UIButton!
     var menu: SideMenuNavigationController?
+    var myIndexPath: Int?
     var arrTweets: [Tweets] = []     // empty arr of tweets
     lazy var presenter = HomePresenter(view: self)
     
     //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.getUserInfo()
         print("Home View did Load")
         loadTweets()      // fetch the data from network
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
@@ -40,8 +42,8 @@ class HomeViewController: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
+    
     func loadTweets() {
-
         print("loading the tweets")
         presenter.readTweets()
     }
@@ -50,7 +52,6 @@ class HomeViewController: UIViewController {
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
         present(menu!, animated: true)
     }
-    
     @IBAction func topTweetBtn(_ sender: UIBarButtonItem) {
         // Settings ViewController
         
@@ -69,11 +70,13 @@ extension HomeViewController: HomePresenterView  {
         arrTweets = []
         print("The array is Empty")
     }
+    
     // Presenter Succeded
     func appendTweets(TwitteContent: Tweets) {
         arrTweets.append(TwitteContent)
         tableView.reloadData()
     }
+    
     // Presenter Faild
     func tweetsError(error: Error) {
         print("Err HomeViewController : => \(error.localizedDescription)")

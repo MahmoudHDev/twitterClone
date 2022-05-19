@@ -24,8 +24,29 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return TweetTableViewCell()
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let storyBoard = UIStoryboard(name: "TweetDetails", bundle: nil)
+        let tweetDetails = storyBoard.instantiateViewController(identifier: "tweetPage") as! TweetDetailsViewController
+        self.navigationController!.pushViewController(tweetDetails, animated: true)
+        
+        
+        
+        //        performSegue(withIdentifier: "goToTweets", sender: self)
+        
+//        let storyBoard = UIStoryboard(name: "TweetDetails", bundle: nil)
+//        let newVC = storyBoard.instantiateViewController(withIdentifier: "tweetPage")
+//        self.definesPresentationContext = true
+//        newVC.modalPresentationStyle = .overCurrentContext
+//        self.present(newVC, animated: true, completion: nil)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print(segue.destination)
     }
     
 }

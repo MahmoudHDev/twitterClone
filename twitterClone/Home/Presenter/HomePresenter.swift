@@ -14,8 +14,8 @@ protocol HomePresenterView {
     func emptyTheArray()
     func tweetsError(error: Error)
 }
-//MARK:- Home Presenter
 
+//MARK:- Home Presenter
 class HomePresenter {
     
     //MARK:- Properties
@@ -28,7 +28,13 @@ class HomePresenter {
         self.view = view
     }
     //MARK:- Methods
-
+    
+    func getUserInfo() {
+        print(Auth.auth().currentUser?.email!)
+        
+        print(Auth.auth().currentUser?.uid)
+    }
+    
     func readTweets(){
         // getDocuments             For only one time
         // addSnapshotListener      for real time updates
@@ -50,9 +56,9 @@ class HomePresenter {
                            let time = data[K.Tweet.time] as? Timestamp,
                            let tweet = data[K.Tweet.tweet]as? String {
                             // we need to put the variables into thier places in class
-                            let newTweets = Tweets(time: time, tweet: tweet, email: email, profilePhoto: profilePhoto, username: username)
+                            let newTweets = Tweets(time: "time", tweet: tweet, email: email, profilePhoto: profilePhoto, username: username)
                             self.view?.appendTweets(TwitteContent: newTweets)
-                            print("Finally: Successfully Fetched and Appended")
+                            print("Successfully Fetched and Appended")
                         }else{
                             print("Sorry: Error during fetching the data")
                         }
