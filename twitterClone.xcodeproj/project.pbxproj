@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E0C2EBA282464E100A2AE10 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */; };
+		1E24D06E283932A7005DFF28 /* timesAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E24D06D283932A7005DFF28 /* timesAgo.swift */; };
 		1E259C72282D66A20082033A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C71282D66A20082033A /* EditProfileViewController.swift */; };
 		1E259C76282D66B80082033A /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E259C75282D66B80082033A /* EditProfile.storyboard */; };
 		1E259C7A282D67420082033A /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C79282D67420082033A /* EditProfilePresenter.swift */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		1E24D06D283932A7005DFF28 /* timesAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timesAgo.swift; sourceTree = "<group>"; };
 		1E259C71282D66A20082033A /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E259C75282D66B80082033A /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		1E259C79282D67420082033A /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				1E7DE1A52812F940003CEE5D /* Assets.xcassets */,
 				1E7DE1A72812F940003CEE5D /* LaunchScreen.storyboard */,
 				1E3FB45128269FBF007343D9 /* Constants.swift */,
+				1E24D06D283932A7005DFF28 /* timesAgo.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 				1E259C87282D89980082033A /* ChatMessageViewController.swift in Sources */,
 				1E31F9F1282202C700FB18D6 /* NewTweetPresenter.swift in Sources */,
 				1EE4950B282C568D00CB9C45 /* DateExtension.swift in Sources */,
+				1E24D06E283932A7005DFF28 /* timesAgo.swift in Sources */,
 				1E6E504C281ADC3D0054FEA8 /* Tweets.swift in Sources */,
 				1E6DD0342816E93400673F76 /* TweetTableViewCell.swift in Sources */,
 				1E7DE19D2812F93C003CEE5D /* AppDelegate.swift in Sources */,

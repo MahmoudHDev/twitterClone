@@ -13,11 +13,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var newTweetBrn: UIButton!
     var menu: SideMenuNavigationController?
     var myIndexPath: Int?
+    var selectedTweet = Tweets()
+    let dateFormatter = DateFormatter()
     var arrTweets: [Tweets] = []     // empty arr of tweets
     lazy var presenter = HomePresenter(view: self)
     
     //MARK:- View LifeCycle
     override func viewDidLoad() {
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        dateFormatter.timeZone = NSTimeZone(name: "GMT+2") as TimeZone?
         super.viewDidLoad()
         presenter.getUserInfo()
         print("Home View did Load")

@@ -11,7 +11,7 @@
         <!--Chat Message View Controller-->
         <scene sceneID="Rl1-5I-vLI">
             <objects>
-                <viewController id="hSo-3u-Xvi" customClass="ChatMessageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatView" id="hSo-3u-Xvi" customClass="ChatMessageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="alu-dr-IRj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,9 +49,6 @@
                                                         </constraints>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="arrow.up.circle.fill" catalog="system"/>
-                                                        <connections>
-                                                            <action selector="sendBttn:" destination="hSo-3u-Xvi" eventType="touchUpInside" id="aWL-DN-9gd"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -85,7 +82,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="hXW-Pt-e9x"/>
                     <connections>
-                        <outlet property="sendButton" destination="aaq-qe-0zl" id="SLO-UR-g50"/>
                         <outlet property="tableView" destination="dmS-ZT-af2" id="wpr-y3-hg3"/>
                         <outlet property="writeMsg" destination="jfU-FK-GZG" id="quh-No-ePU"/>
                     </connections>

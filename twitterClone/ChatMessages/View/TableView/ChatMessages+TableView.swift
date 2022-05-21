@@ -21,6 +21,9 @@ extension ChatMessageViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        let storyBoard = UIStoryboard(name: "ChatMessages", bundle: nil)
+        
+        let chatView = storyBoard.instantiateViewController(identifier: "chatView") as! ChatMessageViewController
+        self.navigationController!.pushViewController(chatView, animated: true)
     }
 }

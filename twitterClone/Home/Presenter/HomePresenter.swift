@@ -30,16 +30,15 @@ class HomePresenter {
     //MARK:- Methods
     
     func getUserInfo() {
-        print(Auth.auth().currentUser?.email!)
+//        print(Auth.auth().currentUser?.email!)  // will print the provided mail in signup page
         
-        print(Auth.auth().currentUser?.uid)
+//        print(Auth.auth().currentUser?.uid)     // will print the user ID
     }
     
     func readTweets(){
-        // getDocuments             For only one time
-        // addSnapshotListener      for real time updates
-        // Read data by Firestore
+        
         db.collection("userTweets").addSnapshotListener { (querySnapshot, err) in
+            
             if let err = err {
                 self.view?.tweetsError(error: err)
                 print("Error has been ocured while fetchin data ")
@@ -53,14 +52,16 @@ class HomePresenter {
                         if let email = data[K.Tweet.email] as? String,
                            let profilePhoto = data[K.Tweet.profilePhoto] as? String,
                            let username = data[K.Tweet.username] as? String,
-                           let time = data[K.Tweet.time] as? Timestamp,
+                           let times = data[K.Tweet.time] as? Timestamp,
                            let tweet = data[K.Tweet.tweet]as? String {
                             // we need to put the variables into thier places in class
-                            let newTweets = Tweets(time: "time", tweet: tweet, email: email, profilePhoto: profilePhoto, username: username)
+                            print(times)
+                            let newTime = Timestamp.dateValue(times)
+                            let newTweets = Tweets(time: newTime(), tweet: tweet, email: email, profilePhoto: profilePhoto, username: username)
                             self.view?.appendTweets(TwitteContent: newTweets)
                             print("Successfully Fetched and Appended")
                         }else{
-                            print("Sorry: Error during fetching the data")
+                            print("Sorry: Error while retreiving data")
                         }
                         
                     }

@@ -11,6 +11,7 @@ class TweetDetailsViewController: UIViewController {
 
     //MARK:- Properties
     lazy var presenter = TweetDetailsPresenter(view: self)
+    var tweetDetails  = Tweets()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var replyTextField: UITextField!
@@ -20,6 +21,7 @@ class TweetDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(tweetDetails)
         title = "Tweet"
         tableView.register(UINib(nibName: "TweetDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none

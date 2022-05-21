@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
     //MARK:- App LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.separatorStyle = .none
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
