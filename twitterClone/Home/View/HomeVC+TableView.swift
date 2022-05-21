@@ -19,11 +19,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
             let tweets = arrTweets[indexPath.row]
-            
-            let date = dateFormatter.string(from: arrTweets[indexPath.row].time!)
-            
+//            let date = dateFormatter.string(from: arrTweets[indexPath.row].time!)
+            let date = tweets.time?.timesAgoDisplay()
             // init for the cell
-            cell.newTweet(email: tweets.email ?? "", usernameLbl: tweets.username ?? "" , timeOfTweet: "\(date)" , tweetContent: tweets.tweet ?? "")
+            cell.newTweet(email: tweets.email ?? "", usernameLbl: tweets.username ?? "" , timeOfTweet: date ?? "" , tweetContent: tweets.tweet ?? "")
             cell.profileImg.kf.setImage(with: URL(string: tweets.profilePhoto ?? ""))
             return cell
         }
@@ -35,8 +34,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let storyBoard = UIStoryboard(name: "TweetDetails", bundle: nil)
         let tweetDetails = storyBoard.instantiateViewController(identifier: "tweetPage") as! TweetDetailsViewController
         tweetDetails.tweetDetails = arrTweets[indexPath.row]
-        let date = dateFormatter.string(from: arrTweets[indexPath.row].time!)
-        print(date)
+//        let date = dateFormatter.string(from: arrTweets[indexPath.row].time!)
         self.navigationController!.pushViewController(tweetDetails, animated: true)
 
     }

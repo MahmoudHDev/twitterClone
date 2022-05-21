@@ -7,6 +7,16 @@
 
 import Foundation
 extension Date{
+    // date format
+    init(_ dateString: String) {
+        let dateStrningFormatter = DateFormatter()
+        dateStrningFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        dateStrningFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
+        let date = dateStrningFormatter.date(from: dateString)!
+        self.init(timeInterval: 0, since: date)
+    }
+    
+    // show sec, mins, days .. etc.
     
     func timesAgoDisplay() -> String {
         
@@ -17,16 +27,27 @@ extension Date{
         let week = 7 * day
         
         if secondsAgo < minutes {
-            return "\(secondsAgo) seconds ago"
+            return "\(secondsAgo) s"
         } else if secondsAgo < hours {
-            return "\(secondsAgo / minutes) mins"
+            return "\(secondsAgo / minutes) m"
         }else if secondsAgo < day {
-            return "\(secondsAgo / hours) mins ago"
+            return "\(secondsAgo / hours) h"
         }else if secondsAgo < week {
-            return "\(secondsAgo / day) mins ago"
+            return "\(secondsAgo / day) d"
         }
         
-        return "\(secondsAgo / week) weeks"
+        return "\(secondsAgo / week) w"
+    }
+    
+    
+    // another extensions
+    
+    func withAddedMinutes(mins: Double) -> Date {
+        addingTimeInterval(mins * 60)
+    }
+    
+    func withAddedHours(hours: Double) -> Date {
+        withAddedMinutes(mins: hours * 60)
     }
     
 }

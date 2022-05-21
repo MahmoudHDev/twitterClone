@@ -57,7 +57,6 @@
 		1EDEED0C28361FF700D1ADCD /* TweetDetailsVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDEED0B28361FF700D1ADCD /* TweetDetailsVC+TableView.swift */; };
 		1EDEED102836207300D1ADCD /* TweetDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDEED0E2836207300D1ADCD /* TweetDetailsTableViewCell.swift */; };
 		1EDEED112836207300D1ADCD /* TweetDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EDEED0F2836207300D1ADCD /* TweetDetailsTableViewCell.xib */; };
-		1EE4950B282C568D00CB9C45 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE4950A282C568D00CB9C45 /* DateExtension.swift */; };
 		1EE4950E282C71DE00CB9C45 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE4950D282C71DE00CB9C45 /* Settings.storyboard */; };
 		1EE49511282C73D500CB9C45 /* CreateATweet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE49510282C73D500CB9C45 /* CreateATweet.storyboard */; };
 		1EE49518282C754500CB9C45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE49517282C754500CB9C45 /* ProfileViewController.swift */; };
@@ -121,7 +120,6 @@
 		1EDEED0B28361FF700D1ADCD /* TweetDetailsVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TweetDetailsVC+TableView.swift"; sourceTree = "<group>"; };
 		1EDEED0E2836207300D1ADCD /* TweetDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		1EDEED0F2836207300D1ADCD /* TweetDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetDetailsTableViewCell.xib; sourceTree = "<group>"; };
-		1EE4950A282C568D00CB9C45 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		1EE4950D282C71DE00CB9C45 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		1EE49510282C73D500CB9C45 /* CreateATweet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateATweet.storyboard; sourceTree = "<group>"; };
 		1EE49517282C754500CB9C45 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -584,7 +582,6 @@
 				1E7DE1A22812F93C003CEE5D /* Main.storyboard */,
 				1E7DE1AA2812F940003CEE5D /* Info.plist */,
 				1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */,
-				1EE4950A282C568D00CB9C45 /* DateExtension.swift */,
 			);
 			path = twitterClone;
 			sourceTree = "<group>";
@@ -846,7 +843,6 @@
 				1EDEED102836207300D1ADCD /* TweetDetailsTableViewCell.swift in Sources */,
 				1E259C87282D89980082033A /* ChatMessageViewController.swift in Sources */,
 				1E31F9F1282202C700FB18D6 /* NewTweetPresenter.swift in Sources */,
-				1EE4950B282C568D00CB9C45 /* DateExtension.swift in Sources */,
 				1E24D06E283932A7005DFF28 /* timesAgo.swift in Sources */,
 				1E6E504C281ADC3D0054FEA8 /* Tweets.swift in Sources */,
 				1E6DD0342816E93400673F76 /* TweetTableViewCell.swift in Sources */,
