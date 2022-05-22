@@ -27,16 +27,16 @@ extension Date{
         let week = 7 * day
         
         if secondsAgo < minutes {
-            return "\(secondsAgo) s"
+            return "\(secondsAgo)s"
         } else if secondsAgo < hours {
-            return "\(secondsAgo / minutes) m"
+            return "\(secondsAgo / minutes)m"
         }else if secondsAgo < day {
-            return "\(secondsAgo / hours) h"
+            return "\(secondsAgo / hours)h"
         }else if secondsAgo < week {
-            return "\(secondsAgo / day) d"
+            return "\(secondsAgo / day)d"
         }
         
-        return "\(secondsAgo / week) w"
+        return "\(secondsAgo / week)w"
     }
     
     

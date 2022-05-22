@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bvb-Mb-qQ9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -280,7 +280,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="edit Profile" id="oDp-sy-eht">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="9sK-az-Ey1"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="pm2-vM-j2W">
+                            <connections>
+                                <action selector="backBtn:" destination="nIG-ir-V3E" id="0JU-2P-JW0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="9sK-az-Ey1">
+                            <connections>
+                                <action selector="saveBtn:" destination="nIG-ir-V3E" id="dnl-kU-g7d"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bioLbl" destination="Hec-v1-aGX" id="0XJ-5C-kLx"/>
@@ -303,25 +312,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2u-KX-e9u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.81159420289862" y="78.260869565217391"/>
+            <point key="canvasLocation" x="1884.057971014493" y="78.260869565217391"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="xeR-S8-bpQ">
+        <scene sceneID="Z0n-He-NjP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bvb-Mb-qQ9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="editProfileID" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="opS-NC-dzk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJZ-go-ZOw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kfv-ZK-8jO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nIG-ir-V3E" kind="relationship" relationship="rootViewController" id="tLR-wz-pH3"/>
+                        <segue destination="nIG-ir-V3E" kind="relationship" relationship="rootViewController" id="YRZ-tS-Ry7"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uc2-NR-wAW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5tO-u5-OO7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251" y="78"/>
+            <point key="canvasLocation" x="976.81159420289862" y="78.260869565217391"/>
         </scene>
     </scenes>
     <resources>

@@ -32,11 +32,21 @@ class EditProfileViewController: UIViewController {
         super.viewWillDisappear(animated)
         print("View Will Disappear from the EditProfileVC")
     }
-    //MARK:- Methods
-    
     
     //MARK:- Actions
         
+    
+    @IBAction func saveBtn(_ sender: UIBarButtonItem) {
+        // save chagnes
+        print("Saveing changes")
+    }
+    
+    @IBAction func backBtn(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK:- presenter
+
 }
 extension EditProfileViewController: EditProfileView {
     
