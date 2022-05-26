@@ -10,7 +10,10 @@ import Firebase
 //MARK:- Home Protocol
 
 protocol HomePresenterView {
+    
+    func emptyUsersArr()
     func appendTweets(TwitteContent: Tweets)
+    func apppendUsers(twitterUsers: TweeterUsers)
     func emptyTheArray()
     func tweetsError(error: Error)
 }
@@ -28,17 +31,8 @@ class HomePresenter {
         self.view = view
     }
     //MARK:- Methods
-    
-    func getUserInfo() {
-//        print(Auth.auth().currentUser?.email!)  // will print the provided mail in signup page
-        
-//        print(Auth.auth().currentUser?.uid)     // will print the user ID
-    }
-    
     func readTweets(){
-        
-        db.collection("userTweets").addSnapshotListener { (querySnapshot, err) in
-            
+        db.collection(K.collections.tweetsCollection).addSnapshotListener { (querySnapshot, err) in
             if let err = err {
                 self.view?.tweetsError(error: err)
                 print("Error has been ocured while fetchin data ")
@@ -46,7 +40,6 @@ class HomePresenter {
                 if let snapShotDocument = querySnapshot?.documents {
                     self.view?.emptyTheArray()
                     print("done Empty")
-                    // empty the array
                     for doc in snapShotDocument {
                         let data = doc.data()
                         if let email = data[K.Tweet.email] as? String,
@@ -54,8 +47,6 @@ class HomePresenter {
                            let username = data[K.Tweet.username] as? String,
                            let times = data[K.Tweet.time] as? Timestamp,
                            let tweet = data[K.Tweet.tweet]as? String {
-                            // we need to put the variables into thier places in class
-                            print(times)
                             let newTime = Timestamp.dateValue(times)
                             let newTweets = Tweets(time: newTime(), tweet: tweet, email: email, profilePhoto: profilePhoto, username: username)
                             self.view?.appendTweets(TwitteContent: newTweets)
@@ -63,10 +54,37 @@ class HomePresenter {
                         }else{
                             print("Sorry: Error while retreiving data")
                         }
-                        
                     }
                 }
             }
         }
     }       // END IF
+    
+    func currentUserInfo() {
+        db.collection(K.collections.userCollection).addSnapshotListener { (querySnapshot, err) in
+            if let er = err {
+                print("\(er.localizedDescription)")
+            }else {
+                if let snapshotDocs = querySnapshot?.documents  {
+                    self.view?.emptyTheArray()
+                    for doc in snapshotDocs {
+                        let data = doc.data()
+                        if let email        = data[K.user.email] as? String,
+                           let username     = data[K.user.username] as? String,
+                           let profilePhoto = data[K.user.profilePhoto] as? String,
+                           let dateJoined   = data[K.user.dateJoined] as? String,
+                           let userID       = data[K.user.userID] as? String {
+                            var addUser = TweeterUsers()
+                            addUser.email = email
+                            addUser.dateJoined = dateJoined
+                            addUser.profilePhoto = profilePhoto
+                            addUser.username = username
+                            addUser.userID = userID
+                            self.view?.apppendUsers(twitterUsers: addUser)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

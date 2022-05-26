@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class ProfileViewController: UIViewController {
     //MARK:- Properties
     lazy var presenter = ProfilePresenter(view: self)
@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
         tableView.separatorStyle = .none
         title = "Profile"
         presenter.updateProfile()
-        
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
@@ -60,9 +60,9 @@ class ProfileViewController: UIViewController {
 //MARK:- Presenter
 extension ProfileViewController: ProfilePresenterView {
     
-    func defaultProfile(imageProfile: UIImage) {
+    func defaultProfile(imageProfile: URL) {
         // theDefault image
-        profilePhoto.image = imageProfile
+        profilePhoto.kf.setImage(with: imageProfile)
     }
     
     func errorOccured(error: String) {

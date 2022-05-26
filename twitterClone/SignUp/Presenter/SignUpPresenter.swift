@@ -28,9 +28,7 @@ class SignUpPresenter {
     //MARK:- Methods
     func registerUser(name: String, email: String, password: String) {
             Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-                
                 if let er = error as NSError? {
-                    
                     switch AuthErrorCode(rawValue: er.code) {
                     case .weakPassword:
                         print("Weak Password!")
@@ -52,19 +50,22 @@ class SignUpPresenter {
                         self.view?.signUpError(error: "Error! \(er.localizedDescription)")
                     }
                 }else{
-                    // Array that contains the user
+                    
                     do{
+                        guard let currentUser = Auth.auth().currentUser else {return}
+                        let dateJoined = Date()
                         self.ref = self.db.collection("users").addDocument(data: [
                                                                     "userName" : name,
-                                                                            "email" : email])
+                                                                    "email" : email,
+                                                                    "profilePhoto": K.Tweet.defaultProfile,
+                                                                    "dateJoined": "\(dateJoined)",
+                                                                    "userID": currentUser.uid])
                         print("Successfully sent to the DB")
                     }catch let error{
                         print(error.localizedDescription)
                     }
-
                     guard let userInformation = authResult else { return }
                     self.view?.signUpSuccess(username: "\(userInformation.user.providerID)", email: "\(userInformation.user.email!)")
-                    print("Login successfullu as \(userInformation.user.email!)")
                 }
             }
         }

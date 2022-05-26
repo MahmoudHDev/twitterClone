@@ -29,16 +29,16 @@ class NewTweetPresenter {
     
     //MARK:- Methods
     func sendTweet(tweetContent: String ) {
-        // Send the tweet and in case of success dissmiss the current view
-        // Name  of the current user or Email, Date, image URL
-        print("SendTweet Function")
-//        let currentUser = Auth.auth().currentUser
+        guard let currentUser = Auth.auth().currentUser else {return}
+        
         ref = self.db.collection("userTweets").addDocument(data: [
-                                                            "email" : "Demo Email",
-                                                            "username": "Mahmoud",
-                                                            "time": time,
-                                                            "profilePhoto": imageUrl,
-                                                            "tweet":tweetContent]) { err in
+            "email" : currentUser.email ?? "",
+            "username": currentUser.email ?? "",
+            "time": time,
+            "userID":currentUser.uid ,
+            "profilePhoto": imageUrl,
+            "tweet":tweetContent
+            ]) { err in
                 if let err = err {
                     print("Error From the presenter")
                     self.view?.tweetError(error: err)
@@ -48,5 +48,6 @@ class NewTweetPresenter {
                 }
         }
     }
+
 
 }

@@ -447,7 +447,7 @@
         <!--Navigation Controller-->
         <scene sceneID="0lP-bR-2Ks">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P1z-vb-FJE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="firstViewPage" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="P1z-vb-FJE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EOC-mu-bzy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

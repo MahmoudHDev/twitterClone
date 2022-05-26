@@ -19,10 +19,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
             let tweets = arrTweets[indexPath.row]
+            let images = tweets.profilePhoto
             let date = tweets.time?.timesAgoDisplay()
             // init for the cell
             cell.newTweet(email: tweets.email ?? "", usernameLbl: tweets.username ?? "" , timeOfTweet: date ?? "" , tweetContent: tweets.tweet ?? "")
-            cell.profileImg.kf.setImage(with: URL(string: tweets.profilePhoto ?? ""))
+            
+            cell.profileImg.kf.setImage(with: URL(string: images ?? K.Tweet.defaultProfile))
             return cell
         }
         return TweetTableViewCell()

@@ -10,18 +10,20 @@ import Firebase
 
 class CreateATweetViewController: UIViewController {
     //MARK:- Properties
+    lazy var presenter = NewTweetPresenter(view: self)
     @IBOutlet weak var tweetBttn    : UIBarButtonItem!
     @IBOutlet weak var profilePhoto : UIImageView!
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var remainingLbl : UILabel!
+    let pickerController = UIImagePickerController()
     let barButtonApperance = UIBarButtonItemAppearance()
-    lazy var presenter = NewTweetPresenter(view: self)
     var maxCount = 280
     
     //MARK:- View LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerController.delegate = self
+        pickerController.mediaTypes = ["public.image","public.movie"]
         tweetTextView.becomeFirstResponder()
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
@@ -37,11 +39,8 @@ class CreateATweetViewController: UIViewController {
         super.viewWillDisappear(true)
         print("View Disappeared")
     }
-    //MARK:- Methods
-    
     
     //MARK:- Actions
-    
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
@@ -51,6 +50,21 @@ class CreateATweetViewController: UIViewController {
         tweetBttn.isEnabled = false
         presenter.sendTweet(tweetContent: tweetTextView.text!)
         print("tweetBtn Tapped")
+    }
+    
+    @IBAction func insertImg(_ sender: UIButton) {
+        // UIImage picker by Library
+        pickerController.allowsEditing = true
+        pickerController.sourceType = .photoLibrary
+        pickerController.sourceType = .savedPhotosAlbum
+        self.present(pickerController, animated: true)
+    }
+    
+    @IBAction func cameraImage(_ sender: UIButton) {
+        // UIImage Picker by camera
+        pickerController.sourceType = .camera
+        pickerController.allowsEditing = true
+        present(pickerController, animated: true)
     }
 }
 

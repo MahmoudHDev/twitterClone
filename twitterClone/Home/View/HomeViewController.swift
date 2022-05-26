@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var newTweetBrn: UIButton!
     var menu: SideMenuNavigationController?
     var myIndexPath: Int?
+    var tweeterUsers: [TweeterUsers] = []
     var selectedTweet = Tweets()
     let dateFormatter = DateFormatter()
     var arrTweets: [Tweets] = []     // empty arr of tweets
@@ -23,8 +24,6 @@ class HomeViewController: UIViewController {
         dateFormatter.dateFormat = "MM-dd-yyyy"
         dateFormatter.timeZone = NSTimeZone(name: "GMT+2") as TimeZone?
         super.viewDidLoad()
-        presenter.getUserInfo()
-        print("Home View did Load")
         loadTweets()      // fetch the data from network
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         // SideMenu Configuration
@@ -48,7 +47,6 @@ class HomeViewController: UIViewController {
     }
     
     func loadTweets() {
-        print("loading the tweets")
         presenter.readTweets()
     }
     //MARK:- Actions
@@ -69,19 +67,24 @@ class HomeViewController: UIViewController {
 
 //MARK:- Presenter
 extension HomeViewController: HomePresenterView  {
+    func emptyUsersArr() {
+        tweeterUsers = []
+    }
+    
+    func apppendUsers(twitterUsers: TweeterUsers) {
+        tweeterUsers.append(twitterUsers)
+    }
+    
     func emptyTheArray() {
         //Empty the Array
         arrTweets = []
-        print("The array is Empty")
     }
     
-    // Presenter Succeded
     func appendTweets(TwitteContent: Tweets) {
         arrTweets.append(TwitteContent)
         tableView.reloadData()
     }
     
-    // Presenter Faild
     func tweetsError(error: Error) {
         print("Err HomeViewController : => \(error.localizedDescription)")
     }

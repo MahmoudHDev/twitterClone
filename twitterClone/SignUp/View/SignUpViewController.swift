@@ -50,8 +50,10 @@ extension SignUpViewController: SignUpPresenterView {
 
     func signUpSuccess(username: String, email: String) {
         self.dismiss(animated: true, completion: nil)
-        present(HomeViewController(), animated: true)
-        print("signed in as: \(username), \(email) ")
+        let storyBoard  = UIStoryboard(name: "Main", bundle: nil)
+        let vc          = storyBoard.instantiateViewController(identifier: "firstViewPage")
+        present(vc, animated: true)
+        print("signed in as: \(username), \(email)")
     }
     
     func signUpError(error: String) {
