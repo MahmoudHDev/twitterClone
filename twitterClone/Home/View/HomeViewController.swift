@@ -21,13 +21,14 @@ class HomeViewController: UIViewController {
     
     //MARK:- View LifeCycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         dateFormatter.dateFormat = "MM-dd-yyyy"
         dateFormatter.timeZone = NSTimeZone(name: "GMT+2") as TimeZone?
-        super.viewDidLoad()
         loadTweets()      // fetch the data from network
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         // SideMenu Configuration
         updateSideMenu()
+        
         tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
         newTweetBrn.layer.cornerRadius = 0.5 * newTweetBrn.bounds.size.width
@@ -48,7 +49,9 @@ class HomeViewController: UIViewController {
     
     func loadTweets() {
         presenter.readTweets()
+        presenter.currentUserInfo()
     }
+    
     //MARK:- Actions
     
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
@@ -65,15 +68,14 @@ class HomeViewController: UIViewController {
     }
 }
 
+
+
 //MARK:- Presenter
 extension HomeViewController: HomePresenterView  {
     func emptyUsersArr() {
         tweeterUsers = []
     }
-    
-    func apppendUsers(twitterUsers: TweeterUsers) {
-        tweeterUsers.append(twitterUsers)
-    }
+
     
     func emptyTheArray() {
         //Empty the Array

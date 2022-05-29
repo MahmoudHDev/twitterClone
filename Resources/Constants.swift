@@ -15,8 +15,8 @@ struct K {
     static let cellIdentifier   = "cell"
     
     struct collections {
-        static let tweetsCollection = "userTweets"
-        static let userCollection   = "users"
+        static let userTweets = "userTweets"
+        static let users  = "users"
     }
     struct user {
         static let userID           = "userID"
@@ -24,6 +24,8 @@ struct K {
         static let email            = "email"
         static let profilePhoto     = "profilePhoto"
         static let dateJoined       = "dateJoined"
+        static let coverImage       = "https://via.placeholder.com/250"
+
     }
     struct Tweet{
         static let username         = "username"

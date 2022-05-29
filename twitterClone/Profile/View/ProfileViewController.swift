@@ -21,14 +21,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var editButton       :UIButton!
     @IBOutlet weak var navigateProfile  :UISegmentedControl!
     @IBOutlet weak var tableView        :UITableView!
-    
+    var userInfor =  TweeterUsers()
     //MARK:- App LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+//        updateUI()
+        profilePhoto.layer.cornerRadius = 0.5 * profilePhoto.bounds.size.width
+
         tableView.separatorStyle = .none
         title = "Profile"
-        presenter.updateProfile()
+//        presenter.updateProfile()
+        presenter.userInfo()
 
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,6 +58,18 @@ class ProfileViewController: UIViewController {
         profilePhoto.layer.cornerRadius = profilePhoto.frame.size.width/2
         profilePhoto.clipsToBounds = true
     }
+    func loadInfo() {
+        print("Load Info of user: \(userInfor.username)")
+        title               = userInfor.username!
+        nameOfTheUser.text  = userInfor.username!
+        username.text       = userInfor.username!
+        joinedDate.text     = userInfor.dateJoined!
+        followers.text      = String(userInfor.followers!)
+        following.text      = String(userInfor.following!)
+        profilePhoto.kf.setImage(with: URL(string: userInfor.profilePhoto!))
+        
+        
+    }
 
 }
 //MARK:- Presenter
@@ -62,12 +77,18 @@ extension ProfileViewController: ProfilePresenterView {
     
     func defaultProfile(imageProfile: URL) {
         // theDefault image
-        profilePhoto.kf.setImage(with: imageProfile)
+//        profilePhoto.kf.setImage(with: imageProfile)
     }
     
     func errorOccured(error: String) {
         print(error)
     }
     
+    func userInformation(user info: TweeterUsers) {
+        print("Show user information")
+        userInfor = info
+        loadInfo()
+        print(userInfor.username)
+    }
 
 }

@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYm-bv-2oH">
-                                <rect key="frame" x="78" y="219" width="281" height="80"/>
+                                <rect key="frame" x="78" y="243" width="281" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jQx-Vv-LSl">
                                         <rect key="frame" x="10" y="5" width="110" height="55"/>
@@ -83,7 +83,7 @@
                             <constraint firstItem="JpU-aZ-Zv5" firstAttribute="width" secondItem="MM1-fg-8gf" secondAttribute="width" id="BNI-eX-d5K"/>
                             <constraint firstItem="8c7-jc-4N4" firstAttribute="top" secondItem="GFz-TJ-3dC" secondAttribute="top" constant="13" id="DNj-eD-hBN"/>
                             <constraint firstItem="MM1-fg-8gf" firstAttribute="width" secondItem="xNk-8m-4vi" secondAttribute="width" multiplier="0.75" id="G7w-EQ-JA6"/>
-                            <constraint firstItem="wYm-bv-2oH" firstAttribute="top" secondItem="MM1-fg-8gf" secondAttribute="bottom" constant="10" id="H1S-eR-yTP"/>
+                            <constraint firstItem="wYm-bv-2oH" firstAttribute="top" secondItem="JpU-aZ-Zv5" secondAttribute="bottom" constant="5" id="ICr-lf-Vza"/>
                             <constraint firstItem="GFz-TJ-3dC" firstAttribute="trailing" secondItem="MM1-fg-8gf" secondAttribute="trailing" constant="16" id="IuH-dT-DC4"/>
                             <constraint firstItem="JpU-aZ-Zv5" firstAttribute="top" secondItem="MM1-fg-8gf" secondAttribute="bottom" constant="8" symbolic="YES" id="NCV-A8-F1b"/>
                             <constraint firstItem="JpU-aZ-Zv5" firstAttribute="height" secondItem="MM1-fg-8gf" secondAttribute="height" multiplier="0.14" id="e03-wq-xvE"/>

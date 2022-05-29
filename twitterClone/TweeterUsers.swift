@@ -20,16 +20,11 @@ struct TweeterUsers {
     var city        : String?
     var followers, following : Int?
     var isFollower  = false
-//    var myTweets    = Tweets()?
-    
-    var currentUser : Bool {
-        
-        return Auth.auth().currentUser?.uid == userID
-    }
-    
+    var myTweets    :[Tweets] = []
+
     //MARK:- Methods
     
 }
-struct UserRelationStats {
-    var followers, following : Int
-}
+//struct UserRelationStats {
+//    var followers, following : Int
+//}

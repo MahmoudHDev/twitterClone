@@ -8,9 +8,9 @@
 import Foundation
 import Firebase
 protocol NewTweetPresenterView {
+    func updateProf(image:String)
     func tweetSuccess(Tweet: String)
     func tweetError(error: Error)
-    
 }
 //MARK:- Presenter
 class NewTweetPresenter {
@@ -28,6 +28,22 @@ class NewTweetPresenter {
     }
     
     //MARK:- Methods
+    func userInfo() {
+        guard let userID = Auth.auth().currentUser else { return }
+        print(userID.uid)
+        let ref = Database.database().reference()
+        ref.child(K.collections.users).child(userID.uid).observeSingleEvent(of: .value) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            if let profilePhoto = value!["profilePhoto"] as? String {
+                let imageURl = profilePhoto
+                self.view?.updateProf(image: imageURl )
+            }else{
+                print("Error while fetching the profile photo")
+            }
+            
+        }
+    }
+    
     func sendTweet(tweetContent: String ) {
         guard let currentUser = Auth.auth().currentUser else {return}
         

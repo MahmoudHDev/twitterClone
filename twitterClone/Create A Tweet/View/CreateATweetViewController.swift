@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-
+import Kingfisher
 class CreateATweetViewController: UIViewController {
     //MARK:- Properties
     lazy var presenter = NewTweetPresenter(view: self)
@@ -24,6 +24,7 @@ class CreateATweetViewController: UIViewController {
         super.viewDidLoad()
         pickerController.delegate = self
         pickerController.mediaTypes = ["public.image","public.movie"]
+        presenter.userInfo()
         tweetTextView.becomeFirstResponder()
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
@@ -70,6 +71,12 @@ class CreateATweetViewController: UIViewController {
 
 //MARK:- Presenter Protocol
 extension CreateATweetViewController: NewTweetPresenterView {
+    func updateProf(image: String) {
+        print(image)
+        profilePhoto.kf.indicatorType = .activity
+        profilePhoto.kf.setImage(with: URL(string: image))
+    }
+    
     
     func tweetSuccess(Tweet: String) {
         self.dismiss(animated: true, completion: nil)

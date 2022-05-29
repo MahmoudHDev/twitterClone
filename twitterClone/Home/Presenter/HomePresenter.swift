@@ -13,7 +13,6 @@ protocol HomePresenterView {
     
     func emptyUsersArr()
     func appendTweets(TwitteContent: Tweets)
-    func apppendUsers(twitterUsers: TweeterUsers)
     func emptyTheArray()
     func tweetsError(error: Error)
 }
@@ -24,6 +23,7 @@ class HomePresenter {
     //MARK:- Properties
     private weak var ref: DocumentReference? = nil
     let db = Firestore.firestore()
+    let dbRef = Database.database().reference()
     var view: HomePresenterView?
     
     //MARK:- Init
@@ -32,11 +32,12 @@ class HomePresenter {
     }
     //MARK:- Methods
     func readTweets(){
-        db.collection(K.collections.tweetsCollection).addSnapshotListener { (querySnapshot, err) in
+        db.collection(K.collections.userTweets).addSnapshotListener { (querySnapshot, err) in
             if let err = err {
                 self.view?.tweetsError(error: err)
                 print("Error has been ocured while fetchin data ")
             }else {
+                
                 if let snapShotDocument = querySnapshot?.documents {
                     self.view?.emptyTheArray()
                     print("done Empty")
@@ -61,30 +62,9 @@ class HomePresenter {
     }       // END IF
     
     func currentUserInfo() {
-        db.collection(K.collections.userCollection).addSnapshotListener { (querySnapshot, err) in
-            if let er = err {
-                print("\(er.localizedDescription)")
-            }else {
-                if let snapshotDocs = querySnapshot?.documents  {
-                    self.view?.emptyTheArray()
-                    for doc in snapshotDocs {
-                        let data = doc.data()
-                        if let email        = data[K.user.email] as? String,
-                           let username     = data[K.user.username] as? String,
-                           let profilePhoto = data[K.user.profilePhoto] as? String,
-                           let dateJoined   = data[K.user.dateJoined] as? String,
-                           let userID       = data[K.user.userID] as? String {
-                            var addUser = TweeterUsers()
-                            addUser.email = email
-                            addUser.dateJoined = dateJoined
-                            addUser.profilePhoto = profilePhoto
-                            addUser.username = username
-                            addUser.userID = userID
-                            self.view?.apppendUsers(twitterUsers: addUser)
-                        }
-                    }
-                }
-            }
-        }
+        // Current User ID
+        guard let user = Auth.auth().currentUser else {return}
     }
+    
+    
 }
