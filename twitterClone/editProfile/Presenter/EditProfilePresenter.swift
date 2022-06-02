@@ -58,7 +58,7 @@ class EditProfilePresenter {
 
     }
 
-    func changeData(username: String?, city: String?, profileImg:String?, coverImage:String?) {
+    func changeData(username: String?, city: String?) {
         guard let userID = Auth.auth().currentUser?.uid else {
             return
         }
@@ -67,13 +67,11 @@ class EditProfilePresenter {
         // due to the variables are gonna be the same values
         ref.child(K.collections.users).child(userID).updateChildValues([
             "username"      : username!,
-            "city"          : city!,
-            "profilePhto"   : username!,
-            "coverPhoto"    : coverImage!
+            "city"          : city!
         ])
         
     }
-    func savePhoto() {
+    func savePhoto(theImg: UIImage) {
         
     }
     

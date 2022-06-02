@@ -55,6 +55,7 @@
 		1ECC412128305CB2008B8AA6 /* TweetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECC412028305CB2008B8AA6 /* TweetDetailsPresenter.swift */; };
 		1ECC412428305D71008B8AA6 /* TweetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECC412328305D71008B8AA6 /* TweetDetailsViewController.swift */; };
 		1ECC412728306413008B8AA6 /* TweetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECC412628306413008B8AA6 /* TweetDetails.storyboard */; };
+		1ED6F5812848FBB800FDEE0C /* editProfile+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6F5802848FBB800FDEE0C /* editProfile+Picker.swift */; };
 		1EDEED0C28361FF700D1ADCD /* TweetDetailsVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDEED0B28361FF700D1ADCD /* TweetDetailsVC+TableView.swift */; };
 		1EDEED102836207300D1ADCD /* TweetDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDEED0E2836207300D1ADCD /* TweetDetailsTableViewCell.swift */; };
 		1EDEED112836207300D1ADCD /* TweetDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EDEED0F2836207300D1ADCD /* TweetDetailsTableViewCell.xib */; };
@@ -120,6 +121,7 @@
 		1ECC412028305CB2008B8AA6 /* TweetDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsPresenter.swift; sourceTree = "<group>"; };
 		1ECC412328305D71008B8AA6 /* TweetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewController.swift; sourceTree = "<group>"; };
 		1ECC412628306413008B8AA6 /* TweetDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TweetDetails.storyboard; sourceTree = "<group>"; };
+		1ED6F5802848FBB800FDEE0C /* editProfile+Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "editProfile+Picker.swift"; sourceTree = "<group>"; };
 		1EDEED0B28361FF700D1ADCD /* TweetDetailsVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TweetDetailsVC+TableView.swift"; sourceTree = "<group>"; };
 		1EDEED0E2836207300D1ADCD /* TweetDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		1EDEED0F2836207300D1ADCD /* TweetDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetDetailsTableViewCell.xib; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				1E259C71282D66A20082033A /* EditProfileViewController.swift */,
+				1ED6F5802848FBB800FDEE0C /* editProfile+Picker.swift */,
 				1E259C75282D66B80082033A /* EditProfile.storyboard */,
 			);
 			path = View;
@@ -846,6 +849,7 @@
 				1ECBFC792814415500ABE9D6 /* RootSideMenuTVC.swift in Sources */,
 				1E259C72282D66A20082033A /* EditProfileViewController.swift in Sources */,
 				1E259C96282DA86E0082033A /* ProfileVC+TableView.swift in Sources */,
+				1ED6F5812848FBB800FDEE0C /* editProfile+Picker.swift in Sources */,
 				1EEC20DB283A7F6200141CF2 /* TweeterUsers.swift in Sources */,
 				1E259C7A282D67420082033A /* EditProfilePresenter.swift in Sources */,
 				1EDEED102836207300D1ADCD /* TweetDetailsTableViewCell.swift in Sources */,

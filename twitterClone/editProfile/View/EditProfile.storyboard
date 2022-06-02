@@ -35,51 +35,44 @@
                                                             <constraint firstAttribute="width" constant="100" id="tiM-EH-SPg"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmK-PH-eIW">
-                                                        <rect key="frame" x="38" y="72" width="40" height="40"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmK-PH-eIW">
+                                                        <rect key="frame" x="33" y="67" width="50" height="50"/>
                                                         <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="0.25489619009999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="Q2b-dq-kpa"/>
-                                                            <constraint firstAttribute="height" constant="40" id="XSt-uK-VCj"/>
+                                                            <constraint firstAttribute="width" constant="50" id="Q2b-dq-kpa"/>
+                                                            <constraint firstAttribute="height" constant="50" id="XSt-uK-VCj"/>
                                                         </constraints>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="camera.badge.ellipsis" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="addImageBtns:" destination="nIG-ir-V3E" eventType="touchUpInside" id="iAx-BA-H6f"/>
+                                                        </connections>
                                                     </button>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="58K-sJ-yRr">
-                                                        <rect key="frame" x="167" y="30" width="80" height="40"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxU-gA-8jx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="40"/>
-                                                                <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="0.25489619009999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="camera.badge.ellipsis" catalog="system"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLD-0L-Ll1">
-                                                                <rect key="frame" x="42.666666666666657" y="0.0" width="37.333333333333343" height="40"/>
-                                                                <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="0.25489619009999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="xmark" catalog="system"/>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="0ql-45-IsM"/>
-                                                            <constraint firstAttribute="width" constant="80" id="Lzk-cE-St4"/>
-                                                        </constraints>
-                                                    </stackView>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxU-gA-8jx">
+                                                        <rect key="frame" x="124.33333333333333" y="25" width="165.33333333333337" height="50"/>
+                                                        <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="0.25489619009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="camera.badge.ellipsis" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="addImageBtns:" destination="nIG-ir-V3E" eventType="touchUpInside" id="8px-3p-vXd"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.83921568629999999" green="0.8980392157" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="BmK-PH-eIW" firstAttribute="centerX" secondItem="8tR-3H-bDS" secondAttribute="centerX" id="0za-AA-gLa"/>
                                                     <constraint firstItem="8tR-3H-bDS" firstAttribute="top" secondItem="2Uw-Ra-bsb" secondAttribute="top" constant="42" id="7FG-xk-86U"/>
                                                     <constraint firstItem="BmK-PH-eIW" firstAttribute="centerY" secondItem="8tR-3H-bDS" secondAttribute="centerY" id="7Wl-ry-s1B"/>
-                                                    <constraint firstItem="58K-sJ-yRr" firstAttribute="centerY" secondItem="gU9-tm-YqY" secondAttribute="centerY" id="IuN-u1-1Ea"/>
+                                                    <constraint firstItem="NxU-gA-8jx" firstAttribute="height" secondItem="gU9-tm-YqY" secondAttribute="height" multiplier="0.5" id="9O1-ep-k3j"/>
+                                                    <constraint firstItem="NxU-gA-8jx" firstAttribute="centerY" secondItem="gU9-tm-YqY" secondAttribute="centerY" id="HXA-iO-dsN"/>
+                                                    <constraint firstItem="NxU-gA-8jx" firstAttribute="centerX" secondItem="2Uw-Ra-bsb" secondAttribute="centerX" id="NND-Xy-hGj"/>
                                                     <constraint firstAttribute="trailing" secondItem="gU9-tm-YqY" secondAttribute="trailing" id="W71-UW-vg3"/>
                                                     <constraint firstItem="gU9-tm-YqY" firstAttribute="leading" secondItem="2Uw-Ra-bsb" secondAttribute="leading" id="Xz5-Ev-joy"/>
-                                                    <constraint firstItem="58K-sJ-yRr" firstAttribute="centerX" secondItem="gU9-tm-YqY" secondAttribute="centerX" id="cj0-Ye-Vh8"/>
                                                     <constraint firstItem="gU9-tm-YqY" firstAttribute="height" secondItem="2Uw-Ra-bsb" secondAttribute="height" multiplier="0.666667" id="dHV-JX-XPl"/>
                                                     <constraint firstItem="8tR-3H-bDS" firstAttribute="leading" secondItem="2Uw-Ra-bsb" secondAttribute="leading" constant="8" id="iUy-Du-t70"/>
                                                     <constraint firstItem="gU9-tm-YqY" firstAttribute="top" secondItem="2Uw-Ra-bsb" secondAttribute="top" id="lTb-Xn-s9T"/>
                                                     <constraint firstAttribute="height" constant="150" id="pf9-1j-Tfw"/>
+                                                    <constraint firstItem="NxU-gA-8jx" firstAttribute="width" secondItem="gU9-tm-YqY" secondAttribute="width" multiplier="0.4" id="uDY-kq-Gfu"/>
                                                     <constraint firstAttribute="bottom" secondItem="8tR-3H-bDS" secondAttribute="bottom" constant="8" id="xQ6-eg-7SN"/>
                                                 </constraints>
                                             </view>
@@ -300,7 +293,6 @@
                         <outlet property="locationLbl" destination="Ify-T7-y3f" id="3Vk-GH-f8T"/>
                         <outlet property="nameLbl" destination="a8J-Vq-jd2" id="6xe-8s-oY1"/>
                         <outlet property="profilePhoto" destination="8tR-3H-bDS" id="Iqf-P2-KS9"/>
-                        <outlet property="removeCoverBtn" destination="SLD-0L-Ll1" id="fUi-wE-9UG"/>
                         <outlet property="webSiteLbl" destination="Dav-hO-tt8" id="PZj-3j-AZz"/>
                         <outletCollection property="viewInfos" destination="4xb-iJ-Drr" collectionClass="NSMutableArray" id="oXI-T2-ghV"/>
                         <outletCollection property="viewInfos" destination="c8C-vx-2bd" collectionClass="NSMutableArray" id="UBz-f9-C8M"/>
@@ -335,7 +327,6 @@
     </scenes>
     <resources>
         <image name="camera.badge.ellipsis" catalog="system" width="128" height="92"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
