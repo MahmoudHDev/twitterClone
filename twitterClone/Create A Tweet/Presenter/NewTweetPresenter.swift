@@ -7,8 +7,9 @@
 
 import Foundation
 import Firebase
+
 protocol NewTweetPresenterView {
-    func updateProf(image:UIImage )
+    func updateProf(image: StorageReference)
     func tweetSuccess(Tweet: String)
     func tweetError(error: Error)
 }
@@ -30,9 +31,7 @@ class NewTweetPresenter {
     }
     
     //MARK:- Methods
-    
-    // load user Profile image
-    
+        
     func userInfo() {
         guard let user  = Auth.auth().currentUser else { return }
         
@@ -40,7 +39,6 @@ class NewTweetPresenter {
             let value = snapshot.value as? NSDictionary
             if let imgURL = value!["profilePhoto"] as? String {
                 self.loadImage(url: imgURL)
-                
             }else{
                 print("Error while fetching the profile photo")
             }
@@ -49,21 +47,8 @@ class NewTweetPresenter {
     
     func loadImage(url: String) {
         let imagesRef = self.storage.reference(forURL: url)
-            imagesRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
-                if let error = error {
-                    print(error)
-                }else{
-                    print("success")
-                    guard let imgData = UIImage(data: data!) else {
-                        return
-                    }
-                            print("the image from presenter is \(imgData)")
-                            self.view?.updateProf(image: imgData)
-                }
-            }
+        self.view?.updateProf(image: imagesRef)
     }
-    
-    
     
     
     // Send the Tweet to DataBase
@@ -91,3 +76,24 @@ class NewTweetPresenter {
     
     
 }
+
+
+
+/*
+ 
+ imagesRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+     if let error = error {
+         print(error)
+     }else{
+         print("success")
+         guard let imgData = UIImage(data: data!) else {
+             return
+         }
+                 print("the image from presenter is \(imgData)")
+                 self.view?.updateProf(image: imgData)
+         
+     }
+ }
+ 
+ 
+ */

@@ -10,7 +10,7 @@ import Firebase
 
 //MARK:- The Protocol
 protocol ProfilePresenterView {
-    func defaultProfile(imageProfile: URL)
+    func defaultProfile(imageProfile: StorageReference)
     func errorOccured(error: String)
     func userInformation(user info: TweeterUsers)
 }
@@ -46,6 +46,7 @@ class ProfilePresenter {
             let following   = value["following"] as? Int ?? 0
             let coverImg    = value["coverPhoto"] as? String ?? K.user.coverImage
             // add this to the model
+            self.showUserImage(profileURL: profileImg)      // show the image by this func
             var userInfo = TweeterUsers()
             userInfo.username = username
             userInfo.email = email
@@ -58,29 +59,15 @@ class ProfilePresenter {
         }
     }
     
-    func showUserImage() {
+    func showUserImage(profileURL: String) {
         // show the user Photo in home
-        // read the gs:// Link
-        // due to any edit in the edit profile will affct on the new photo and not by the link , but by reading it from gs url
-        
-        
-        
-        //MARK:- NOTE: UNDER Progress.
+        // due to any edit in the edit profile will affct on the new photo and not by the link , but by reading it from gs ur
+        let imagesRef = self.storage.reference(forURL: profileURL)
 
-        
-        guard let user = Auth.auth().currentUser else {return}
-        // the path of the image of each user
-        let gsRefrence = storage.reference(forURL: "gs://twitterclone-5a78b.appspot.com/UserImages/\(user.email!)/\(user.uid).jpg")
-//        let spaceRef    = storage.reference(forURL: gsRefrence)
-        gsRefrence.downloadURL { (imageURL, error) in
-            if let error = error {
-                self.view?.errorOccured(error: error.localizedDescription)
-            }else{
-                self.view?.defaultProfile(imageProfile: imageURL!)
-                print(imageURL!)
-            }
-        }
+        self.view?.defaultProfile(imageProfile: imagesRef)
+
     }
     
     
 }
+

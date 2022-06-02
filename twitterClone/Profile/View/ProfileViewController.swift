@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Kingfisher
+import FirebaseStorageUI
 class ProfileViewController: UIViewController {
     //MARK:- Properties
     lazy var presenter = ProfilePresenter(view: self)
@@ -73,9 +73,8 @@ class ProfileViewController: UIViewController {
 //MARK:- Presenter
 extension ProfileViewController: ProfilePresenterView {
     
-    func defaultProfile(imageProfile: URL) {
-        // theDefault image
-//        profilePhoto.kf.setImage(with: imageProfile)
+    func defaultProfile(imageProfile: StorageReference) {
+        profilePhoto.sd_setImage(with: imageProfile)
     }
     
     func errorOccured(error: String) {

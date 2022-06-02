@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Firebase
-import Kingfisher
+import FirebaseStorageUI
 class CreateATweetViewController: UIViewController {
     //MARK:- Properties
     lazy var presenter = NewTweetPresenter(view: self)
@@ -71,9 +70,9 @@ class CreateATweetViewController: UIViewController {
 
 //MARK:- Presenter Protocol
 extension CreateATweetViewController: NewTweetPresenterView {
-    func updateProf(image: UIImage) {
+    func updateProf(image: StorageReference) {
         print("the image is \(image)")
-        profilePhoto.image = image
+        profilePhoto.sd_setImage(with: image)
     }
     
     
