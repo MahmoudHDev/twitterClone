@@ -32,18 +32,16 @@ class NewTweetPresenter {
     func userInfo() {
         guard let userID = Auth.auth().currentUser else { return }
         print(userID.uid)
-        let ref = Database.database().reference()
         dbRef.child(K.collections.users).child(userID.uid).observeSingleEvent(of: .value) { (snapshot) in
             let value = snapshot.value as? NSDictionary
             if let profilePhoto = value!["profilePhoto"] as? String {
-                let imageURl = profilePhoto
-                self.view?.updateProf(image: imageURl )
+                self.view?.updateProf(image: profilePhoto )
             }else{
                 print("Error while fetching the profile photo")
             }
-            
         }
     }
+
     
     func sendTweet(tweetContent: String ) {
         guard let currentUser   = Auth.auth().currentUser else {return}
@@ -51,7 +49,7 @@ class NewTweetPresenter {
         dbRef.child(K.collections.users).child(currentUser.uid).getData { (_ , dataSnapshot) in
             if let data = dataSnapshot.value as? NSDictionary {
                 guard let userStr = data["username"] as? String else {return}
-                guard let userImg = data["profilePhoto"] as? String else {return}
+                guard let userImg = data["profilePhoto"] as? String else {return}   // Image URL
                 self.ref = self.db.collection("userTweets").addDocument(data: [
                     "email" : currentUser.email ?? "",
                     "username": userStr,

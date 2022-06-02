@@ -27,10 +27,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 //        updateUI()
         profilePhoto.layer.cornerRadius = 0.5 * profilePhoto.bounds.size.width
-
         tableView.separatorStyle = .none
         title = "Profile"
-//        presenter.updateProfile()
         presenter.userInfo()
 
     }

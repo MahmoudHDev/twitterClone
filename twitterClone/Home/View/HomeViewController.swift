@@ -49,7 +49,6 @@ class HomeViewController: UIViewController {
     
     func loadTweets() {
         presenter.readTweets()
-        presenter.currentUserInfo()
     }
     
     //MARK:- Actions

@@ -14,13 +14,15 @@ protocol ProfilePresenterView {
     func errorOccured(error: String)
     func userInformation(user info: TweeterUsers)
 }
+
+
 //MARK:- The Presenter
 class ProfilePresenter {
     
     //MARK:- Properties
     var view: ProfilePresenterView?
     let storage     = Storage.storage()         // storage init
-    lazy var storageRef  = storage.reference()
+    lazy var storageRef  = storage.reference()  // DB Ref
     
     //MARK:- Init
     
@@ -36,7 +38,6 @@ class ProfilePresenter {
         guard let user = Auth.auth().currentUser else {return}
         ref.child(K.collections.users).child(user.uid).observeSingleEvent(of: .value) { (snapshot) in
             guard let value = snapshot.value as? NSDictionary else {return}
-            
             let username    = value["username"] as? String ?? ""
             let email       = value["email"] as? String ?? ""
             let profileImg  = value["profilePhoto"] as? String ?? K.user.profilePhoto
@@ -57,11 +58,21 @@ class ProfilePresenter {
         }
     }
     
-    
-    func updateProfile() {
-        let storagePath = "gs://twitterclone-5a78b.appspot.com/UserImages/defaultUserProfilePhoto/twitterEgg.png"
-        let spaceRef    = storage.reference(forURL: storagePath)
-        spaceRef.downloadURL { (imageURL, error) in
+    func showUserImage() {
+        // show the user Photo in home
+        // read the gs:// Link
+        // due to any edit in the edit profile will affct on the new photo and not by the link , but by reading it from gs url
+        
+        
+        
+        //MARK:- NOTE: UNDER Progress.
+
+        
+        guard let user = Auth.auth().currentUser else {return}
+        // the path of the image of each user
+        let gsRefrence = storage.reference(forURL: "gs://twitterclone-5a78b.appspot.com/UserImages/\(user.email!)/\(user.uid).jpg")
+//        let spaceRef    = storage.reference(forURL: gsRefrence)
+        gsRefrence.downloadURL { (imageURL, error) in
             if let error = error {
                 self.view?.errorOccured(error: error.localizedDescription)
             }else{
@@ -70,7 +81,6 @@ class ProfilePresenter {
             }
         }
     }
-    
     
     
 }

@@ -59,10 +59,4 @@ class HomePresenter {
         }
     }       // END IF
     
-    func currentUserInfo() {
-        // Current User ID
-        guard let user = Auth.auth().currentUser else {return}
-    }
-    
-    
 }

@@ -57,7 +57,7 @@ class EditProfilePresenter {
         }
 
     }
-    
+
     func changeData(username: String?, city: String?, profileImg:String?, coverImage:String?) {
         guard let userID = Auth.auth().currentUser?.uid else {
             return
@@ -73,8 +73,9 @@ class EditProfilePresenter {
         ])
         
     }
-    // read Data
-    // change Data
+    func savePhoto() {
+        
+    }
     
     
 

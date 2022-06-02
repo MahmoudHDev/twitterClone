@@ -52,11 +52,15 @@ class EditProfileViewController: UIViewController {
 
 }
 extension EditProfileViewController: EditProfileView {
+    
     func readData(userInfo: TweeterUsers) {
         // update information
         let user = userInfo
         nameLbl.text        = user.username
         locationLbl.text    = user.city
+        
+        
+        // following syntax must modify
         coverPhoto.kf.setImage(with: URL(string: user.coverPhoto!))
         profilePhoto.kf.setImage(with: URL(string: user.profilePhoto!))
         print("Profile Loaded")
