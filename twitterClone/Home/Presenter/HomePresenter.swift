@@ -10,13 +10,11 @@ import Firebase
 //MARK:- Home Protocol
 
 protocol HomePresenterView {
-    
     func emptyUsersArr()
     func appendTweets(TwitteContent: Tweets)
     func emptyTheArray()
     func tweetsError(error: Error)
 }
-
 //MARK:- Home Presenter
 class HomePresenter {
     

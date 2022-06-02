@@ -20,6 +20,7 @@ class NewTweetPresenter {
     var imageUrl : String = "https://via.placeholder.com/150.png"
     let time = Date()
     let db = Firestore.firestore()
+    let dbRef = Database.database().reference()
     private weak var ref: DocumentReference? = nil
     
     //MARK:- Init
@@ -32,7 +33,7 @@ class NewTweetPresenter {
         guard let userID = Auth.auth().currentUser else { return }
         print(userID.uid)
         let ref = Database.database().reference()
-        ref.child(K.collections.users).child(userID.uid).observeSingleEvent(of: .value) { (snapshot) in
+        dbRef.child(K.collections.users).child(userID.uid).observeSingleEvent(of: .value) { (snapshot) in
             let value = snapshot.value as? NSDictionary
             if let profilePhoto = value!["profilePhoto"] as? String {
                 let imageURl = profilePhoto
@@ -45,25 +46,26 @@ class NewTweetPresenter {
     }
     
     func sendTweet(tweetContent: String ) {
-        guard let currentUser = Auth.auth().currentUser else {return}
-        
-        ref = self.db.collection("userTweets").addDocument(data: [
-            "email" : currentUser.email ?? "",
-            "username": currentUser.email ?? "",
-            "time": time,
-            "userID":currentUser.uid ,
-            "profilePhoto": imageUrl,
-            "tweet":tweetContent
-            ]) { err in
-                if let err = err {
-                    print("Error From the presenter")
-                    self.view?.tweetError(error: err)
-                }else{
-                    print("Success From the presenter")
-                    self.view?.tweetSuccess(Tweet: "Document added Successfully")
-                }
+        guard let currentUser   = Auth.auth().currentUser else {return}
+
+        dbRef.child(K.collections.users).child(currentUser.uid).getData { (_ , dataSnapshot) in
+            if let data = dataSnapshot.value as? NSDictionary {
+                guard let userStr = data["username"] as? String else {return}
+                guard let userImg = data["profilePhoto"] as? String else {return}
+                self.ref = self.db.collection("userTweets").addDocument(data: [
+                    "email" : currentUser.email ?? "",
+                    "username": userStr,
+                    "time": self.time,
+                    "userID":currentUser.uid ,
+                    "profilePhoto": userImg ,
+                    "tweet":tweetContent
+                ])
+                print("Success From the presenter")
+                self.view?.tweetSuccess(Tweet: "Document added Successfully")
+            }
         }
+
     }
-
-
+    
+    
 }

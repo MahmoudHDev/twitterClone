@@ -53,7 +53,6 @@ class ProfilePresenter {
             userInfo.followers = followers
             userInfo.following = following
             userInfo.coverPhoto = coverImg
-            
             self.view?.userInformation(user: userInfo)
         }
     }

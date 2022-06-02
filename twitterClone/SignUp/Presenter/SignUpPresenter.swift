@@ -50,26 +50,23 @@ class SignUpPresenter {
                         self.view?.signUpError(error: "Error! \(er.localizedDescription)")
                     }
                 }else{
-                    
-                    do{
                         guard let user = Auth.auth().currentUser else {return}
                         let dbRef = Database.database().reference()
                         let dateJoined = Date()
                         dbRef.child(K.collections.users).child(user.uid).setValue([
-                                                                                    "username" : name,
-                                                                                    "email" : email,
-                                                                                    "profilePhoto": K.Tweet.defaultProfile,
-                                                                                    "dateJoined": "\(dateJoined)",
-                                                                                    "userID": user.uid,
-                                                                                    "followers": 0,
-                                                                                    "following":0,
-                                                                                    "city":"set location",
-                                                                                    "coverPhoto":K.user.coverImage])
+                        "username" : name,
+                        "email" : email,
+                        "profilePhoto": K.Tweet.defaultProfile,
+                        "dateJoined": "\(dateJoined)",
+                        "userID": user.uid,
+                        "followers": 0,
+                        "following":0,
+                        "city":"set location",
+                        "coverPhoto":K.user.coverImage
+                        ])
                         // Provide a default cover Photo
                         print("Successfully sent to the Realtime DB")
-                    }catch let error{
-                        print(error.localizedDescription)
-                    }
+                    
                     guard let userInformation = authResult else { return }
                     self.view?.signUpSuccess(username: "\(userInformation.user.providerID)", email: "\(userInformation.user.email!)")
                 }
