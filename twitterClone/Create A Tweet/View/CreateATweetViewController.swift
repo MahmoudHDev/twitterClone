@@ -71,10 +71,9 @@ class CreateATweetViewController: UIViewController {
 
 //MARK:- Presenter Protocol
 extension CreateATweetViewController: NewTweetPresenterView {
-    func updateProf(image: String) {
-        print(image)
-        profilePhoto.kf.indicatorType = .activity
-        profilePhoto.kf.setImage(with: URL(string: image))
+    func updateProf(image: UIImage) {
+        print("the image is \(image)")
+        profilePhoto.image = image
     }
     
     

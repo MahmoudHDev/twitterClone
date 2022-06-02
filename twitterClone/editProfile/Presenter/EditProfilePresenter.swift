@@ -20,7 +20,8 @@ class EditProfilePresenter {
     
     //MARK:- Properties
     var view: EditProfileView?
-    
+    let ref = Database.database().reference()
+    let storage = Storage.storage()
     //MARK:- Init
     init(view: EditProfileView) {
         self.view = view
@@ -55,27 +56,41 @@ class EditProfilePresenter {
                 }
             }
         }
-
     }
 
-    func changeData(username: String?, city: String?) {
+    func changeData(username: String, city: String) {
         guard let userID = Auth.auth().currentUser?.uid else {
             return
         }
-        let ref = Database.database().reference()
-        // if these value are kept the same so nothing is gonna change
-        // due to the variables are gonna be the same values
         ref.child(K.collections.users).child(userID).updateChildValues([
-            "username"      : username!,
-            "city"          : city!
+            "username"      : username,
+            "city"          : city
         ])
-        
     }
+    
     func savePhoto(theImg: UIImage) {
+        guard let user = Auth.auth().currentUser else { return }
+        theImg.jpegData(compressionQuality: 0.5)
+        if let imgData = theImg.pngData() {
+            // create a refrence
+            let userPath = storage.reference().child(K.collections.users).child(user.email!).child("\(user.uid).png")
+            // Upload the Image
+            userPath.putData(imgData)
+            // get the image URL
+            userPath.downloadURL { (url, error) in
+                guard let imgURl = url else { return }
+            // save the ImageURL To the Realtime DB
+                self.ref.child(K.collections.users).child(user.uid).updateChildValues(["profilePhoto": "\(imgURl)"])
+                print("the url is \(url)")
+            }
+            
+        }else{
+            print("uploading Error")
+        }
+
         
     }
     
     
 
 }
-
