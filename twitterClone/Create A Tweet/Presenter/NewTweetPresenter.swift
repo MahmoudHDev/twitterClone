@@ -39,17 +39,16 @@ class NewTweetPresenter {
         dbRef.child(K.collections.users).child(user.uid).observeSingleEvent(of: .value) { (snapshot) in
             let value = snapshot.value as? NSDictionary
             if let imgURL = value!["profilePhoto"] as? String {
-                self.loadImage()
+                self.loadImage(url: imgURL)
                 
             }else{
                 print("Error while fetching the profile photo")
             }
         }
     }
-    func loadImage() {
-        let imgURL = "gs://twitterclone-5a78b.appspot.com/users/222@222.com/wb8aroXvneeCL7xO2Pe53p9SZbG2.png"
-        let secURL = "https://firebasestorage.googleapis.com:443/v0/b/twitterclone-5a78b.appspot.com/o/users%2F222@222.com%2Fwb8aroXvneeCL7xO2Pe53p9SZbG2.png?alt=media&token=c82d8fae-30ee-41c6-aeab-be057c916b88"
-        let imagesRef = self.storage.reference(forURL: secURL)
+    
+    func loadImage(url: String) {
+        let imagesRef = self.storage.reference(forURL: url)
             imagesRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
                 if let error = error {
                     print(error)

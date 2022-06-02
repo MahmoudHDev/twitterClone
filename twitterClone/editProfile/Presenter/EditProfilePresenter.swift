@@ -81,7 +81,6 @@ class EditProfilePresenter {
                 guard let imgURl = url else { return }
             // save the ImageURL To the Realtime DB
                 self.ref.child(K.collections.users).child(user.uid).updateChildValues(["profilePhoto": "\(imgURl)"])
-                print("the url is \(url)")
             }
             
         }else{
