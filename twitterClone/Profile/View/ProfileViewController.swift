@@ -73,8 +73,8 @@ class ProfileViewController: UIViewController {
 //MARK:- Presenter
 extension ProfileViewController: ProfilePresenterView {
     
-    func defaultProfile(imageProfile: StorageReference) {
-        profilePhoto.sd_setImage(with: imageProfile)
+    func defaultProfile(imageProfile: UIImage) {
+        profilePhoto.image = imageProfile
     }
     
     func errorOccured(error: String) {
@@ -85,7 +85,6 @@ extension ProfileViewController: ProfilePresenterView {
         print("Show user information")
         userInfor = info
         loadInfo()
-        print(userInfor.username)
     }
 
 }

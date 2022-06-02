@@ -76,6 +76,10 @@ class EditProfileViewController: UIViewController {
 
 }
 extension EditProfileViewController: EditProfileView {
+    func readImgs(profilePhotos: UIImage) {
+        profilePhoto.image = profilePhotos
+    }
+    
     
     func readData(userInfo: TweeterUsers) {
         // update information

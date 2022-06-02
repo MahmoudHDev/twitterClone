@@ -10,7 +10,7 @@ import Firebase
 
 //MARK:- The Protocol
 protocol ProfilePresenterView {
-    func defaultProfile(imageProfile: StorageReference)
+    func defaultProfile(imageProfile: UIImage)
     func errorOccured(error: String)
     func userInformation(user info: TweeterUsers)
 }
@@ -63,8 +63,17 @@ class ProfilePresenter {
         // show the user Photo in home
         // due to any edit in the edit profile will affct on the new photo and not by the link , but by reading it from gs ur
         let imagesRef = self.storage.reference(forURL: profileURL)
-
-        self.view?.defaultProfile(imageProfile: imagesRef)
+        imagesRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            }else{
+                print("success")
+                guard let imgData = UIImage(data: data!) else { return }
+                        print("the image from presenter is \(imgData)")
+                self.view?.defaultProfile(imageProfile: imgData)
+                
+            }
+        }
 
     }
     

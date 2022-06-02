@@ -10,6 +10,7 @@ import Firebase
 
 //MARK:- The Protocol
 protocol EditProfileView {
+    func readImgs(profilePhotos: UIImage)
     func readData(userInfo: TweeterUsers)
     func dataDidChange(message: String)
     func dataDidNotChange(error: String)
@@ -29,7 +30,6 @@ class EditProfilePresenter {
     
     //MARK:- Methods
     
-    // Firebase
     func readDate() {
         guard let userID = Auth.auth().currentUser?.uid else {return}
         let ref = Database.database().reference()
@@ -38,12 +38,13 @@ class EditProfilePresenter {
                 self.view?.dataDidNotChange(error: error.localizedDescription)
             }else{
                 if let value = dataSnapshot.value as? NSDictionary {
-                    let profileImage        = value["profilePhoto"] as? String
+                    guard let profileImage        = value["profilePhoto"] as? String else {return}
                     let coverImage          = value["coverPhoto"] as? String
                     let city                = value["city"] as? String
                     let username            = value["username"] as? String
                     let email               = value["email"] as? String
                     var userInfo            = TweeterUsers()
+                    self.loadImage(url: profileImage)
                     userInfo.profilePhoto   = profileImage
                     userInfo.coverPhoto     = coverImage
                     userInfo.username       = username
@@ -58,6 +59,20 @@ class EditProfilePresenter {
         }
     }
 
+    func loadImage(url: String) {
+        let imagesRef = self.storage.reference(forURL: url)
+        imagesRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            }else{
+                print("success")
+                guard let imgData = UIImage(data: data!) else { return }
+                        print("the image from presenter is \(imgData)")
+                        self.view?.readImgs(profilePhotos: imgData)
+            }
+        }
+    }
+    
     func changeData(username: String, city: String) {
         guard let userID = Auth.auth().currentUser?.uid else {
             return
@@ -82,14 +97,10 @@ class EditProfilePresenter {
             // save the ImageURL To the Realtime DB
                 self.ref.child(K.collections.users).child(user.uid).updateChildValues(["profilePhoto": "\(imgURl)"])
             }
-            
         }else{
             print("uploading Error")
         }
-
         
     }
-    
-    
 
 }

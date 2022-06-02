@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 protocol NewTweetPresenterView {
-    func updateProf(image: StorageReference)
+    func updateProf(image: UIImage)
     func tweetSuccess(Tweet: String)
     func tweetError(error: Error)
 }
@@ -47,9 +47,17 @@ class NewTweetPresenter {
     
     func loadImage(url: String) {
         let imagesRef = self.storage.reference(forURL: url)
-        self.view?.updateProf(image: imagesRef)
+        imagesRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+            if let error = error {
+                print(error)
+            }else{
+                print("success")
+                guard let imgData = UIImage(data: data!) else { return }
+                        print("the image from presenter is \(imgData)")
+                        self.view?.updateProf(image: imgData)
+            }
+        }
     }
-    
     
     // Send the Tweet to DataBase
     func sendTweet(tweetContent: String ) {

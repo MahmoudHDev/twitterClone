@@ -70,11 +70,9 @@ class CreateATweetViewController: UIViewController {
 
 //MARK:- Presenter Protocol
 extension CreateATweetViewController: NewTweetPresenterView {
-    func updateProf(image: StorageReference) {
-        print("the image is \(image)")
-        profilePhoto.sd_setImage(with: image)
+    func updateProf(image: UIImage) {
+        profilePhoto.image = image
     }
-    
     
     func tweetSuccess(Tweet: String) {
         self.dismiss(animated: true, completion: nil)
