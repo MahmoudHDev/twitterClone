@@ -15,6 +15,8 @@ class ChatMessageViewController: UIViewController {
     @IBOutlet weak var writeMsg: UITextField!
     
     
+    
+    
     //MARK:- App LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

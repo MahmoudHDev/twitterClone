@@ -17,10 +17,11 @@ extension SignUpViewController: UITextFieldDelegate {
         passwordFTxtField.isSecureTextEntry = false
         passwordSTxtField.isSecureTextEntry = false
         
-        username.delegate          = self
-        emailTxtField.delegate     = self
-        passwordSTxtField.delegate = self
-        passwordFTxtField.delegate = self
+        username.delegate           = self
+        emailTxtField.delegate      = self
+        emailTxtField.delegate      = self
+        passwordSTxtField.delegate  = self
+        passwordFTxtField.delegate  = self
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

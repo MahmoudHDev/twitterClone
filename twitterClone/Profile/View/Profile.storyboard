@@ -181,10 +181,37 @@
                                     <outlet property="delegate" destination="Azs-Fm-mC3" id="RXY-Dt-MlN"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ule-ic-n2X">
+                                <rect key="frame" x="340" y="660" width="60" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqW-nq-TFZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" red="0.13714063169999999" green="0.53951340910000001" blue="0.92610400920000002" alpha="0.80995826199999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="square.and.pencil" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="writeATweet:" destination="Azs-Fm-mC3" eventType="touchUpInside" id="Prb-Sw-VES"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pqW-nq-TFZ" firstAttribute="centerX" secondItem="ule-ic-n2X" secondAttribute="centerX" id="4Ha-1r-RkW"/>
+                                    <constraint firstAttribute="bottom" secondItem="pqW-nq-TFZ" secondAttribute="bottom" id="4ew-hP-hSd"/>
+                                    <constraint firstAttribute="height" constant="60" id="RbA-Ew-2Qs"/>
+                                    <constraint firstItem="pqW-nq-TFZ" firstAttribute="leading" secondItem="ule-ic-n2X" secondAttribute="leading" id="Sh2-f7-4WH"/>
+                                    <constraint firstAttribute="trailing" secondItem="pqW-nq-TFZ" secondAttribute="trailing" id="VgJ-AR-ebi"/>
+                                    <constraint firstItem="pqW-nq-TFZ" firstAttribute="centerY" secondItem="ule-ic-n2X" secondAttribute="centerY" id="fft-EG-ePo"/>
+                                    <constraint firstAttribute="width" constant="60" id="zgl-mx-Jr7"/>
+                                    <constraint firstItem="pqW-nq-TFZ" firstAttribute="top" secondItem="ule-ic-n2X" secondAttribute="top" id="zut-wk-YDj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Bt-a3-P5l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5Bt-a3-P5l" firstAttribute="bottom" secondItem="ule-ic-n2X" secondAttribute="bottom" constant="16" id="0hj-1F-JMS"/>
                             <constraint firstItem="jac-xR-APE" firstAttribute="trailing" secondItem="5Bt-a3-P5l" secondAttribute="trailing" id="1ov-Xo-KwK"/>
                             <constraint firstItem="jac-xR-APE" firstAttribute="leading" secondItem="5Bt-a3-P5l" secondAttribute="leading" id="3Q0-KP-dIX"/>
                             <constraint firstItem="jac-xR-APE" firstAttribute="top" secondItem="5Bt-a3-P5l" secondAttribute="top" id="3dv-Yj-AD6"/>
@@ -199,11 +226,13 @@
                             <constraint firstItem="RFh-kI-fdr" firstAttribute="top" secondItem="ZIK-K5-VK9" secondAttribute="bottom" id="dOS-Vb-oWe"/>
                             <constraint firstItem="RFh-kI-fdr" firstAttribute="leading" secondItem="5Bt-a3-P5l" secondAttribute="leading" id="ge9-4C-7hQ"/>
                             <constraint firstItem="5Bt-a3-P5l" firstAttribute="bottom" secondItem="RFh-kI-fdr" secondAttribute="bottom" id="pTn-gI-uO0"/>
+                            <constraint firstItem="5Bt-a3-P5l" firstAttribute="trailing" secondItem="ule-ic-n2X" secondAttribute="trailing" constant="14" id="qxY-sC-HIS"/>
                             <constraint firstItem="5Bt-a3-P5l" firstAttribute="trailing" secondItem="RFh-kI-fdr" secondAttribute="trailing" id="xJv-F6-3GB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Q8-Lj-vak"/>
                     <connections>
+                        <outlet property="compossAtweet" destination="pqW-nq-TFZ" id="txE-KH-lfT"/>
                         <outlet property="coverPhoto" destination="jac-xR-APE" id="lJ2-bl-XAR"/>
                         <outlet property="editButton" destination="ieZ-Io-DpP" id="hPS-6R-CSh"/>
                         <outlet property="followers" destination="jM0-NM-Ueu" id="mgX-e6-EXz"/>
@@ -223,6 +252,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

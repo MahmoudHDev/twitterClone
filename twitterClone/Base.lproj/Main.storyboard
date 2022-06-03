@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P1z-vb-FJE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msV-Gd-E4d">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -683,12 +683,43 @@
                                     <outlet property="delegate" destination="8ZH-sP-J15" id="ZBs-xB-jdY"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-iE-VJ4">
+                                <rect key="frame" x="310" y="543" width="60" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTb-th-FGj">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" red="0.13714063169999999" green="0.53951340910000001" blue="0.92610400920000002" alpha="0.80995826199999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="bolt.horizontal.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="newTweetBtn:" destination="mVC-eD-sdZ" eventType="touchUpInside" id="fen-eU-ypJ"/>
+                                            <action selector="writeAMessage:" destination="w5t-qv-CUO" eventType="touchUpInside" id="F5K-uy-9K4"/>
+                                            <action selector="writeAMessage:" destination="8ZH-sP-J15" eventType="touchUpInside" id="qek-yU-tIq"/>
+                                            <action selector="writeMsg:" destination="w5t-qv-CUO" eventType="touchUpInside" id="Ai3-81-S1c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="2XD-4x-452"/>
+                                    <constraint firstItem="qTb-th-FGj" firstAttribute="centerY" secondItem="yr9-iE-VJ4" secondAttribute="centerY" id="CcY-nJ-Ms2"/>
+                                    <constraint firstAttribute="bottom" secondItem="qTb-th-FGj" secondAttribute="bottom" id="gQV-88-r6j"/>
+                                    <constraint firstItem="qTb-th-FGj" firstAttribute="leading" secondItem="yr9-iE-VJ4" secondAttribute="leading" id="h5h-SR-kTy"/>
+                                    <constraint firstAttribute="height" constant="60" id="hUb-qf-ejf"/>
+                                    <constraint firstItem="qTb-th-FGj" firstAttribute="top" secondItem="yr9-iE-VJ4" secondAttribute="top" id="lQ4-D5-4ap"/>
+                                    <constraint firstItem="qTb-th-FGj" firstAttribute="centerX" secondItem="yr9-iE-VJ4" secondAttribute="centerX" id="ns9-H7-UBD"/>
+                                    <constraint firstAttribute="trailing" secondItem="qTb-th-FGj" secondAttribute="trailing" id="od5-w3-dgA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MuU-13-1hM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MuU-13-1hM" firstAttribute="trailing" secondItem="yr9-iE-VJ4" secondAttribute="trailing" constant="5" id="1qs-3u-aWW"/>
                             <constraint firstItem="Hmg-Pt-ZxZ" firstAttribute="top" secondItem="MuU-13-1hM" secondAttribute="top" id="AmN-tz-Fnd"/>
                             <constraint firstItem="MuU-13-1hM" firstAttribute="trailing" secondItem="htn-xI-895" secondAttribute="trailing" id="Bbh-Dl-5c9"/>
+                            <constraint firstItem="MuU-13-1hM" firstAttribute="bottom" secondItem="yr9-iE-VJ4" secondAttribute="bottom" constant="15" id="O3o-4d-5rT"/>
                             <constraint firstItem="htn-xI-895" firstAttribute="top" secondItem="Hmg-Pt-ZxZ" secondAttribute="bottom" id="TDI-ux-wea"/>
                             <constraint firstItem="Hmg-Pt-ZxZ" firstAttribute="leading" secondItem="MuU-13-1hM" secondAttribute="leading" id="Wfc-YN-frS"/>
                             <constraint firstItem="MuU-13-1hM" firstAttribute="bottom" secondItem="htn-xI-895" secondAttribute="bottom" id="bIw-3f-Uco"/>
@@ -700,9 +731,11 @@
                     <navigationItem key="navigationItem" id="35X-VW-iqM"/>
                     <connections>
                         <outlet property="tableView" destination="htn-xI-895" id="VRY-Ve-Zij"/>
+                        <outlet property="writeMssgBtn" destination="qTb-th-FGj" id="sKO-9g-MN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNk-CU-5Ob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="w5t-qv-CUO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4569" y="782"/>
         </scene>
@@ -743,6 +776,7 @@
     </scenes>
     <resources>
         <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="bolt.horizontal.fill" catalog="system" width="128" height="60"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>

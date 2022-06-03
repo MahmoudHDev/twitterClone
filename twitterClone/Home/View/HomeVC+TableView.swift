@@ -26,11 +26,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.newTweet(email: tweets.email ?? "E", usernameLbl: tweets.username ?? "U" , timeOfTweet: date ?? "3" , tweetContent: tweets.tweet ?? "4")
             if let newImgs = images {
                 let newPath = storage.reference(forURL: newImgs)
-                
                 newPath.getData(maxSize: 1 * 1024 * 1024) { (data, err) in
                     cell.profileImg.image = UIImage(data: data!)
                 }
-                
                 }else{
                 // add a label
                 print("No Tweets Available")

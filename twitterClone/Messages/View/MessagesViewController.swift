@@ -12,6 +12,7 @@ class MessagesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var menu: SideMenuNavigationController?
     
+    @IBOutlet weak var writeMssgBtn: UIButton!
     //MARK:- view LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,9 @@ class MessagesViewController: UIViewController {
         present(menu!, animated: true)
     }
     
+    @IBAction func writeAMessage(_ sender: UIButton) {
+        // Composs a message
+    }
     @IBAction func settingsBtn(_ sender: UIBarButtonItem) {
         // Present the settings
         

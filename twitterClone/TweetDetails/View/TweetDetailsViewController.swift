@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class TweetDetailsViewController: UIViewController {
 
     //MARK:- Properties
@@ -16,13 +16,13 @@ class TweetDetailsViewController: UIViewController {
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var replyTextField: UITextField!
     @IBOutlet weak var imageProfile: UIImageView!
-    
+    let storage = Storage.storage()
     //MARK:- App LifeCycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(tweetDetails)
-        title = "Tweet"
+        title = "Thread"
         tableView.register(UINib(nibName: "TweetDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
         self.modalPresentationStyle = .currentContext
@@ -42,6 +42,7 @@ class TweetDetailsViewController: UIViewController {
 
 extension TweetDetailsViewController: TweetDetailsView {
     func viewTweet() {
+        // Load People Views
         print("View Tweet Details")
     }
     

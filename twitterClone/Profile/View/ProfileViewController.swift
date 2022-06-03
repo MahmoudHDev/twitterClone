@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var editButton       :UIButton!
     @IBOutlet weak var navigateProfile  :UISegmentedControl!
     @IBOutlet weak var tableView        :UITableView!
+    @IBOutlet weak var compossAtweet    :UIButton!
     var userInfor =  TweeterUsers()
     //MARK:- App LifeCycle
     override func viewDidLoad() {
@@ -30,14 +31,14 @@ class ProfileViewController: UIViewController {
         tableView.separatorStyle = .none
         title = "Profile"
         presenter.userInfo()
-
+        compossAtweet.layer.cornerRadius = 0.5 * compossAtweet.bounds.size.width
+        compossAtweet.clipsToBounds = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         // do something 
     }
     //MARK:- Actions
-    
     @IBAction func editBtn(_ sender: Any) {
         // go to edit EditProfileVC
         let storyBoard = UIStoryboard(name: "EditProfile", bundle: nil)
@@ -48,6 +49,12 @@ class ProfileViewController: UIViewController {
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func writeATweet(_ sender: UIButton){
+        let storyBoard = UIStoryboard(name: "CreateATweet", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "createATweet")
+        present(vc, animated: true)
+    }
     //MARK:- Methods
     func updateUI() {
         profilePhoto.layer.borderWidth = 1.0
@@ -57,6 +64,7 @@ class ProfileViewController: UIViewController {
         profilePhoto.clipsToBounds = true
     }
     func loadInfo() {
+        
         print("Load Info of user: \(userInfor.username)")
         title               = userInfor.username!
         nameOfTheUser.text  = userInfor.username!
