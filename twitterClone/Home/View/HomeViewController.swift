@@ -7,17 +7,20 @@
 
 import UIKit
 import SideMenu
+import Firebase
+
 class HomeViewController: UIViewController {
     //MARK:- Properties
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTweetBrn: UIButton!
-    var menu: SideMenuNavigationController?
-    var myIndexPath: Int?
-    var tweeterUsers: [TweeterUsers] = []
-    var selectedTweet = Tweets()
-    let dateFormatter = DateFormatter()
-    var arrTweets: [Tweets] = []     // empty arr of tweets
-    lazy var presenter = HomePresenter(view: self)
+    lazy var presenter  = HomePresenter(view: self)
+    var menu            : SideMenuNavigationController?
+    var myIndexPath     : Int?
+    var tweeterUsers    : [TweeterUsers] = []
+    var selectedTweet   = Tweets()
+    var arrTweets       : [Tweets] = []     // empty arr of tweets
+    let dateFormatter   = DateFormatter()
+    let storage         = Storage.storage()
     
     //MARK:- View LifeCycle
     override func viewDidLoad() {
@@ -28,7 +31,6 @@ class HomeViewController: UIViewController {
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         // SideMenu Configuration
         updateSideMenu()
-        
         tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
         newTweetBrn.layer.cornerRadius = 0.5 * newTweetBrn.bounds.size.width
@@ -46,9 +48,9 @@ class HomeViewController: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
-    
     func loadTweets() {
         presenter.readTweets()
+        
     }
     
     //MARK:- Actions

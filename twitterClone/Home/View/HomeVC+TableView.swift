@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Kingfisher
+import Firebase
 
 //MARK:- TableView DataSource, and Delegate
 
@@ -23,14 +23,20 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             let images = tweets.profilePhoto
             let date = tweets.time?.timesAgoDisplay()
             // init for the cell
-        cell.newTweet(email: tweets.email ?? "E", usernameLbl: tweets.username ?? "U" , timeOfTweet: date ?? "3" , tweetContent: tweets.tweet ?? "4")
-            
-            cell.profileImg.kf.setImage(with: URL(string: images ?? K.Tweet.defaultProfile))
-        }else{
-            cell.textLabel?.text = "No Tweets Available"
+            cell.newTweet(email: tweets.email ?? "E", usernameLbl: tweets.username ?? "U" , timeOfTweet: date ?? "3" , tweetContent: tweets.tweet ?? "4")
+            if let newImgs = images {
+                let newPath = storage.reference(forURL: newImgs)
+                
+                newPath.getData(maxSize: 1 * 1024 * 1024) { (data, err) in
+                    cell.profileImg.image = UIImage(data: data!)
+                }
+                
+                }else{
+                // add a label
+                print("No Tweets Available")
+            }
         }
-
-            return cell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -39,7 +45,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let tweetDetails = storyBoard.instantiateViewController(identifier: "tweetPage") as! TweetDetailsViewController
         tweetDetails.tweetDetails = arrTweets[indexPath.row]
         self.navigationController!.pushViewController(tweetDetails, animated: true)
-
+        
     }
     
 }

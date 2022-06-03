@@ -22,12 +22,15 @@ class HomePresenter {
     private weak var ref: DocumentReference? = nil
     let db = Firestore.firestore()
     let dbRef = Database.database().reference()
+    let storage = Storage.storage()
     var view: HomePresenterView?
     
     //MARK:- Init
     init(view: HomePresenterView) {
         self.view = view
     }
+    
+    
     //MARK:- Methods
     func readTweets(){
         db.collection(K.collections.userTweets).addSnapshotListener { (querySnapshot, err) in
@@ -35,12 +38,12 @@ class HomePresenter {
                 self.view?.tweetsError(error: err)
                 print("Error has been ocured while fetchin data ")
             }else {
-                
                 if let snapShotDocument = querySnapshot?.documents {
                     self.view?.emptyTheArray()
                     print("done Empty")
                     for doc in snapShotDocument {
                         let data = doc.data()
+                        
                         if let email = data[K.Tweet.email] as? String,
                            let profilePhoto = data[K.Tweet.profilePhoto] as? String,
                            let username = data[K.Tweet.username] as? String,
@@ -49,7 +52,9 @@ class HomePresenter {
                             let newTime = Timestamp.dateValue(times)
                             let newTweets = Tweets(time: newTime(), tweet: tweet, email: email, profilePhoto: profilePhoto, username: username)
                             self.view?.appendTweets(TwitteContent: newTweets)
+
                             print("Successfully Fetched and Appended")
+                            
                         }else{
                             print("Sorry: Error while retreiving data")
                         }
@@ -58,5 +63,6 @@ class HomePresenter {
             }
         }
     }       // END IF
+
     
 }
