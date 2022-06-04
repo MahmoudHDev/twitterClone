@@ -25,7 +25,15 @@ class TweetDetailsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tappedMe))
+        profilePhoto.isUserInteractionEnabled = true
+        profilePhoto.addGestureRecognizer(tap)
         
+        
+        profilePhoto.layer.borderWidth = 0.5
+        profilePhoto.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        profilePhoto.layer.cornerRadius = 0.5 * profilePhoto.bounds.size.width
+
     }
 
 
@@ -46,6 +54,7 @@ class TweetDetailsTableViewCell: UITableViewCell {
             print("Retweet")
         case 2:
             print("Like")
+            // Access to the tweet and edit the content by 1 from the data base
         case 3:
             print("Share")
         case 4:
@@ -55,5 +64,8 @@ class TweetDetailsTableViewCell: UITableViewCell {
         }
     }
     
-    
+    @objc
+    func tappedMe(){
+     print("go to user profile")
+    }
 }

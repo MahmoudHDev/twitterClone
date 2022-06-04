@@ -28,6 +28,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 //        updateUI()
         profilePhoto.layer.cornerRadius = 0.5 * profilePhoto.bounds.size.width
+        profilePhoto.layer.borderWidth = 0.5
+        profilePhoto.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         tableView.separatorStyle = .none
         title = "Profile"
         presenter.userInfo()

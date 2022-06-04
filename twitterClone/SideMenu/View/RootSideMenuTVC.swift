@@ -72,7 +72,7 @@ class RootSideMenuTVC: UITableViewController {
             let vc = storyBoard.instantiateViewController(identifier: "showProfile") as! ProfileViewController
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
-            print("Show Lists")
+            print("Show Lists View controller")
         case 2:
             print("Show Bookmarks")
         case 3:

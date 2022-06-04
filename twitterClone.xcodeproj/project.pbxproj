@@ -28,6 +28,9 @@
 		1E31F9F92822046C00FB18D6 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */; };
 		1E31FA012822065B00FB18D6 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31FA002822065B00FB18D6 /* NotificationPresenter.swift */; };
 		1E31FA10282207C500FB18D6 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31FA0F282207C500FB18D6 /* SettingsPresenter.swift */; };
+		1E3CC3E3284B798A00A33755 /* UsersProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3CC3E2284B798A00A33755 /* UsersProfileViewController.swift */; };
+		1E3CC3E7284B79B200A33755 /* UsersProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3CC3E6284B79B200A33755 /* UsersProfile.storyboard */; };
+		1E3CC3EA284B7A4D00A33755 /* UsersProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3CC3E9284B7A4D00A33755 /* UsersProfilePresenter.swift */; };
 		1E3FB45228269FBF007343D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3FB45128269FBF007343D9 /* Constants.swift */; };
 		1E3FB4862826A375007343D9 /* SignUpView+TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3FB4852826A375007343D9 /* SignUpView+TextViewDelegate.swift */; };
 		1E3FB48B2826A4EE007343D9 /* LoginVC+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3FB48A2826A4EE007343D9 /* LoginVC+TextFieldDelegate.swift */; };
@@ -92,6 +95,9 @@
 		1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		1E31FA002822065B00FB18D6 /* NotificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
 		1E31FA0F282207C500FB18D6 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		1E3CC3E2284B798A00A33755 /* UsersProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProfileViewController.swift; sourceTree = "<group>"; };
+		1E3CC3E6284B79B200A33755 /* UsersProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsersProfile.storyboard; sourceTree = "<group>"; };
+		1E3CC3E9284B7A4D00A33755 /* UsersProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProfilePresenter.swift; sourceTree = "<group>"; };
 		1E3FB45128269FBF007343D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1E3FB4852826A375007343D9 /* SignUpView+TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpView+TextViewDelegate.swift"; sourceTree = "<group>"; };
 		1E3FB48A2826A4EE007343D9 /* LoginVC+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC+TextFieldDelegate.swift"; sourceTree = "<group>"; };
@@ -516,6 +522,40 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1E3CC3DE284B794700A33755 /* UsersProfile */ = {
+			isa = PBXGroup;
+			children = (
+				1E3CC3E1284B796700A33755 /* Model */,
+				1E3CC3E0284B795C00A33755 /* View */,
+				1E3CC3DF284B795500A33755 /* Presenter */,
+			);
+			path = UsersProfile;
+			sourceTree = "<group>";
+		};
+		1E3CC3DF284B795500A33755 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1E3CC3E9284B7A4D00A33755 /* UsersProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E3CC3E0284B795C00A33755 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E3CC3E2284B798A00A33755 /* UsersProfileViewController.swift */,
+				1E3CC3E6284B79B200A33755 /* UsersProfile.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E3CC3E1284B796700A33755 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1E3FB4812826A314007343D9 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +612,7 @@
 		1E7DE19B2812F93C003CEE5D /* twitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				1E3CC3DE284B794700A33755 /* UsersProfile */,
 				1E7DE19C2812F93C003CEE5D /* AppDelegate.swift */,
 				1E7DE19E2812F93C003CEE5D /* SceneDelegate.swift */,
 				1EEC20DA283A7F6100141CF2 /* TweeterUsers.swift */,
@@ -767,6 +808,7 @@
 				1E7DE1B22812FA23003CEE5D /* GoogleService-Info.plist in Resources */,
 				1ECC412728306413008B8AA6 /* TweetDetails.storyboard in Resources */,
 				1EE4950E282C71DE00CB9C45 /* Settings.storyboard in Resources */,
+				1E3CC3E7284B79B200A33755 /* UsersProfile.storyboard in Resources */,
 				1E7DE1A62812F940003CEE5D /* Assets.xcassets in Resources */,
 				1E259C76282D66B80082033A /* EditProfile.storyboard in Resources */,
 				1EE49511282C73D500CB9C45 /* CreateATweet.storyboard in Resources */,
@@ -835,6 +877,7 @@
 				1E259C8E282D951D0082033A /* ChatMessages+TableView.swift in Sources */,
 				1EE4951E282C75F200CB9C45 /* ProfilePresenter.swift in Sources */,
 				1E259C81282D88580082033A /* Messages.swift in Sources */,
+				1E3CC3EA284B7A4D00A33755 /* UsersProfilePresenter.swift in Sources */,
 				1EDEED0C28361FF700D1ADCD /* TweetDetailsVC+TableView.swift in Sources */,
 				1E694318281847DC00894579 /* CreateATweetViewController.swift in Sources */,
 				1E0C2EBA282464E100A2AE10 /* LoginPresenter.swift in Sources */,
@@ -851,6 +894,7 @@
 				1E259C96282DA86E0082033A /* ProfileVC+TableView.swift in Sources */,
 				1ED6F5812848FBB800FDEE0C /* editProfile+Picker.swift in Sources */,
 				1EEC20DB283A7F6200141CF2 /* TweeterUsers.swift in Sources */,
+				1E3CC3E3284B798A00A33755 /* UsersProfileViewController.swift in Sources */,
 				1E259C7A282D67420082033A /* EditProfilePresenter.swift in Sources */,
 				1EDEED102836207300D1ADCD /* TweetDetailsTableViewCell.swift in Sources */,
 				1E259C87282D89980082033A /* ChatMessageViewController.swift in Sources */,

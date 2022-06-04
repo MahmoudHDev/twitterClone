@@ -38,6 +38,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
         let storyBoard = UIStoryboard(name: "TweetDetails", bundle: nil)
         let tweetDetails = storyBoard.instantiateViewController(identifier: "tweetPage") as! TweetDetailsViewController

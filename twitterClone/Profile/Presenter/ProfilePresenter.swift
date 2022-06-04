@@ -36,8 +36,8 @@ class ProfilePresenter {
         var ref: DatabaseReference!
         ref = Database.database().reference()
         guard let user = Auth.auth().currentUser else {return}
-        ref.child(K.collections.users).child(user.uid).observeSingleEvent(of: .value) { (snapshot) in
-            guard let value = snapshot.value as? NSDictionary else {return}
+        ref.child(K.collections.users).child(user.uid).observe(.value, with: { (datasnapShot) in
+            guard let value = datasnapShot.value as? NSDictionary else {return}
             let username    = value["username"] as? String ?? ""
             let email       = value["email"] as? String ?? ""
             let profileImg  = value["profilePhoto"] as? String ?? K.user.profilePhoto
@@ -56,12 +56,17 @@ class ProfilePresenter {
             userInfo.following = following
             userInfo.coverPhoto = coverImg
             self.view?.userInformation(user: userInfo)
-        }
+        })
+//            .observeSingleEvent(of: .value) { (snapshot) in
+//
+//        }
+        
     }
     
     func showUserImage(profileURL: String) {
         // show the user Photo in home
         // due to any edit in the edit profile will affct on the new photo and not by the link , but by reading it from gs ur
+        print("ShowUserImage func")
         let imagesRef = self.storage.reference(forURL: profileURL)
         imagesRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
             if let error = error {
