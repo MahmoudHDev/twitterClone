@@ -83,7 +83,7 @@ class TweetTableViewCell: UITableViewCell {
         }
     }
 
-    func newTweet(email: String, usernameLbl: String,timeOfTweet: String ,tweetContent:String){
+    func newTweet(email: String, usernameLbl: String, timeOfTweet: String, tweetContent:String){
         self.nameLbl.text       = email
         self.usernameLbl.text   = usernameLbl
         self.timeOfTweet.text   = timeOfTweet

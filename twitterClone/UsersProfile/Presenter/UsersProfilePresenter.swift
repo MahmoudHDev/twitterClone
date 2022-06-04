@@ -12,6 +12,7 @@ import Firebase
 
 protocol UsersProfileView {
     func dataDidLoad()
+    
 }
 
 //MARK:- Presenter
@@ -28,8 +29,6 @@ class UsersProfilePresenter {
     }
     
     //MARK:- Methods
-
-    
     func loadUserData() {
         // get Data From FireBase
     }

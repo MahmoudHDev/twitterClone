@@ -8,6 +8,11 @@
 import UIKit
 import FaveButton
 
+protocol TweetDetailsTVCDelegate {
+    func showUserData(userInfo: Tweets)
+    
+}
+
 class TweetDetailsTableViewCell: UITableViewCell {
     //MARK:- Properties
     @IBOutlet weak var comment  :FaveButton!
@@ -19,6 +24,8 @@ class TweetDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var tweetContent: UILabel!
     @IBOutlet weak var profilePhoto: UIImageView!
+    var delegate: TweetDetailsTVCDelegate?
+    var profTweetDetails  = Tweets()
     
     //MARK:- Nib Cycle
 
@@ -28,7 +35,6 @@ class TweetDetailsTableViewCell: UITableViewCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tappedMe))
         profilePhoto.isUserInteractionEnabled = true
         profilePhoto.addGestureRecognizer(tap)
-        
         
         profilePhoto.layer.borderWidth = 0.5
         profilePhoto.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
@@ -54,6 +60,7 @@ class TweetDetailsTableViewCell: UITableViewCell {
             print("Retweet")
         case 2:
             print("Like")
+            // if the bool variable is true then increase the like with 1
             // Access to the tweet and edit the content by 1 from the data base
         case 3:
             print("Share")
@@ -67,5 +74,9 @@ class TweetDetailsTableViewCell: UITableViewCell {
     @objc
     func tappedMe(){
      print("go to user profile")
+        delegate?.showUserData(userInfo: profTweetDetails)
+        
+        print(profTweetDetails.time)
+        
     }
 }

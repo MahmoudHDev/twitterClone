@@ -31,6 +31,7 @@
 		1E3CC3E3284B798A00A33755 /* UsersProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3CC3E2284B798A00A33755 /* UsersProfileViewController.swift */; };
 		1E3CC3E7284B79B200A33755 /* UsersProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3CC3E6284B79B200A33755 /* UsersProfile.storyboard */; };
 		1E3CC3EA284B7A4D00A33755 /* UsersProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3CC3E9284B7A4D00A33755 /* UsersProfilePresenter.swift */; };
+		1E3CC3EE284B956600A33755 /* UsersProfileVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3CC3ED284B956600A33755 /* UsersProfileVC+TableView.swift */; };
 		1E3FB45228269FBF007343D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3FB45128269FBF007343D9 /* Constants.swift */; };
 		1E3FB4862826A375007343D9 /* SignUpView+TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3FB4852826A375007343D9 /* SignUpView+TextViewDelegate.swift */; };
 		1E3FB48B2826A4EE007343D9 /* LoginVC+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3FB48A2826A4EE007343D9 /* LoginVC+TextFieldDelegate.swift */; };
@@ -98,6 +99,7 @@
 		1E3CC3E2284B798A00A33755 /* UsersProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProfileViewController.swift; sourceTree = "<group>"; };
 		1E3CC3E6284B79B200A33755 /* UsersProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsersProfile.storyboard; sourceTree = "<group>"; };
 		1E3CC3E9284B7A4D00A33755 /* UsersProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProfilePresenter.swift; sourceTree = "<group>"; };
+		1E3CC3ED284B956600A33755 /* UsersProfileVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersProfileVC+TableView.swift"; sourceTree = "<group>"; };
 		1E3FB45128269FBF007343D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1E3FB4852826A375007343D9 /* SignUpView+TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpView+TextViewDelegate.swift"; sourceTree = "<group>"; };
 		1E3FB48A2826A4EE007343D9 /* LoginVC+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC+TextFieldDelegate.swift"; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 			children = (
 				1E3CC3E2284B798A00A33755 /* UsersProfileViewController.swift */,
 				1E3CC3E6284B79B200A33755 /* UsersProfile.storyboard */,
+				1E3CC3ED284B956600A33755 /* UsersProfileVC+TableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -612,7 +615,6 @@
 		1E7DE19B2812F93C003CEE5D /* twitterClone */ = {
 			isa = PBXGroup;
 			children = (
-				1E3CC3DE284B794700A33755 /* UsersProfile */,
 				1E7DE19C2812F93C003CEE5D /* AppDelegate.swift */,
 				1E7DE19E2812F93C003CEE5D /* SceneDelegate.swift */,
 				1EEC20DA283A7F6100141CF2 /* TweeterUsers.swift */,
@@ -621,6 +623,7 @@
 				1E31F9E22821FD7E00FB18D6 /* Home */,
 				1E31F9ED2822028B00FB18D6 /* Create A Tweet */,
 				1ECC411B28305C1A008B8AA6 /* TweetDetails */,
+				1E3CC3DE284B794700A33755 /* UsersProfile */,
 				1EE49513282C74D100CB9C45 /* Profile */,
 				1E259C6D282D660A0082033A /* editProfile */,
 				1E31FA0B2822079500FB18D6 /* Settings */,
@@ -896,6 +899,7 @@
 				1EEC20DB283A7F6200141CF2 /* TweeterUsers.swift in Sources */,
 				1E3CC3E3284B798A00A33755 /* UsersProfileViewController.swift in Sources */,
 				1E259C7A282D67420082033A /* EditProfilePresenter.swift in Sources */,
+				1E3CC3EE284B956600A33755 /* UsersProfileVC+TableView.swift in Sources */,
 				1EDEED102836207300D1ADCD /* TweetDetailsTableViewCell.swift in Sources */,
 				1E259C87282D89980082033A /* ChatMessageViewController.swift in Sources */,
 				1E31F9F1282202C700FB18D6 /* NewTweetPresenter.swift in Sources */,
