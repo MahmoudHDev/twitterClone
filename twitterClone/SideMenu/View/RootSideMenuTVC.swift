@@ -6,11 +6,11 @@
 //
 
 import UIKit
-
+import Firebase
 class RootSideMenuTVC: UITableViewController {
 
     //MARK:- Properties
-    var arrTitles = ["Profile", "Lists", "Bookmarks", "Moments"]
+    var arrTitles = ["Profile", "Lists", "Bookmarks", "Moments", "Logout"]
     var arrImgs   : [UIImage] = []
     
     //MARK:- View LifeCycles
@@ -39,12 +39,14 @@ class RootSideMenuTVC: UITableViewController {
         arrImgs.append(SFSymbols.lists!)
         arrImgs.append(SFSymbols.bookmarks!)
         arrImgs.append(SFSymbols.moments!)
+        arrImgs.append(SFSymbols.logout!)
     }
     enum SFSymbols: CaseIterable {
-        static let home = UIImage(systemName: "person")
-        static let lists = UIImage(systemName: "note.text")
-        static let bookmarks = UIImage(systemName: "bookmark")
-        static let moments = UIImage(systemName: "bolt")
+        static let home         = UIImage(systemName: "person")
+        static let lists        = UIImage(systemName: "note.text")
+        static let bookmarks    = UIImage(systemName: "bookmark")
+        static let moments      = UIImage(systemName: "bolt")
+        static let logout       = UIImage(systemName: "person.fill.badge.minus")
     }
     
     // MARK: - Table view data source
@@ -73,6 +75,20 @@ class RootSideMenuTVC: UITableViewController {
             print("Show Lists")
         case 2:
             print("Show Bookmarks")
+        case 3:
+            print("Moments")
+        case 4:
+            print("Logout")
+            do {
+                // need to dissmiss the past ViewController to avoid the overload on the memory
+                try Auth.auth().signOut()
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let rootVC = storyBoard.instantiateViewController(identifier: "firstViewPage")
+                self.present(rootVC, animated: true)
+            }catch{
+                print("Error \(error)")
+            }
+
         default:
             print("Show Moments")
         }
