@@ -10,14 +10,18 @@ import SideMenu
 class SearchViewController: UIViewController {
     //MARK:- Properties
 
-    var menu: SideMenuNavigationController?
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchTxtField: UITextField!
+    lazy var presenter                  = SearchPresenter(view: self)
+    var menu                            : SideMenuNavigationController?
+    @IBOutlet weak var tableView        : UITableView!
+    @IBOutlet weak var searchTxtField   : UITextField!
+    var arrUsers = [TweeterUsers]()
+    
     //MARK:- view LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.separatorStyle = .none
-
+        presenter.loadUsers()
+        tableView.separatorStyle    = .none
+        searchTxtField.delegate     = self
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         updateSideMenu()
     }
@@ -41,18 +45,20 @@ class SearchViewController: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
+    
 }
+//MARK:- Presenter
 
-//MARK:- UITableView DataSource
-
-extension SearchViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+extension SearchViewController: SearchView {
+    func removeUsers() {
+        arrUsers.removeAll()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        return cell
+    
+    func loadUsers(users: TweeterUsers) {
+        arrUsers.append(users)
+        tableView.reloadData()
+        print(users.username)
     }
     
     
