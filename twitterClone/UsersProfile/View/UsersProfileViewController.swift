@@ -26,7 +26,7 @@ class UsersProfileViewController: UIViewController {
     @IBOutlet weak var dmBtn            :UIButton!
     
     var tweetInfo = Tweets()
-
+    var user = TweeterUsers()
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,36 +44,69 @@ class UsersProfileViewController: UIViewController {
     //MARK:- Actions
     
     @IBAction func profileVCButtons(_ sender: UIButton ) {
-     
+        
         switch sender.tag {
         case 0:
             print("Follow")
-            // change the data in database to "isFollow-> True"
+        // change the data in database to "isFollow-> True"
         case 1 :
             print("Send a message")
-            // go to chat ViewController
+        // go to chat ViewController
         default:
             print("assign a button")
         }
         
     }
+    
+    //MARK:- Methods
 
+    func updateUIForUser() {
+        
+        username.text       = user.email
+        nameOfTheUser.text  = user.username
+        joinedDate.text     = user.dateJoined
+        following.text      = "\(user.following ?? 0)"
+        followers.text      = "\(user.followers ?? 0)"
+
+
+    }
+    
+    func updateUIForMe() {
+
+        username.text       = user.email
+        nameOfTheUser.text  = user.username
+        joinedDate.text     = user.dateJoined
+        following.text      = "\(user.following ?? 0)"
+        followers.text      = "\(user.followers ?? 0)"
+        dmBtn.isHidden      = true
+        followBtn.isHidden  = true
+
+    }
 }
 
 //MARK:- Presenter
 
 extension UsersProfileViewController: UsersProfileView {
+    func defaultProfile(imageProfile: UIImage) {
+        //        coverPhoto
+        profilePhoto.image = imageProfile
+    }
+    
     
     
     func myProfileData(info: TweeterUsers) {
         print("myProfile Loaded")
-        print(info)
+        user = info
+        updateUIForMe()
     }
     
     func userProfileData(info: TweeterUsers) {
         print("userProfile Loaded")
-        print(info)
+        user = info
+        updateUIForUser()
+
 
     }
-  
+    
+    
 }

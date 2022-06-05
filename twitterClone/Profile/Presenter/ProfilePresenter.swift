@@ -57,16 +57,12 @@ class ProfilePresenter {
             userInfo.coverPhoto = coverImg
             self.view?.userInformation(user: userInfo)
         })
-//            .observeSingleEvent(of: .value) { (snapshot) in
-//
-//        }
         
     }
     
     func showUserImage(profileURL: String) {
         // show the user Photo in home
         // due to any edit in the edit profile will affct on the new photo and not by the link , but by reading it from gs ur
-        print("ShowUserImage func")
         let imagesRef = self.storage.reference(forURL: profileURL)
         imagesRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
             if let error = error {
