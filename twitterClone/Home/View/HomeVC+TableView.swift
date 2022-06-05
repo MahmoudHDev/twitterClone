@@ -14,6 +14,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrTweets.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,7 +28,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             if let newImgs = images {
                 let newPath = storage.reference(forURL: newImgs)
                 newPath.getData(maxSize: 1 * 1024 * 1024) { (data, err) in
-                    cell.profileImg.image = UIImage(data: data!)
+                    guard let safeData = UIImage(data: data ?? Data()) else {return}
+                    cell.profileImg.image = safeData
                 }
                 }else{
                 // add a label

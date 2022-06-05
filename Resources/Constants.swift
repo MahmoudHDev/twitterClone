@@ -18,14 +18,19 @@ struct K {
         static let userTweets = "userTweets"
         static let users  = "users"
     }
+    
     struct user {
         static let userID           = "userID"
+        static let city             = "city"
         static let username         = "username"
         static let email            = "email"
         static let profilePhoto     = "profilePhoto"
         static let dateJoined       = "dateJoined"
         static let coverImage       = "https://via.placeholder.com/250"
-
+        static let time             = "time"
+        static let following        = "following"
+        static let followers        = "followers"
+        
     }
     struct Tweet{
         static let username         = "username"

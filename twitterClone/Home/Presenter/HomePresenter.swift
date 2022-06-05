@@ -46,11 +46,12 @@ class HomePresenter {
                         
                         if let email = data[K.Tweet.email] as? String,
                            let profilePhoto = data[K.Tweet.profilePhoto] as? String,
+                           let userID       = data["userID"] as? String,
                            let username = data[K.Tweet.username] as? String,
                            let times = data[K.Tweet.time] as? Timestamp,
                            let tweet = data[K.Tweet.tweet]as? String {
                             let newTime = Timestamp.dateValue(times)
-                            let newTweets = Tweets(time: newTime(), tweet: tweet, email: email, profilePhoto: profilePhoto, username: username)
+                            let newTweets = Tweets(time: newTime(), tweet: tweet, email: email, profilePhoto: profilePhoto, username: username, userID: userID)
                             self.view?.appendTweets(TwitteContent: newTweets)
 
                             print("Successfully Fetched and Appended")

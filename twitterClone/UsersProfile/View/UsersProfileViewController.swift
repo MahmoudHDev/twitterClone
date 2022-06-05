@@ -24,20 +24,20 @@ class UsersProfileViewController: UIViewController {
     @IBOutlet weak var tableView        :UITableView!
     @IBOutlet weak var followBtn        :UIButton!
     @IBOutlet weak var dmBtn            :UIButton!
+    
     var tweetInfo = Tweets()
 
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        dmBtn.layer.cornerRadius = 0.5
-        followBtn.layer.cornerRadius = 0.5
+        dmBtn.layer.cornerRadius        = 0.5
+        followBtn.layer.cornerRadius    = 0.5
         profilePhoto.layer.cornerRadius = 0.5 * profilePhoto.bounds.size.width
-        profilePhoto.layer.borderWidth = 0.5
-        profilePhoto.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        
-        tableView.separatorStyle = .none
-        title = "Profile"
-        
+        profilePhoto.layer.borderWidth  = 0.5
+        profilePhoto.layer.borderColor  = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        tableView.separatorStyle        = .none
+        title                           = "Profile"
+        presenter.loadUserData(idProf: tweetInfo.userID ?? "")
         // Do any additional setup after loading the view.
     }
     
@@ -48,14 +48,15 @@ class UsersProfileViewController: UIViewController {
         switch sender.tag {
         case 0:
             print("Follow")
+            // change the data in database to "isFollow-> True"
         case 1 :
             print("Send a message")
+            // go to chat ViewController
         default:
             print("assign a button")
         }
         
     }
-
 
 }
 
@@ -63,9 +64,16 @@ class UsersProfileViewController: UIViewController {
 
 extension UsersProfileViewController: UsersProfileView {
     
-    func dataDidLoad() {
-        print("Data Loaded")
+    
+    func myProfileData(info: TweeterUsers) {
+        print("myProfile Loaded")
+        print(info)
     }
     
-    
+    func userProfileData(info: TweeterUsers) {
+        print("userProfile Loaded")
+        print(info)
+
+    }
+  
 }
