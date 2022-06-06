@@ -14,8 +14,9 @@ class SearchViewController: UIViewController {
     var menu                            : SideMenuNavigationController?
     @IBOutlet weak var tableView        : UITableView!
     @IBOutlet weak var searchTxtField   : UITextField!
-    var arrUsers = [TweeterUsers]()
-    
+    var arrUsers = [TweeterUsers]()     // usernames, emails
+    var filterdUser = [TweeterUsers]()
+    var isWritten = false
     //MARK:- view LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
