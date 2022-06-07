@@ -364,18 +364,10 @@
 		1E31F9F42822042D00FB18D6 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				1E31F9F52822043A00FB18D6 /* Model */,
 				1E31F9F62822044600FB18D6 /* View */,
 				1E31F9F72822044D00FB18D6 /* Presenter */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		1E31F9F52822043A00FB18D6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1E31F9F62822044600FB18D6 /* View */ = {
