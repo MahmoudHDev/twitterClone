@@ -52,6 +52,8 @@
 		1E7DE1B22812FA23003CEE5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */; };
 		1E7DE1C62813058A003CEE5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DE1C52813058A003CEE5D /* LoginViewController.swift */; };
 		1E7DE1C928130596003CEE5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DE1C828130596003CEE5D /* SignUpViewController.swift */; };
+		1E9E4BD9284FFF4E001B2C08 /* ProfileFromSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E4BD8284FFF4E001B2C08 /* ProfileFromSearchVC.swift */; };
+		1E9E4BDD284FFF60001B2C08 /* ProfileFromSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E4BDC284FFF60001B2C08 /* ProfileFromSearch.storyboard */; };
 		1ECBFC6D28143CAC00ABE9D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */; };
 		1ECBFC7028143F2000ABE9D6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */; };
 		1ECBFC7328143F2C00ABE9D6 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */; };
@@ -124,6 +126,8 @@
 		1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E7DE1C52813058A003CEE5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1E7DE1C828130596003CEE5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1E9E4BD8284FFF4E001B2C08 /* ProfileFromSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFromSearchVC.swift; sourceTree = "<group>"; };
+		1E9E4BDC284FFF60001B2C08 /* ProfileFromSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileFromSearch.storyboard; sourceTree = "<group>"; };
 		1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -628,6 +632,7 @@
 				1E31FA03282206B500FB18D6 /* Messages */,
 				1E259C7C282D882E0082033A /* ChatMessages */,
 				1E31F9F42822042D00FB18D6 /* Search */,
+				1E9E4BD4284FFEFD001B2C08 /* ProfileBySearch */,
 				1E31F9FC2822060300FB18D6 /* Notification */,
 				1E31FA072822076000FB18D6 /* SideMenu */,
 				1E7DE1A22812F93C003CEE5D /* Main.storyboard */,
@@ -635,6 +640,39 @@
 				1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */,
 			);
 			path = twitterClone;
+			sourceTree = "<group>";
+		};
+		1E9E4BD4284FFEFD001B2C08 /* ProfileBySearch */ = {
+			isa = PBXGroup;
+			children = (
+				1E9E4BD7284FFF24001B2C08 /* Model */,
+				1E9E4BD6284FFF1B001B2C08 /* View */,
+				1E9E4BD5284FFF12001B2C08 /* Presenter */,
+			);
+			path = ProfileBySearch;
+			sourceTree = "<group>";
+		};
+		1E9E4BD5284FFF12001B2C08 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1E9E4BD6284FFF1B001B2C08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E9E4BD8284FFF4E001B2C08 /* ProfileFromSearchVC.swift */,
+				1E9E4BDC284FFF60001B2C08 /* ProfileFromSearch.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E9E4BD7284FFF24001B2C08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1ECC411B28305C1A008B8AA6 /* TweetDetails */ = {
@@ -810,6 +848,7 @@
 				1ECC412728306413008B8AA6 /* TweetDetails.storyboard in Resources */,
 				1EE4950E282C71DE00CB9C45 /* Settings.storyboard in Resources */,
 				1E3CC3E7284B79B200A33755 /* UsersProfile.storyboard in Resources */,
+				1E9E4BDD284FFF60001B2C08 /* ProfileFromSearch.storyboard in Resources */,
 				1E7DE1A62812F940003CEE5D /* Assets.xcassets in Resources */,
 				1E259C76282D66B80082033A /* EditProfile.storyboard in Resources */,
 				1EE49511282C73D500CB9C45 /* CreateATweet.storyboard in Resources */,
@@ -872,6 +911,7 @@
 				1E7DE1C62813058A003CEE5D /* LoginViewController.swift in Sources */,
 				1E26D8C32825AE9900BDC7B5 /* SignUpPresenter.swift in Sources */,
 				1E6E5066281AE6180054FEA8 /* MessagesTableViewCell.swift in Sources */,
+				1E9E4BD9284FFF4E001B2C08 /* ProfileFromSearchVC.swift in Sources */,
 				1E31F9F92822046C00FB18D6 /* SearchPresenter.swift in Sources */,
 				1ECC412128305CB2008B8AA6 /* TweetDetailsPresenter.swift in Sources */,
 				1E259C9A282DA8E90082033A /* RootSideMenuPresenter.swift in Sources */,

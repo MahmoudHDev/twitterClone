@@ -589,6 +589,14 @@
             </objects>
             <point key="canvasLocation" x="5765" y="-414"/>
         </scene>
+        <!--ProfileFromSearch-->
+        <scene sceneID="Wib-gw-uC5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileFromSearch" id="OKK-PO-htc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQo-Rc-Sbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5766" y="-379"/>
+        </scene>
         <!--TweetDetails-->
         <scene sceneID="mHH-0y-y5s">
             <objects>

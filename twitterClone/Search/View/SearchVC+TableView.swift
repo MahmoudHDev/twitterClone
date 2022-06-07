@@ -28,6 +28,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let storyBoard  = UIStoryboard(name: "ProfileFromSearch", bundle: nil)
+        let vc          = storyBoard.instantiateViewController(withIdentifier: "ProfFromSearch") as! ProfileFromSearchVC
+        self.present(vc, animated: true)
+        
         print(filterdUser[indexPath.row].email)
     }
     
