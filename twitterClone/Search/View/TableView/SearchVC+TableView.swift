@@ -37,15 +37,13 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedUser = filterdUser[indexPath.row]
+        // Don't forget the order
         tableView.deselectRow(at: indexPath, animated: true)
 
         performSegue(withIdentifier: "goToProf", sender: indexPath)
     }
-    
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                
-//                let nav = segue.destination as! UINavigationController
-//                let vc = nav.topViewController as! ProfileFromSearchVC
+            
             if let nav = segue.destination as? UINavigationController, let vc = nav.topViewController as? ProfileFromSearchVC {
                 vc.userInformtion = selectedUser
                 print("Success")

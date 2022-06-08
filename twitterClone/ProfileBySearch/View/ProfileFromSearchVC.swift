@@ -60,12 +60,14 @@ class ProfileFromSearchVC: UIViewController {
     //MARK:- Methods
     
     func updateUI() {
-        
+        guard let userImage = userInformtion.profilePhoto else {return}
+        presenter.loadImgs(url: userImage)
         username.text   = userInformtion.username ?? "no Name"
         email.text      = userInformtion.email ?? "no Name"
         city.text       = userInformtion.city  ?? "Egypt"
         following.text   = "\(userInformtion.following ?? 0)"
         followers.text   = "\(userInformtion.followers ?? 0)"
+        
     }
 
 }
@@ -73,7 +75,8 @@ class ProfileFromSearchVC: UIViewController {
 //MARK:- Presenter
 extension ProfileFromSearchVC: ProfileFromSearchView {
     
-    func loadInfo() {
+    func loadInfo(img: UIImage) {
+        profileImg.image = img
         print("Load Info")
     }
     

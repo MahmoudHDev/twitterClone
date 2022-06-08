@@ -234,7 +234,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gPY-jM-bTL">
             <objects>
-                <navigationController storyboardIdentifier="ProfFromSearch" automaticallyAdjustsScrollViewInsets="NO" id="uRQ-bI-oyI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProfFromSearch" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="uRQ-bI-oyI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VyI-Se-B5W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
