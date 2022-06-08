@@ -16,8 +16,9 @@ protocol SearchView {
 class SearchPresenter {
     
     //MARK:- Properties
-    var view: SearchView?
-    let ref =  Database.database().reference()
+    var view    : SearchView?
+    let ref     =  Database.database().reference()
+    let storage = Storage.storage()
     
     //MARK:- Init
     
@@ -55,14 +56,5 @@ class SearchPresenter {
                 self.view?.loadUsers(users: user)
             })
         }
-
-        
     }
-    
 }
-
-// Load users and append them inside an Array of users
-
-// get all userData
-// if the textField match with a specific charachters the textField should show the users
-

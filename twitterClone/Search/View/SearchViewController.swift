@@ -7,17 +7,20 @@
 
 import UIKit
 import SideMenu
+import Firebase
+
 class SearchViewController: UIViewController {
     //MARK:- Properties
-
-    lazy var presenter                  = SearchPresenter(view: self)
-    var menu                            : SideMenuNavigationController?
     @IBOutlet weak var tableView        : UITableView!
     @IBOutlet weak var searchTxtField   : UITextField!
-    var arrUsers = [TweeterUsers]()     // usernames, emails
-    var filterdUser = [TweeterUsers]()
-    var isWritten = false
-    var selectedUser = TweeterUsers()
+    lazy var presenter                  = SearchPresenter(view: self)
+    var storage         = Storage.storage()
+    var arrUsers        = [TweeterUsers]()
+    var filterdUser     = [TweeterUsers]()
+    var isWritten       = false
+    var selectedUser    = TweeterUsers()
+    var menu : SideMenuNavigationController?
+
     //MARK:- view LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +32,13 @@ class SearchViewController: UIViewController {
         updateSideMenu()
     }
     //MARK:- Methods
-
+    
     
     //MARK:- Actions
-
+    
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
         present(menu!, animated: true)
-
+        
     }
     
     @IBAction func settingsBtn(_ sender: UIBarButtonItem) {
@@ -53,15 +56,14 @@ class SearchViewController: UIViewController {
 //MARK:- Presenter
 
 extension SearchViewController: SearchView {
+    
     func removeUsers() {
         arrUsers.removeAll()
     }
     
-    
     func loadUsers(users: TweeterUsers) {
         arrUsers.append(users)
         tableView.reloadData()
-        print(users.username)
     }
     
     

@@ -23,10 +23,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView        :UITableView!
     @IBOutlet weak var compossAtweet    :UIButton!
     var userInfor =  TweeterUsers()
+    
     //MARK:- App LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateUI()
         profilePhoto.layer.cornerRadius = 0.5 * profilePhoto.bounds.size.width
         profilePhoto.layer.borderWidth = 0.5
         profilePhoto.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
@@ -36,10 +36,8 @@ class ProfileViewController: UIViewController {
         compossAtweet.layer.cornerRadius = 0.5 * compossAtweet.bounds.size.width
         compossAtweet.clipsToBounds = true
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        // do something 
-    }
+    
+    
     //MARK:- Actions
     @IBAction func editBtn(_ sender: Any) {
         // go to edit EditProfileVC
@@ -58,13 +56,6 @@ class ProfileViewController: UIViewController {
         present(vc, animated: true)
     }
     //MARK:- Methods
-    func updateUI() {
-        profilePhoto.layer.borderWidth = 1.0
-        profilePhoto.layer.masksToBounds = false
-        profilePhoto.layer.borderColor = UIColor.white.cgColor
-        profilePhoto.layer.cornerRadius = profilePhoto.frame.size.width/2
-        profilePhoto.clipsToBounds = true
-    }
     func loadInfo() {
         
         print("Load Info of user: \(userInfor.username)")
@@ -75,7 +66,6 @@ class ProfileViewController: UIViewController {
         followers.text      = String(userInfor.followers!)
         following.text      = String(userInfor.following!)
         profilePhoto.kf.setImage(with: URL(string: userInfor.profilePhoto!))
-        
         
     }
 

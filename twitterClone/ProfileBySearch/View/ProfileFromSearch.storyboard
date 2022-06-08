@@ -36,7 +36,7 @@
                                             <action selector="profileBtns:" destination="BSz-EC-CEw" eventType="touchUpInside" id="Pdh-Bc-CBl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7f-20-aKm">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7f-20-aKm">
                                         <rect key="frame" x="45" y="0.0" width="80" height="30"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>

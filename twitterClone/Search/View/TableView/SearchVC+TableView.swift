@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -15,10 +15,19 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchTableViewCell
-
+        
         if filterdUser.count > 0 {
+            let imgURL = filterdUser[indexPath.row].profilePhoto
+            storage.reference(forURL: imgURL!).getData(maxSize: 1 * 1024 * 1024) { (data, _) in
+                guard let safeData = UIImage(data: data!) else {return}
+                cell.imgProfile.image = safeData
+            }
+            
             cell.usernameLbl.text = filterdUser[indexPath.row].username
             cell.imgProfile.image = UIImage(named: "twitterEgg")
+            
+            
+            
         }else {
             cell.textLabel?.text = "write anything in the search bar"
         }
@@ -44,5 +53,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             print(vc.userInformtion)
         }
     }
+    
 }
 
