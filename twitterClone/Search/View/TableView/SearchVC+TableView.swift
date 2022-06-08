@@ -14,11 +14,11 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchTableViewCell
+
         if filterdUser.count > 0 {
-            cell.textLabel?.text = filterdUser[indexPath.row].username
-            cell.imageView?.image = UIImage(named: "twitterEgg")
+            cell.usernameLbl.text = filterdUser[indexPath.row].username
+            cell.imgProfile.image = UIImage(named: "twitterEgg")
         }else {
             cell.textLabel?.text = "write anything in the search bar"
         }
@@ -28,12 +28,21 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let storyBoard  = UIStoryboard(name: "ProfileFromSearch", bundle: nil)
-        let vc          = storyBoard.instantiateViewController(withIdentifier: "ProfFromSearch") as! ProfileFromSearchVC
-        self.present(vc, animated: true)
         
-        print(filterdUser[indexPath.row].email)
+        selectedUser = filterdUser[indexPath.row]
+        performSegue(withIdentifier: "goToProfileSearch", sender: self)
+//     segue ID   goToProfileSearch
     }
     
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToProfileSearch" {
+            print("show Profile search")
+            let vc = ProfileFromSearchVC()
+            vc.userInformtion = selectedUser
+            
+            print(vc.userInformtion)
+        }
+    }
 }
+

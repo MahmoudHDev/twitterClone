@@ -33,12 +33,13 @@ extension TweetDetailsViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        // send the data to other View so u can view the data
+
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension TweetDetailsViewController: TweetDetailsTVCDelegate {
+    
     func showUserData(userInfo: Tweets) {
         let storyBoard = UIStoryboard(name: "UsersProfile", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "showUsersProf") as! UsersProfileViewController

@@ -319,13 +319,16 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="cU2-9K-Afa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="cU2-9K-Afa" customClass="SearchTableViewCell" customModule="twitterClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cU2-9K-Afa" id="CWw-Ib-Pj7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="OKK-PO-htc" kind="show" identifier="goToProfileSearch" id="jqf-pA-z3W"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -592,10 +595,12 @@
         <!--ProfileFromSearch-->
         <scene sceneID="Wib-gw-uC5">
             <objects>
-                <viewControllerPlaceholder storyboardName="ProfileFromSearch" id="OKK-PO-htc" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ProfileFromSearch" id="OKK-PO-htc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SCM-vZ-igi"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQo-Rc-Sbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5766" y="-379"/>
+            <point key="canvasLocation" x="5895" y="-702"/>
         </scene>
         <!--TweetDetails-->
         <scene sceneID="mHH-0y-y5s">

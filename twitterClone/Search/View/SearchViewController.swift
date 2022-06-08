@@ -17,10 +17,12 @@ class SearchViewController: UIViewController {
     var arrUsers = [TweeterUsers]()     // usernames, emails
     var filterdUser = [TweeterUsers]()
     var isWritten = false
+    var selectedUser = TweeterUsers()
     //MARK:- view LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.loadUsers()
+        tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.separatorStyle    = .none
         searchTxtField.delegate     = self
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())

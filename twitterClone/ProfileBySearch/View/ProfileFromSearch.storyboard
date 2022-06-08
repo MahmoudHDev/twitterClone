@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BSz-EC-CEw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uRQ-bI-oyI">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile From SearchVC-->
+        <!--Profile-->
         <scene sceneID="eCh-aE-3YJ">
             <objects>
-                <viewController storyboardIdentifier="ProfFromSearch" id="BSz-EC-CEw" customClass="ProfileFromSearchVC" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BSz-EC-CEw" customClass="ProfileFromSearchVC" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bKX-B8-mfo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,8 +27,36 @@
                         <viewLayoutGuide key="safeArea" id="1yF-1f-wfD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile" id="fEb-Xi-pOl">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="z2M-Cp-6Pq">
+                            <connections>
+                                <action selector="backBtn:" destination="BSz-EC-CEw" id="oh0-sQ-Uir"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBttn" destination="z2M-Cp-6Pq" id="5n7-FT-SkX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JY-6j-nOu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="578.26086956521749" y="161.41304347826087"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gPY-jM-bTL">
+            <objects>
+                <navigationController storyboardIdentifier="ProfFromSearch" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="uRQ-bI-oyI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VyI-Se-B5W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BSz-EC-CEw" kind="relationship" relationship="rootViewController" id="2kY-es-gqe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1m9-OT-n6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-328.98550724637681" y="161.41304347826087"/>
         </scene>
