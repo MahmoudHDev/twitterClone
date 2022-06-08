@@ -327,7 +327,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="OKK-PO-htc" kind="show" identifier="goToProf" trigger="accessoryAction" id="5WW-BY-Kjs"/>
+                                            <segue destination="OKK-PO-htc" kind="presentation" identifier="goToProf" id="Hcf-IH-ZdW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
