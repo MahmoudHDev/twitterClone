@@ -25,6 +25,7 @@
 		1E259C96282DA86E0082033A /* ProfileVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C95282DA86E0082033A /* ProfileVC+TableView.swift */; };
 		1E259C9A282DA8E90082033A /* RootSideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C99282DA8E90082033A /* RootSideMenuPresenter.swift */; };
 		1E26D8C32825AE9900BDC7B5 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26D8C22825AE9900BDC7B5 /* SignUpPresenter.swift */; };
+		1E2F04612851240500ED3FAF /* ProfileBySearch+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2F04602851240500ED3FAF /* ProfileBySearch+TableView.swift */; };
 		1E31F9EA282201D300FB18D6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9E9282201D300FB18D6 /* HomePresenter.swift */; };
 		1E31F9F1282202C700FB18D6 /* NewTweetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9F0282202C700FB18D6 /* NewTweetPresenter.swift */; };
 		1E31F9F92822046C00FB18D6 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */; };
@@ -100,6 +101,7 @@
 		1E259C95282DA86E0082033A /* ProfileVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC+TableView.swift"; sourceTree = "<group>"; };
 		1E259C99282DA8E90082033A /* RootSideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSideMenuPresenter.swift; sourceTree = "<group>"; };
 		1E26D8C22825AE9900BDC7B5 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		1E2F04602851240500ED3FAF /* ProfileBySearch+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileBySearch+TableView.swift"; sourceTree = "<group>"; };
 		1E31F9E9282201D300FB18D6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		1E31F9F0282202C700FB18D6 /* NewTweetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetPresenter.swift; sourceTree = "<group>"; };
 		1E31F9F82822046C00FB18D6 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 			children = (
 				1E9E4BD8284FFF4E001B2C08 /* ProfileFromSearchVC.swift */,
 				1E9E4BDC284FFF60001B2C08 /* ProfileFromSearch.storyboard */,
+				1E2F04602851240500ED3FAF /* ProfileBySearch+TableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -975,6 +978,7 @@
 				1ECBFC7528143F3900ABE9D6 /* MessagesViewController.swift in Sources */,
 				1E6E5063281AE3C00054FEA8 /* Message.swift in Sources */,
 				1EFC73DC2827145A0069A510 /* HomeVC+TableView.swift in Sources */,
+				1E2F04612851240500ED3FAF /* ProfileBySearch+TableView.swift in Sources */,
 				1E7DE1C928130596003CEE5D /* SignUpViewController.swift in Sources */,
 				1ECBFC842814511000ABE9D6 /* SettingsViewController.swift in Sources */,
 				1E259C8A282D89B70082033A /* ChatMessagesPresenter.swift in Sources */,
