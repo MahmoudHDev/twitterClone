@@ -327,7 +327,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="OKK-PO-htc" kind="show" identifier="goToProfileSearch" id="jqf-pA-z3W"/>
+                                            <segue destination="OKK-PO-htc" kind="show" identifier="goToProf" trigger="accessoryAction" id="5WW-BY-Kjs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -595,10 +595,10 @@
         <!--ProfileFromSearch-->
         <scene sceneID="Wib-gw-uC5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQo-Rc-Sbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="ProfileFromSearch" id="OKK-PO-htc" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="SCM-vZ-igi"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zQo-Rc-Sbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5895" y="-702"/>
         </scene>

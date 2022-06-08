@@ -73,10 +73,8 @@ class TweetDetailsTableViewCell: UITableViewCell {
     
     @objc
     func tappedMe(){
-     print("go to user profile")
+     // go to user profile
         delegate?.showUserData(userInfo: profTweetDetails)
-        
-        print(profTweetDetails.time)
         
     }
 }

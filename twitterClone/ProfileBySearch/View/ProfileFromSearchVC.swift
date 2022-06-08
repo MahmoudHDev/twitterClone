@@ -35,6 +35,7 @@ class ProfileFromSearchVC: UIViewController {
         profileImg.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
+        print(userInformtion.email)
         updateUI()
         // Do any additional setup after loading the view.
     }
