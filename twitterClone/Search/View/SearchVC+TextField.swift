@@ -9,6 +9,11 @@ import UIKit
 
 extension SearchViewController: UITextFieldDelegate{
 
+    func assignTheTextField() {
+        searchTxtField.becomeFirstResponder()
+        searchTxtField.delegate     = self
+    }
+    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField.text == "" {
             filterdUser.removeAll()

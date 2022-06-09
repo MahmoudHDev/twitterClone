@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+
 //MARK:- view
 protocol ProfileFromSearchView {
     func loadInfo(img: UIImage)

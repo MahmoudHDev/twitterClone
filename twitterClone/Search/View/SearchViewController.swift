@@ -17,18 +17,17 @@ class SearchViewController: UIViewController {
     var storage         = Storage.storage()
     var arrUsers        = [TweeterUsers]()
     var filterdUser     = [TweeterUsers]()
-    var isWritten       = false
     var selectedUser    = TweeterUsers()
     var menu : SideMenuNavigationController?
 
     //MARK:- view LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter.loadUsers()
         tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.separatorStyle    = .none
-        searchTxtField.delegate     = self
-        menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
+        assignTheTextField()
         updateSideMenu()
     }
     //MARK:- Methods
@@ -47,7 +46,7 @@ class SearchViewController: UIViewController {
     
     func updateSideMenu(){
         menu?.leftSide = true
-        // CHANGE THIS
+        menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
