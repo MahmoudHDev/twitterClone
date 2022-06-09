@@ -19,7 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bru-Qa-gxC" userLabel="TopSection">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="147.33333333333334"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-gY-4m9">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterEgg" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-gY-4m9">
                                         <rect key="frame" x="20" y="67.333333333333329" width="80" height="79.999999999999986"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="IEn-ii-YOB"/>
@@ -67,7 +67,7 @@
                                     <constraint firstAttribute="trailing" secondItem="qK4-En-mcx" secondAttribute="trailing" constant="8" id="uu7-9l-psd"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kym-v3-YKm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Kym-v3-YKm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xy8-9q-qGu">
@@ -245,6 +245,8 @@
     </scenes>
     <resources>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
+        <image name="twitterEgg" width="268" height="268"/>
+        <image name="twitterLogo" width="240" height="240"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
