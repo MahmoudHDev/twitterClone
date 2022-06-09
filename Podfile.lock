@@ -383,6 +383,11 @@ PODS:
   - FirebaseStorage (8.15.0):
     - FirebaseCore (~> 8.0)
     - GTMSessionFetcher/Core (~> 1.5)
+  - FirebaseStorageUI (12.2.0):
+    - FirebaseStorage (< 10.0, >= 8.0)
+    - SDWebImage (~> 5.6)
+  - FirebaseUI/Storage (12.2.0):
+    - FirebaseStorageUI (~> 12.0)
   - GoogleDataTransport (9.1.2):
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
@@ -436,8 +441,10 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
   - SideMenu (6.5.0)
-  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - FaveButton
@@ -445,10 +452,10 @@ DEPENDENCIES:
   - FirebaseAuth
   - FirebaseDatabase
   - FirebaseStorage
+  - FirebaseUI/Storage
   - IQKeyboardManagerSwift
   - Kingfisher
   - SideMenu
-  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -462,6 +469,8 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseStorage
+    - FirebaseStorageUI
+    - FirebaseUI
     - GoogleDataTransport
     - GoogleUtilities
     - "gRPC-C++"
@@ -472,8 +481,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SDWebImage
     - SideMenu
-    - SVProgressHUD
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -486,6 +495,8 @@ SPEC CHECKSUMS:
   FirebaseDatabase: f567afd233e54a303d84423207736590a6feb419
   FirebaseFirestore: 15ae9648476436efed698a909e44c4737498f9b4
   FirebaseStorage: 8019af461599b2c3bc61c6a5dbdfa3d2de66a4d9
+  FirebaseStorageUI: 952bb91b93ae0ee00d0033af011c918606c35d37
+  FirebaseUI: 33ee19f70792fae68bee5cbbbf93733baa2cc7fa
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
@@ -496,9 +507,9 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: f3654abd799d59a92e5d99942233d3cd85d43cd6
+PODFILE CHECKSUM: ab3cf910f7fa58d22c788fa5e7a2852e110e2f26
 
 COCOAPODS: 1.11.2
