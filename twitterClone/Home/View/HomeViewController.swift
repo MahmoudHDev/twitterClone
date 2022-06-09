@@ -49,8 +49,8 @@ class HomeViewController: UIViewController {
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
     func loadTweets() {
-        presenter.readTweets()
-        
+//        presenter.readTweets()
+        presenter.readTweetsQuery()
     }
     
     //MARK:- Actions

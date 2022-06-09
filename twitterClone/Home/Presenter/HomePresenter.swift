@@ -23,6 +23,7 @@ class HomePresenter {
     let db = Firestore.firestore()
     let dbRef = Database.database().reference()
     let storage = Storage.storage()
+    let date = Date()
     var view: HomePresenterView?
     
     //MARK:- Init
@@ -33,12 +34,52 @@ class HomePresenter {
     
     //MARK:- Methods
     func readTweets(){
-        db.collection(K.collections.userTweets).addSnapshotListener { (querySnapshot, err) in
+        let tweetRef = db.collection(K.collections.userTweets)
+        
+        tweetRef.addSnapshotListener { (querySnapshot, err) in
             if let err = err {
                 self.view?.tweetsError(error: err)
                 print("Error has been ocured while fetchin data ")
             }else {
                 if let snapShotDocument = querySnapshot?.documents {
+                    
+                    self.view?.emptyTheArray()
+                    print("done Empty")
+                    for doc in snapShotDocument {
+                        let data = doc.data()
+                        
+                        if let email = data[K.Tweet.email] as? String,
+                           let profilePhoto = data[K.Tweet.profilePhoto] as? String,
+                           let userID       = data["userID"] as? String,
+                           let username = data[K.Tweet.username] as? String,
+                           let times = data[K.Tweet.time] as? Timestamp,
+                           let tweet = data[K.Tweet.tweet]as? String {
+                            let newTime = Timestamp.dateValue(times)
+                            let newTweets = Tweets(time: newTime(), tweet: tweet, email: email, profilePhoto: profilePhoto, username: username, userID: userID)
+//                            self.view?.appendTweets(TwitteContent: newTweets)
+
+                            print("Successfully Fetched and Appended")
+                            
+                        }else{
+                            print("Sorry: Error while retreiving data")
+                        }
+                    }
+                }
+            }
+        }
+    }       // END IF
+
+    
+    func readTweetsQuery(){
+        let tweetRef = db.collection(K.collections.userTweets)
+        
+        tweetRef.whereField("time", isLessThanOrEqualTo: date).getDocuments { (querySnapshot, err) in
+            if let err = err {
+                self.view?.tweetsError(error: err)
+                print("Error has been ocured while fetchin data ")
+            }else {
+                if let snapShotDocument = querySnapshot?.documents {
+                    
                     self.view?.emptyTheArray()
                     print("done Empty")
                     for doc in snapShotDocument {
@@ -64,6 +105,5 @@ class HomePresenter {
             }
         }
     }       // END IF
-
     
 }
