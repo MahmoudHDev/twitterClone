@@ -35,6 +35,10 @@ class MessagesViewController: UIViewController {
     
     @IBAction func writeAMessage(_ sender: UIButton) {
         // Composs a message
+        let storyBoard = UIStoryboard(name: "StartAChat", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "searchForAUser")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func settingsBtn(_ sender: UIBarButtonItem) {

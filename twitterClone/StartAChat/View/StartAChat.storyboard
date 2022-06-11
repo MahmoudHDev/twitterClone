@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ijJ-ie-HmO">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--StartA Chat View Controller-->
+        <scene sceneID="KhC-Cb-I33">
+            <objects>
+                <viewController id="Tni-qu-fsQ" customClass="StartAChatViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uoT-2m-3J3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-Zj-O4M">
+                                <rect key="frame" x="0.0" y="94" width="414" height="642"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="510-DR-U9i" customClass="StartAChatTableViewCell" customModule="twitterClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="510-DR-U9i" id="D7U-Q5-yhG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search for a user.." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MtC-TM-Bad">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6Bw-Bb-Mfw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="riP-2l-Qw4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MtC-TM-Bad" firstAttribute="leading" secondItem="riP-2l-Qw4" secondAttribute="leading" id="ApI-Zc-2so"/>
+                            <constraint firstItem="QB2-Zj-O4M" firstAttribute="bottom" secondItem="riP-2l-Qw4" secondAttribute="bottom" id="M4a-E2-uzJ"/>
+                            <constraint firstItem="QB2-Zj-O4M" firstAttribute="leading" secondItem="riP-2l-Qw4" secondAttribute="leading" id="NyA-kd-HUP"/>
+                            <constraint firstItem="QB2-Zj-O4M" firstAttribute="top" secondItem="MtC-TM-Bad" secondAttribute="bottom" id="WCX-3S-q7l"/>
+                            <constraint firstItem="MtC-TM-Bad" firstAttribute="top" secondItem="riP-2l-Qw4" secondAttribute="top" id="e9z-0Y-5Fp"/>
+                            <constraint firstItem="riP-2l-Qw4" firstAttribute="trailing" secondItem="MtC-TM-Bad" secondAttribute="trailing" id="iat-R3-nf4"/>
+                            <constraint firstItem="QB2-Zj-O4M" firstAttribute="trailing" secondItem="riP-2l-Qw4" secondAttribute="trailing" id="tC5-5B-iNe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="o0F-E8-5xU">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="3td-Ht-2bW">
+                            <connections>
+                                <action selector="backBtn:" destination="Tni-qu-fsQ" id="v9Q-ZJ-sG8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchTextField" destination="MtC-TM-Bad" id="LKU-03-fFL"/>
+                        <outlet property="tableView" destination="QB2-Zj-O4M" id="Urm-Fp-XVk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jce-C9-ino" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007.2463768115942" y="-81.521739130434796"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IZC-2o-UBh">
+            <objects>
+                <navigationController storyboardIdentifier="searchForAUser" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="ijJ-ie-HmO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vxD-Xl-Jc6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tni-qu-fsQ" kind="relationship" relationship="rootViewController" id="IA7-tR-Gnu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGd-G1-W3X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291" y="-82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

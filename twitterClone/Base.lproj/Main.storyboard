@@ -711,6 +711,7 @@
                                             <action selector="writeAMessage:" destination="w5t-qv-CUO" eventType="touchUpInside" id="F5K-uy-9K4"/>
                                             <action selector="writeAMessage:" destination="8ZH-sP-J15" eventType="touchUpInside" id="qek-yU-tIq"/>
                                             <action selector="writeMsg:" destination="w5t-qv-CUO" eventType="touchUpInside" id="Ai3-81-S1c"/>
+                                            <segue destination="ESC-Ri-uAH" kind="show" id="Mlo-rO-26X"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -760,7 +761,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xZ-1T-ZeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5411" y="782"/>
+            <point key="canvasLocation" x="5160" y="766"/>
+        </scene>
+        <!--StartAChat-->
+        <scene sceneID="00h-cQ-M8d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StartAChat" id="ESC-Ri-uAH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6FD-EG-Qiq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8H1-X2-cia" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5142" y="999"/>
         </scene>
         <!--goToProfile-->
         <scene sceneID="Gmg-xH-c95">

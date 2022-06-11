@@ -62,6 +62,10 @@
 		1EC5D4622854BE00004D9661 /* StartAChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5D4612854BE00004D9661 /* StartAChatViewController.swift */; };
 		1EC5D4662854BE9D004D9661 /* StartAChat+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5D4652854BE9D004D9661 /* StartAChat+TableView.swift */; };
 		1EC5D46A2854BF7D004D9661 /* StartAChat+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5D4692854BF7D004D9661 /* StartAChat+TextField.swift */; };
+		1EC5D46E2854C01A004D9661 /* StartAChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5D46C2854C01A004D9661 /* StartAChatTableViewCell.swift */; };
+		1EC5D46F2854C01A004D9661 /* StartAChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EC5D46D2854C01A004D9661 /* StartAChatTableViewCell.xib */; };
+		1EC5D4722854C0D6004D9661 /* StartAChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5D4712854C0D6004D9661 /* StartAChatPresenter.swift */; };
+		1EC5D4752854C270004D9661 /* StartAChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC5D4742854C270004D9661 /* StartAChat.storyboard */; };
 		1ECBFC6D28143CAC00ABE9D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */; };
 		1ECBFC7028143F2000ABE9D6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */; };
 		1ECBFC7328143F2C00ABE9D6 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */; };
@@ -147,6 +151,10 @@
 		1EC5D4612854BE00004D9661 /* StartAChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAChatViewController.swift; sourceTree = "<group>"; };
 		1EC5D4652854BE9D004D9661 /* StartAChat+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartAChat+TableView.swift"; sourceTree = "<group>"; };
 		1EC5D4692854BF7D004D9661 /* StartAChat+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartAChat+TextField.swift"; sourceTree = "<group>"; };
+		1EC5D46C2854C01A004D9661 /* StartAChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAChatTableViewCell.swift; sourceTree = "<group>"; };
+		1EC5D46D2854C01A004D9661 /* StartAChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartAChatTableViewCell.xib; sourceTree = "<group>"; };
+		1EC5D4712854C0D6004D9661 /* StartAChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAChatPresenter.swift; sourceTree = "<group>"; };
+		1EC5D4742854C270004D9661 /* StartAChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartAChat.storyboard; sourceTree = "<group>"; };
 		1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -733,6 +741,7 @@
 		1EC5D45E2854BDC6004D9661 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				1EC5D4712854C0D6004D9661 /* StartAChatPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -743,6 +752,7 @@
 				1EC5D4642854BE81004D9661 /* TableView */,
 				1EC5D4612854BE00004D9661 /* StartAChatViewController.swift */,
 				1EC5D4692854BF7D004D9661 /* StartAChat+TextField.swift */,
+				1EC5D4742854C270004D9661 /* StartAChat.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -758,6 +768,8 @@
 			isa = PBXGroup;
 			children = (
 				1EC5D4652854BE9D004D9661 /* StartAChat+TableView.swift */,
+				1EC5D46C2854C01A004D9661 /* StartAChatTableViewCell.swift */,
+				1EC5D46D2854C01A004D9661 /* StartAChatTableViewCell.xib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -926,6 +938,7 @@
 				1E259C93282D96490082033A /* MessagePopTableViewCell.xib in Resources */,
 				1E7DE1A92812F940003CEE5D /* LaunchScreen.storyboard in Resources */,
 				1EE3778028548E87009D5363 /* UsersProfileTableViewCell.xib in Resources */,
+				1EC5D46F2854C01A004D9661 /* StartAChatTableViewCell.xib in Resources */,
 				1EE4951B282C755100CB9C45 /* Profile.storyboard in Resources */,
 				1E7DE1B22812FA23003CEE5D /* GoogleService-Info.plist in Resources */,
 				1ECC412728306413008B8AA6 /* TweetDetails.storyboard in Resources */,
@@ -939,6 +952,7 @@
 				1E7DE1A42812F93C003CEE5D /* Main.storyboard in Resources */,
 				1EDEED112836207300D1ADCD /* TweetDetailsTableViewCell.xib in Resources */,
 				1EB2F97A28522A2400AA1BF4 /* TweetsProfileTableViewCell.xib in Resources */,
+				1EC5D4752854C270004D9661 /* StartAChat.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,7 +1035,9 @@
 				1E259C96282DA86E0082033A /* ProfileVC+TableView.swift in Sources */,
 				1ED6F5812848FBB800FDEE0C /* editProfile+Picker.swift in Sources */,
 				1EC5D4622854BE00004D9661 /* StartAChatViewController.swift in Sources */,
+				1EC5D46E2854C01A004D9661 /* StartAChatTableViewCell.swift in Sources */,
 				1EEC20DB283A7F6200141CF2 /* TweeterUsers.swift in Sources */,
+				1EC5D4722854C0D6004D9661 /* StartAChatPresenter.swift in Sources */,
 				1E3CC3E3284B798A00A33755 /* UsersProfileViewController.swift in Sources */,
 				1E16028F284D00B40060E0C3 /* SearchVC+TableView.swift in Sources */,
 				1E259C7A282D67420082033A /* EditProfilePresenter.swift in Sources */,
