@@ -59,6 +59,9 @@
 		1E9E4BE22850026D001B2C08 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E4BE02850026D001B2C08 /* SearchTableViewCell.xib */; };
 		1EB2F97928522A2400AA1BF4 /* TweetsProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB2F97728522A2400AA1BF4 /* TweetsProfileTableViewCell.swift */; };
 		1EB2F97A28522A2400AA1BF4 /* TweetsProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB2F97828522A2400AA1BF4 /* TweetsProfileTableViewCell.xib */; };
+		1EC5D4622854BE00004D9661 /* StartAChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5D4612854BE00004D9661 /* StartAChatViewController.swift */; };
+		1EC5D4662854BE9D004D9661 /* StartAChat+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5D4652854BE9D004D9661 /* StartAChat+TableView.swift */; };
+		1EC5D46A2854BF7D004D9661 /* StartAChat+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5D4692854BF7D004D9661 /* StartAChat+TextField.swift */; };
 		1ECBFC6D28143CAC00ABE9D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */; };
 		1ECBFC7028143F2000ABE9D6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */; };
 		1ECBFC7328143F2C00ABE9D6 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */; };
@@ -141,6 +144,9 @@
 		1E9E4BE02850026D001B2C08 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		1EB2F97728522A2400AA1BF4 /* TweetsProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsProfileTableViewCell.swift; sourceTree = "<group>"; };
 		1EB2F97828522A2400AA1BF4 /* TweetsProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetsProfileTableViewCell.xib; sourceTree = "<group>"; };
+		1EC5D4612854BE00004D9661 /* StartAChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAChatViewController.swift; sourceTree = "<group>"; };
+		1EC5D4652854BE9D004D9661 /* StartAChat+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartAChat+TableView.swift"; sourceTree = "<group>"; };
+		1EC5D4692854BF7D004D9661 /* StartAChat+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartAChat+TextField.swift"; sourceTree = "<group>"; };
 		1ECBFC6C28143CAC00ABE9D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1ECBFC6F28143F2000ABE9D6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1ECBFC7228143F2C00ABE9D6 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -645,6 +651,7 @@
 				1EE49513282C74D100CB9C45 /* Profile */,
 				1E259C6D282D660A0082033A /* editProfile */,
 				1E31FA0B2822079500FB18D6 /* Settings */,
+				1EC5D45D2854BDA7004D9661 /* StartAChat */,
 				1E31FA03282206B500FB18D6 /* Messages */,
 				1E259C7C282D882E0082033A /* ChatMessages */,
 				1E31F9F42822042D00FB18D6 /* Search */,
@@ -709,6 +716,48 @@
 				1E259C95282DA86E0082033A /* ProfileVC+TableView.swift */,
 				1EB2F97728522A2400AA1BF4 /* TweetsProfileTableViewCell.swift */,
 				1EB2F97828522A2400AA1BF4 /* TweetsProfileTableViewCell.xib */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		1EC5D45D2854BDA7004D9661 /* StartAChat */ = {
+			isa = PBXGroup;
+			children = (
+				1EC5D4602854BDDB004D9661 /* Model */,
+				1EC5D45F2854BDD0004D9661 /* View */,
+				1EC5D45E2854BDC6004D9661 /* Presenter */,
+			);
+			path = StartAChat;
+			sourceTree = "<group>";
+		};
+		1EC5D45E2854BDC6004D9661 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1EC5D45F2854BDD0004D9661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EC5D4642854BE81004D9661 /* TableView */,
+				1EC5D4612854BE00004D9661 /* StartAChatViewController.swift */,
+				1EC5D4692854BF7D004D9661 /* StartAChat+TextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1EC5D4602854BDDB004D9661 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1EC5D4642854BE81004D9661 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				1EC5D4652854BE9D004D9661 /* StartAChat+TableView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -960,6 +1009,7 @@
 				1E0C2EBA282464E100A2AE10 /* LoginPresenter.swift in Sources */,
 				1E7DE1A12812F93C003CEE5D /* ViewController.swift in Sources */,
 				1ECBFC7028143F2000ABE9D6 /* SearchViewController.swift in Sources */,
+				1EC5D4662854BE9D004D9661 /* StartAChat+TableView.swift in Sources */,
 				1ECBFC6D28143CAC00ABE9D6 /* HomeViewController.swift in Sources */,
 				1E31FA10282207C500FB18D6 /* SettingsPresenter.swift in Sources */,
 				1ECBFC7328143F2C00ABE9D6 /* NotificationsViewController.swift in Sources */,
@@ -970,6 +1020,7 @@
 				1E259C72282D66A20082033A /* EditProfileViewController.swift in Sources */,
 				1E259C96282DA86E0082033A /* ProfileVC+TableView.swift in Sources */,
 				1ED6F5812848FBB800FDEE0C /* editProfile+Picker.swift in Sources */,
+				1EC5D4622854BE00004D9661 /* StartAChatViewController.swift in Sources */,
 				1EEC20DB283A7F6200141CF2 /* TweeterUsers.swift in Sources */,
 				1E3CC3E3284B798A00A33755 /* UsersProfileViewController.swift in Sources */,
 				1E16028F284D00B40060E0C3 /* SearchVC+TableView.swift in Sources */,
@@ -983,6 +1034,7 @@
 				1E24D06E283932A7005DFF28 /* timesAgo.swift in Sources */,
 				1E6E504C281ADC3D0054FEA8 /* Tweets.swift in Sources */,
 				1E6DD0342816E93400673F76 /* TweetTableViewCell.swift in Sources */,
+				1EC5D46A2854BF7D004D9661 /* StartAChat+TextField.swift in Sources */,
 				1E7DE19D2812F93C003CEE5D /* AppDelegate.swift in Sources */,
 				1E31FA012822065B00FB18D6 /* NotificationPresenter.swift in Sources */,
 				1EFC73E0282717C90069A510 /* NewTweet+TextViewDelegate.swift in Sources */,

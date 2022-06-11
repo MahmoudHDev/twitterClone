@@ -14,7 +14,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableViewConfiguration() {
         
-        tableView.register(UINib(nibName: "UsersProfileTableViewCell", bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        tableView.register(UINib(nibName: "TweetsProfileTableViewCell", bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
