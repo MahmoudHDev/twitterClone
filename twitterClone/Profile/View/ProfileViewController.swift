@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import FirebaseStorageUI
+import Firebase
+
 class ProfileViewController: UIViewController {
     //MARK:- Properties
     lazy var presenter = ProfilePresenter(view: self)
@@ -22,8 +23,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var navigateProfile  :UISegmentedControl!
     @IBOutlet weak var tableView        :UITableView!
     @IBOutlet weak var compossAtweet    :UIButton!
+    var ref = Storage.storage()
     var userInfor =  TweeterUsers()
     var userTweets    = [Tweets]()
+    
     //MARK:- App LifeCycle
     
     
@@ -92,7 +95,6 @@ extension ProfileViewController: ProfilePresenterView {
     func errorLoadTweets(error: String) {
         print(error)
     }
-    
     
     func defaultProfile(imageProfile: UIImage) {
         profilePhoto.image = imageProfile

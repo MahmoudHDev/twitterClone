@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class UsersProfileViewController: UIViewController {
     
     //MARK:- Properties
@@ -24,12 +24,17 @@ class UsersProfileViewController: UIViewController {
     @IBOutlet weak var tableView        :UITableView!
     @IBOutlet weak var followBtn        :UIButton!
     @IBOutlet weak var dmBtn            :UIButton!
-    
+    var arrTweets = [Tweets]()
     var tweetInfo = Tweets()
     var user = TweeterUsers()
+    var ref = Storage.storage()
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "UsersProfileTableViewCell", bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         dmBtn.layer.cornerRadius        = 0.5
         followBtn.layer.cornerRadius    = 0.5
         profilePhoto.layer.cornerRadius = 0.5 * profilePhoto.bounds.size.width
@@ -61,18 +66,14 @@ class UsersProfileViewController: UIViewController {
     //MARK:- Methods
 
     func updateUIForUser() {
-        
         username.text       = user.email
         nameOfTheUser.text  = user.username
         joinedDate.text     = user.dateJoined
         following.text      = "\(user.following ?? 0)"
         followers.text      = "\(user.followers ?? 0)"
-
-
     }
     
     func updateUIForMe() {
-
         username.text       = user.email
         nameOfTheUser.text  = user.username
         joinedDate.text     = user.dateJoined
@@ -80,20 +81,32 @@ class UsersProfileViewController: UIViewController {
         followers.text      = "\(user.followers ?? 0)"
         dmBtn.isHidden      = true
         followBtn.isHidden  = true
-
     }
+    
 }
 
 //MARK:- Presenter
 
 extension UsersProfileViewController: UsersProfileView {
+    func errorLoadTweets(error: String) {
+        print("Error has occured: \(error)")
+    }
+    
+    func emptyTheArray() {
+        self.arrTweets.removeAll()
+    }
+    
+    func loadTweets(tweets: Tweets) {
+        arrTweets.append(tweets)
+        tableView.reloadData()
+    }
+    
+    
     func defaultProfile(imageProfile: UIImage) {
         //        coverPhoto
         profilePhoto.image = imageProfile
     }
-    
-    
-    
+
     func myProfileData(info: TweeterUsers) {
         print("myProfile Loaded")
         user = info
@@ -104,9 +117,5 @@ extension UsersProfileViewController: UsersProfileView {
         print("userProfile Loaded")
         user = info
         updateUIForUser()
-
-
     }
-    
-    
 }

@@ -1,17 +1,13 @@
 //
-//  TweetsProfileTableViewCell.swift
+//  UsersProfileTableViewCell.swift
 //  twitterClone
 //
-//  Created by Mahmoud on 6/9/22.
+//  Created by Mahmoud on 6/11/22.
 //
 
 import UIKit
 import FaveButton
-
-class TweetsProfileTableViewCell: UITableViewCell {
-    
-    //MARK:- Properties
-
+class UsersProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var like         : FaveButton!
     @IBOutlet weak var comment      : FaveButton!
     @IBOutlet weak var retweet      : FaveButton!
@@ -21,13 +17,13 @@ class TweetsProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var emain        : UILabel!
     @IBOutlet weak var time         : UILabel!
     @IBOutlet weak var tweetContent : UILabel!
-
-    //MARK:- NIB
-
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-
         profileImg.layer.cornerRadius = 0.5 * profileImg.bounds.size.width
         profileImg.layer.borderWidth = 0.5
         profileImg.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
@@ -39,8 +35,6 @@ class TweetsProfileTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    //MARK:- Action
-
     @IBAction func cellButtons(sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -58,6 +52,4 @@ class TweetsProfileTableViewCell: UITableViewCell {
             print("No Selection")
         }
     }
-    
-    
 }

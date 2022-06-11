@@ -92,10 +92,9 @@ class ProfilePresenter {
     func readTweetsQuery(){
         print("Read tweets Query function")
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        let tweetRef = db.collection(K.collections.userTweets)
-//        .order(by: "time", descending: true)
+        let tweetRef = db.collection(K.collections.userTweets).order(by: "time", descending: false)
         
-        tweetRef.whereField("userID", isEqualTo: userID)
+        tweetRef.whereField("userID", isEqualTo: userID).whereField("time", isLessThanOrEqualTo: date )
             .addSnapshotListener { (querySnapshot, err) in
             if let err = err {
                 self.view?.errorLoadTweets(error: err.localizedDescription)

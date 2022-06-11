@@ -14,6 +14,9 @@ protocol UsersProfileView {
     func myProfileData(info: TweeterUsers)
     func userProfileData(info: TweeterUsers)
     func defaultProfile(imageProfile: UIImage)
+    func errorLoadTweets(error: String)
+    func emptyTheArray()
+    func loadTweets(tweets: Tweets)
 }
 
 //MARK:- Presenter
@@ -22,6 +25,8 @@ class UsersProfilePresenter {
     //MARK:- Properties
     let view: UsersProfileView?
     let storage = Storage.storage()
+    let db = Firestore.firestore()
+    var date = Date()
     //MARK:- initializer
     
     init(view: UsersProfileView) {
@@ -34,12 +39,16 @@ class UsersProfilePresenter {
         guard let userID = Auth.auth().currentUser?.uid else {return}
         if idProf == userID {
             myProfile(myUserID: userID )
+            readTweetsQuery(userID: userID)
         }else{
             // view User's Profile
             userProfile(userIDPro: idProf)
+            readTweetsQuery(userID: idProf)
         }
         
     }
+    
+    // if the profile is for the current user
     
     func myProfile(myUserID :String) {
         var ref: DatabaseReference!
@@ -81,6 +90,7 @@ class UsersProfilePresenter {
         
     }       // myProfile Func
     
+    // if the profile for another user
     func userProfile(userIDPro:String){
         var ref: DatabaseReference!
         ref = Database.database().reference()
@@ -132,7 +142,40 @@ class UsersProfilePresenter {
                 
             }
         }
-        
-
     }
+    func readTweetsQuery(userID: String){
+        print("Read tweets Query function")
+        let tweetRef = db.collection(K.collections.userTweets).order(by: "time", descending: false)
+        
+        tweetRef.whereField("userID", isEqualTo: userID).whereField("time", isLessThanOrEqualTo: date )
+            .addSnapshotListener { (querySnapshot, err) in
+            if let err = err {
+                self.view?.errorLoadTweets(error: err.localizedDescription)
+                print("Error has been ocured while fetchin data ")
+            }else {
+                if let snapShotDocument = querySnapshot?.documents {
+                    self.view?.emptyTheArray()
+                    print("done Empty")
+                    for doc in snapShotDocument {
+                        let data = doc.data()
+                        
+                        if let email = data[K.Tweet.email] as? String,
+                           let profilePhoto = data[K.Tweet.profilePhoto] as? String,
+                           let userID = data["userID"] as? String,
+                           let username = data[K.Tweet.username] as? String,
+                           let times = data[K.Tweet.time] as? Timestamp,
+                           let tweet = data[K.Tweet.tweet]as? String {
+                            let newTime = Timestamp.dateValue(times)
+                            let newTweets = Tweets(time: newTime(), tweet: tweet, email: email, profilePhoto: profilePhoto, username: username, userID: userID)
+                            self.view?.loadTweets(tweets: newTweets)
+                            print("Successfully Fetched and Appended")
+                        }else{
+                            print("Sorry: Error while retreiving data")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
