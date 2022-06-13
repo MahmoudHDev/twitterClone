@@ -15,13 +15,6 @@
 		1E259C72282D66A20082033A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C71282D66A20082033A /* EditProfileViewController.swift */; };
 		1E259C76282D66B80082033A /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E259C75282D66B80082033A /* EditProfile.storyboard */; };
 		1E259C7A282D67420082033A /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C79282D67420082033A /* EditProfilePresenter.swift */; };
-		1E259C81282D88580082033A /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C80282D88580082033A /* Messages.swift */; };
-		1E259C84282D88E60082033A /* ChatMessages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E259C83282D88E60082033A /* ChatMessages.storyboard */; };
-		1E259C87282D89980082033A /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C86282D89980082033A /* ChatMessageViewController.swift */; };
-		1E259C8A282D89B70082033A /* ChatMessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C89282D89B70082033A /* ChatMessagesPresenter.swift */; };
-		1E259C8E282D951D0082033A /* ChatMessages+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C8D282D951D0082033A /* ChatMessages+TableView.swift */; };
-		1E259C92282D96490082033A /* MessagePopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C90282D96490082033A /* MessagePopTableViewCell.swift */; };
-		1E259C93282D96490082033A /* MessagePopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E259C91282D96490082033A /* MessagePopTableViewCell.xib */; };
 		1E259C96282DA86E0082033A /* ProfileVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C95282DA86E0082033A /* ProfileVC+TableView.swift */; };
 		1E259C9A282DA8E90082033A /* RootSideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E259C99282DA8E90082033A /* RootSideMenuPresenter.swift */; };
 		1E26D8C32825AE9900BDC7B5 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26D8C22825AE9900BDC7B5 /* SignUpPresenter.swift */; };
@@ -86,6 +79,8 @@
 		1EE49518282C754500CB9C45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE49517282C754500CB9C45 /* ProfileViewController.swift */; };
 		1EE4951B282C755100CB9C45 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE4951A282C755100CB9C45 /* Profile.storyboard */; };
 		1EE4951E282C75F200CB9C45 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE4951D282C75F200CB9C45 /* ProfilePresenter.swift */; };
+		1EE5CE5F2857A09F0019C95D /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5CE5E2857A09F0019C95D /* Chat.storyboard */; };
+		1EE5CE622857A0C00019C95D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5CE612857A0C00019C95D /* ChatViewController.swift */; };
 		1EEC20DB283A7F6200141CF2 /* TweeterUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEC20DA283A7F6100141CF2 /* TweeterUsers.swift */; };
 		1EFC73DC2827145A0069A510 /* HomeVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC73DB2827145A0069A510 /* HomeVC+TableView.swift */; };
 		1EFC73E0282717C90069A510 /* NewTweet+TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC73DF282717C90069A510 /* NewTweet+TextViewDelegate.swift */; };
@@ -102,13 +97,6 @@
 		1E259C71282D66A20082033A /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E259C75282D66B80082033A /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		1E259C79282D67420082033A /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
-		1E259C80282D88580082033A /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
-		1E259C83282D88E60082033A /* ChatMessages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatMessages.storyboard; sourceTree = "<group>"; };
-		1E259C86282D89980082033A /* ChatMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
-		1E259C89282D89B70082033A /* ChatMessagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesPresenter.swift; sourceTree = "<group>"; };
-		1E259C8D282D951D0082033A /* ChatMessages+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessages+TableView.swift"; sourceTree = "<group>"; };
-		1E259C90282D96490082033A /* MessagePopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePopTableViewCell.swift; sourceTree = "<group>"; };
-		1E259C91282D96490082033A /* MessagePopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagePopTableViewCell.xib; sourceTree = "<group>"; };
 		1E259C95282DA86E0082033A /* ProfileVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileVC+TableView.swift"; sourceTree = "<group>"; };
 		1E259C99282DA8E90082033A /* RootSideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSideMenuPresenter.swift; sourceTree = "<group>"; };
 		1E26D8C22825AE9900BDC7B5 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
@@ -175,6 +163,8 @@
 		1EE49517282C754500CB9C45 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1EE4951A282C755100CB9C45 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1EE4951D282C75F200CB9C45 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		1EE5CE5E2857A09F0019C95D /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		1EE5CE612857A0C00019C95D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1EEC20DA283A7F6100141CF2 /* TweeterUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweeterUsers.swift; sourceTree = "<group>"; };
 		1EFC73DB2827145A0069A510 /* HomeVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+TableView.swift"; sourceTree = "<group>"; };
 		1EFC73DF282717C90069A510 /* NewTweet+TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewTweet+TextViewDelegate.swift"; sourceTree = "<group>"; };
@@ -252,50 +242,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1E259C7C282D882E0082033A /* ChatMessages */ = {
+		1E2851A12857993C00BE169E /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				1E259C7F282D88460082033A /* Model */,
-				1E259C7E282D88420082033A /* View */,
-				1E259C7D282D883A0082033A /* Presenter */,
+				1EE5CE5C2857A07E0019C95D /* Model */,
+				1EE5CE5B2857A0780019C95D /* View */,
+				1EE5CE5A2857A0710019C95D /* Prsenter */,
 			);
-			path = ChatMessages;
-			sourceTree = "<group>";
-		};
-		1E259C7D282D883A0082033A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				1E259C89282D89B70082033A /* ChatMessagesPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		1E259C7E282D88420082033A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1E259C8C282D94DF0082033A /* TableView */,
-				1E259C83282D88E60082033A /* ChatMessages.storyboard */,
-				1E259C86282D89980082033A /* ChatMessageViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		1E259C7F282D88460082033A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1E259C80282D88580082033A /* Messages.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1E259C8C282D94DF0082033A /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				1E259C8D282D951D0082033A /* ChatMessages+TableView.swift */,
-				1E259C90282D96490082033A /* MessagePopTableViewCell.swift */,
-				1E259C91282D96490082033A /* MessagePopTableViewCell.xib */,
-			);
-			path = TableView;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		1E31F9DA2821F11D00FB18D6 /* login */ = {
@@ -660,8 +614,8 @@
 				1E259C6D282D660A0082033A /* editProfile */,
 				1E31FA0B2822079500FB18D6 /* Settings */,
 				1EC5D45D2854BDA7004D9661 /* StartAChat */,
+				1E2851A12857993C00BE169E /* Chat */,
 				1E31FA03282206B500FB18D6 /* Messages */,
-				1E259C7C282D882E0082033A /* ChatMessages */,
 				1E31F9F42822042D00FB18D6 /* Search */,
 				1E9E4BD4284FFEFD001B2C08 /* ProfileBySearch */,
 				1E31F9FC2822060300FB18D6 /* Notification */,
@@ -848,6 +802,29 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1EE5CE5A2857A0710019C95D /* Prsenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Prsenter;
+			sourceTree = "<group>";
+		};
+		1EE5CE5B2857A0780019C95D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EE5CE5E2857A09F0019C95D /* Chat.storyboard */,
+				1EE5CE612857A0C00019C95D /* ChatViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1EE5CE5C2857A07E0019C95D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1EFC73DE282717740069A510 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -935,7 +912,6 @@
 			files = (
 				1E6DD0352816E93400673F76 /* TweetTableViewCell.xib in Resources */,
 				1E9E4BE22850026D001B2C08 /* SearchTableViewCell.xib in Resources */,
-				1E259C93282D96490082033A /* MessagePopTableViewCell.xib in Resources */,
 				1E7DE1A92812F940003CEE5D /* LaunchScreen.storyboard in Resources */,
 				1EE3778028548E87009D5363 /* UsersProfileTableViewCell.xib in Resources */,
 				1EC5D46F2854C01A004D9661 /* StartAChatTableViewCell.xib in Resources */,
@@ -947,8 +923,8 @@
 				1E9E4BDD284FFF60001B2C08 /* ProfileFromSearch.storyboard in Resources */,
 				1E7DE1A62812F940003CEE5D /* Assets.xcassets in Resources */,
 				1E259C76282D66B80082033A /* EditProfile.storyboard in Resources */,
+				1EE5CE5F2857A09F0019C95D /* Chat.storyboard in Resources */,
 				1EE49511282C73D500CB9C45 /* CreateATweet.storyboard in Resources */,
-				1E259C84282D88E60082033A /* ChatMessages.storyboard in Resources */,
 				1E7DE1A42812F93C003CEE5D /* Main.storyboard in Resources */,
 				1EDEED112836207300D1ADCD /* TweetDetailsTableViewCell.xib in Resources */,
 				1EB2F97A28522A2400AA1BF4 /* TweetsProfileTableViewCell.xib in Resources */,
@@ -1013,15 +989,14 @@
 				1E31F9F92822046C00FB18D6 /* SearchPresenter.swift in Sources */,
 				1ECC412128305CB2008B8AA6 /* TweetDetailsPresenter.swift in Sources */,
 				1E259C9A282DA8E90082033A /* RootSideMenuPresenter.swift in Sources */,
-				1E259C8E282D951D0082033A /* ChatMessages+TableView.swift in Sources */,
 				1E9E4BE12850026D001B2C08 /* SearchTableViewCell.swift in Sources */,
 				1EE4951E282C75F200CB9C45 /* ProfilePresenter.swift in Sources */,
-				1E259C81282D88580082033A /* Messages.swift in Sources */,
 				1E3CC3EA284B7A4D00A33755 /* UsersProfilePresenter.swift in Sources */,
 				1EDEED0C28361FF700D1ADCD /* TweetDetailsVC+TableView.swift in Sources */,
 				1E694318281847DC00894579 /* CreateATweetViewController.swift in Sources */,
 				1E0C2EBA282464E100A2AE10 /* LoginPresenter.swift in Sources */,
 				1E7DE1A12812F93C003CEE5D /* ViewController.swift in Sources */,
+				1EE5CE622857A0C00019C95D /* ChatViewController.swift in Sources */,
 				1ECBFC7028143F2000ABE9D6 /* SearchViewController.swift in Sources */,
 				1EC5D4662854BE9D004D9661 /* StartAChat+TableView.swift in Sources */,
 				1ECBFC6D28143CAC00ABE9D6 /* HomeViewController.swift in Sources */,
@@ -1043,7 +1018,6 @@
 				1E259C7A282D67420082033A /* EditProfilePresenter.swift in Sources */,
 				1E3CC3EE284B956600A33755 /* UsersProfileVC+TableView.swift in Sources */,
 				1EDEED102836207300D1ADCD /* TweetDetailsTableViewCell.swift in Sources */,
-				1E259C87282D89980082033A /* ChatMessageViewController.swift in Sources */,
 				1E31F9F1282202C700FB18D6 /* NewTweetPresenter.swift in Sources */,
 				1E160292284D01CD0060E0C3 /* SearchVC+TextField.swift in Sources */,
 				1EFF1F9C28508E1600F18BBE /* ProfileBySearchPresenter.swift in Sources */,
@@ -1055,7 +1029,6 @@
 				1E31FA012822065B00FB18D6 /* NotificationPresenter.swift in Sources */,
 				1EFC73E0282717C90069A510 /* NewTweet+TextViewDelegate.swift in Sources */,
 				1E31F9EA282201D300FB18D6 /* HomePresenter.swift in Sources */,
-				1E259C92282D96490082033A /* MessagePopTableViewCell.swift in Sources */,
 				1EB2F97928522A2400AA1BF4 /* TweetsProfileTableViewCell.swift in Sources */,
 				1E7DE19F2812F93C003CEE5D /* SceneDelegate.swift in Sources */,
 				1ECBFC7528143F3900ABE9D6 /* MessagesViewController.swift in Sources */,
@@ -1064,7 +1037,6 @@
 				1E2F04612851240500ED3FAF /* ProfileBySearch+TableView.swift in Sources */,
 				1E7DE1C928130596003CEE5D /* SignUpViewController.swift in Sources */,
 				1ECBFC842814511000ABE9D6 /* SettingsViewController.swift in Sources */,
-				1E259C8A282D89B70082033A /* ChatMessagesPresenter.swift in Sources */,
 				1ECC412428305D71008B8AA6 /* TweetDetailsViewController.swift in Sources */,
 				1EE3777F28548E87009D5363 /* UsersProfileTableViewCell.swift in Sources */,
 				1E3FB45228269FBF007343D9 /* Constants.swift in Sources */,

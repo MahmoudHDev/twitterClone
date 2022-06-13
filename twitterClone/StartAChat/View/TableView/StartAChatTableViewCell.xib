@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,11 +28,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSV-9r-8Nz">
-                                <rect key="frame" x="70" y="0.0" width="230" height="60"/>
+                                <rect key="frame" x="70" y="0.0" width="93.5" height="60"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-fg-7bh" userLabel="greenView">
+                                <rect key="frame" x="173.5" y="0.0" width="126.5" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -44,6 +49,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="greenView" destination="TCJ-fg-7bh" id="dUH-9S-eAp"/>
                 <outlet property="imgProfile" destination="KdE-gg-yQU" id="j9n-98-lqC"/>
                 <outlet property="usernameLbl" destination="NSV-9r-8Nz" id="lwd-8b-XUi"/>
             </connections>
@@ -52,5 +58,8 @@
     </objects>
     <resources>
         <image name="twitterEgg" width="268" height="268"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

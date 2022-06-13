@@ -590,7 +590,7 @@
                 <viewControllerPlaceholder storyboardName="CreateATweet" referencedIdentifier="goToNewTweet" id="UPY-IV-abQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1I-Ac-cmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5765" y="-414"/>
+            <point key="canvasLocation" x="5768" y="-450"/>
         </scene>
         <!--ProfileFromSearch-->
         <scene sceneID="Wib-gw-uC5">
@@ -610,7 +610,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBR-Qt-y3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5190" y="-80"/>
+            <point key="canvasLocation" x="4998" y="-104"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="Oq5-pX-GQy">
@@ -753,10 +753,10 @@
             </objects>
             <point key="canvasLocation" x="4569" y="782"/>
         </scene>
-        <!--ChatMessages-->
+        <!--chatID-->
         <scene sceneID="Ehr-BN-UwT">
             <objects>
-                <viewControllerPlaceholder storyboardName="ChatMessages" id="GqL-Y9-BCX" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Chat" referencedIdentifier="chatID" id="GqL-Y9-BCX" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="28v-7V-c4e"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xZ-1T-ZeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -779,7 +779,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="goToProfile" id="yGX-a7-3dN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUV-zr-wSG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5766" y="-519"/>
+            <point key="canvasLocation" x="5769" y="-554"/>
         </scene>
         <!--goToEditProfile-->
         <scene sceneID="2tG-YA-ZKS">
@@ -787,7 +787,7 @@
                 <viewControllerPlaceholder storyboardName="EditProfile" referencedIdentifier="goToEditProfile" id="SJM-y6-L50" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNw-Yd-lD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5765" y="-486"/>
+            <point key="canvasLocation" x="5768" y="-522"/>
         </scene>
         <!--goToSettings-->
         <scene sceneID="mWe-W9-FYX">
@@ -795,7 +795,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="goToSettings" id="Br3-u4-0pz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35R-t0-R6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5765" y="-452"/>
+            <point key="canvasLocation" x="5768" y="-488"/>
         </scene>
     </scenes>
     <resources>

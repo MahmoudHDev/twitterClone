@@ -7,15 +7,16 @@
 
 import UIKit
 import Firebase
+
+
 extension StartAChatViewController: UITableViewDelegate, UITableViewDataSource {
-    
     
     func tableViewConfig() {
         tableView.register(UINib(nibName: "StartAChatTableViewCell", bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filterdUser.count
@@ -30,25 +31,18 @@ extension StartAChatViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.imgProfile.image = safeData
                 }
             }
-            
             cell.usernameLbl.text = filterdUser[indexPath.row].username
             cell.imgProfile.image = UIImage(named: "twitterEgg")
-            
         }
         
         print(filterdUser[indexPath.row].email ?? "" )
-
-        // Reg a NIB , Cast it
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        // segue ,, and don't forget about the sequence
-        
+        selectedUser = filterdUser[indexPath.row]
+        let storyB = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID")
+        self.navigationController?.pushViewController(storyB, animated: true)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // segue to pass the data
-    }
+
 }

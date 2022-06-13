@@ -7,18 +7,25 @@
 
 import UIKit
 import Firebase
+import CLTypingLabel
+
 class StartAChatViewController: UIViewController {
     
     //MARK:- Properties
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTextField  : UITextField!
+    @IBOutlet weak var tableView        : UITableView!
+    @IBOutlet weak var lblInView        : CLTypingLabel!
+    @IBOutlet weak var loadingView      : UIView!
     var storage         = Storage.storage()
-    var filterdUser = [TweeterUsers]()
-    var arrUsers = [TweeterUsers]()
+    var filterdUser     = [TweeterUsers]()
+    var arrUsers        = [TweeterUsers]()
+    var selectedUser    = TweeterUsers()
     //MARK:- View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblInView.text = "Start write a username..."
+        lblInView.charInterval = 0.1
         let presenter = StartAChatPresenter(view: self)
         presenter.loadUsers()
         assignTheTextField()
@@ -40,7 +47,6 @@ extension StartAChatViewController: StartAChatView {
         arrUsers.append(users)
         
     }
-    
     
     func loadSuccessfully() {
         print("loaded Successfully")

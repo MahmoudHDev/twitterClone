@@ -16,4 +16,5 @@ target 'twitterClone' do
   pod 'FaveButton'
   pod 'IQKeyboardManagerSwift'
   pod 'Kingfisher'
+  pod 'CLTypingLabel'
 end

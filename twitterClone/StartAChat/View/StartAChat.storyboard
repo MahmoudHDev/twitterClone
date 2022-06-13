@@ -38,16 +38,45 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-Ut-SqM">
+                                <rect key="frame" x="0.0" y="94" width="414" height="642"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search For Someone ..🔍" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWO-un-a4f" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                        <rect key="frame" x="10" y="10" width="394" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="HcK-Xm-Nfd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="charInterval">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wWO-un-a4f" firstAttribute="top" secondItem="Hdp-Ut-SqM" secondAttribute="top" constant="10" id="0F9-UL-0Nl"/>
+                                    <constraint firstAttribute="trailing" secondItem="wWO-un-a4f" secondAttribute="trailing" constant="10" id="Aee-oR-u6h"/>
+                                    <constraint firstItem="wWO-un-a4f" firstAttribute="leading" secondItem="Hdp-Ut-SqM" secondAttribute="leading" constant="10" id="K2M-5Y-HbN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="riP-2l-Qw4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MtC-TM-Bad" firstAttribute="leading" secondItem="riP-2l-Qw4" secondAttribute="leading" id="ApI-Zc-2so"/>
                             <constraint firstItem="QB2-Zj-O4M" firstAttribute="bottom" secondItem="riP-2l-Qw4" secondAttribute="bottom" id="M4a-E2-uzJ"/>
+                            <constraint firstItem="Hdp-Ut-SqM" firstAttribute="leading" secondItem="riP-2l-Qw4" secondAttribute="leading" id="MKT-cA-Dye"/>
                             <constraint firstItem="QB2-Zj-O4M" firstAttribute="leading" secondItem="riP-2l-Qw4" secondAttribute="leading" id="NyA-kd-HUP"/>
                             <constraint firstItem="QB2-Zj-O4M" firstAttribute="top" secondItem="MtC-TM-Bad" secondAttribute="bottom" id="WCX-3S-q7l"/>
+                            <constraint firstItem="riP-2l-Qw4" firstAttribute="trailing" secondItem="Hdp-Ut-SqM" secondAttribute="trailing" id="bNE-oD-BTt"/>
                             <constraint firstItem="MtC-TM-Bad" firstAttribute="top" secondItem="riP-2l-Qw4" secondAttribute="top" id="e9z-0Y-5Fp"/>
+                            <constraint firstItem="Hdp-Ut-SqM" firstAttribute="top" secondItem="MtC-TM-Bad" secondAttribute="bottom" id="eqk-QC-ifC"/>
                             <constraint firstItem="riP-2l-Qw4" firstAttribute="trailing" secondItem="MtC-TM-Bad" secondAttribute="trailing" id="iat-R3-nf4"/>
+                            <constraint firstItem="riP-2l-Qw4" firstAttribute="bottom" secondItem="Hdp-Ut-SqM" secondAttribute="bottom" id="sqq-fg-paf"/>
                             <constraint firstItem="QB2-Zj-O4M" firstAttribute="trailing" secondItem="riP-2l-Qw4" secondAttribute="trailing" id="tC5-5B-iNe"/>
                         </constraints>
                     </view>
@@ -59,6 +88,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lblInView" destination="wWO-un-a4f" id="dOa-PM-vCN"/>
+                        <outlet property="loadingView" destination="Hdp-Ut-SqM" id="JfV-kg-D4l"/>
                         <outlet property="searchTextField" destination="MtC-TM-Bad" id="LKU-03-fFL"/>
                         <outlet property="tableView" destination="QB2-Zj-O4M" id="Urm-Fp-XVk"/>
                     </connections>
@@ -86,6 +117,9 @@
             <point key="canvasLocation" x="291" y="-82"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="wWO-un-a4f"/>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
