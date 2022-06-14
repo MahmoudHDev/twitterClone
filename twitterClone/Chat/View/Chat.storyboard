@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1pQ-zz-aHK">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -11,7 +11,7 @@
         <!--Chat View Controller-->
         <scene sceneID="SHY-A2-Ti9">
             <objects>
-                <viewController storyboardIdentifier="chatID" id="1pQ-zz-aHK" customClass="ChatViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatID" modalPresentationStyle="fullScreen" id="1pQ-zz-aHK" customClass="ChatViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZg-c5-amG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,12 +67,12 @@
                         <viewLayoutGuide key="safeArea" id="xx8-hl-0Ob"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="frf-Ry-pPM" firstAttribute="top" secondItem="xx8-hl-0Ob" secondAttribute="top" id="1Al-Z4-3Xc"/>
+                            <constraint firstItem="frf-Ry-pPM" firstAttribute="trailing" secondItem="xx8-hl-0Ob" secondAttribute="trailing" id="A7l-a3-zyw"/>
                             <constraint firstItem="sH9-a8-cEr" firstAttribute="leading" secondItem="xx8-hl-0Ob" secondAttribute="leading" id="AuZ-ME-Sau"/>
-                            <constraint firstItem="xx8-hl-0Ob" firstAttribute="trailing" secondItem="frf-Ry-pPM" secondAttribute="trailing" id="F2r-CM-qpC"/>
+                            <constraint firstItem="frf-Ry-pPM" firstAttribute="top" secondItem="xx8-hl-0Ob" secondAttribute="top" id="JoE-rY-VhS"/>
                             <constraint firstItem="sH9-a8-cEr" firstAttribute="trailing" secondItem="xx8-hl-0Ob" secondAttribute="trailing" id="cDj-gL-TiS"/>
-                            <constraint firstItem="sH9-a8-cEr" firstAttribute="top" secondItem="frf-Ry-pPM" secondAttribute="bottom" id="mdy-hK-4TK"/>
-                            <constraint firstItem="frf-Ry-pPM" firstAttribute="leading" secondItem="xx8-hl-0Ob" secondAttribute="leading" id="ndU-LX-vKe"/>
+                            <constraint firstItem="frf-Ry-pPM" firstAttribute="leading" secondItem="xx8-hl-0Ob" secondAttribute="leading" id="xP6-YP-Z8O"/>
+                            <constraint firstItem="sH9-a8-cEr" firstAttribute="top" secondItem="frf-Ry-pPM" secondAttribute="bottom" id="zEb-cc-72B"/>
                             <constraint firstItem="sH9-a8-cEr" firstAttribute="bottom" secondItem="xx8-hl-0Ob" secondAttribute="bottom" id="zhr-NU-bpe"/>
                         </constraints>
                     </view>

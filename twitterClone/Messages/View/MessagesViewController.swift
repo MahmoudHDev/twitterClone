@@ -56,7 +56,7 @@ class MessagesViewController: UIViewController {
 
 //MARK:- UITableView dataSource
 
-extension MessagesViewController: UITableViewDataSource {
+extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -66,5 +66,13 @@ extension MessagesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID") as! ChatViewController
+        self.navigationController?.pushViewController(storyBoard, animated: true)
+        print("go to chat")
+        
+    }
+    
     
 }
