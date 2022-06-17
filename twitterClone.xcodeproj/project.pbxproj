@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E0BF629283BB5DF00A4B706 /* newTweet+PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BF628283BB5DF00A4B706 /* newTweet+PickerController.swift */; };
 		1E0C2EBA282464E100A2AE10 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */; };
+		1E1579DF2858C0DD0016F6EA /* ChatVC+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1579DE2858C0DD0016F6EA /* ChatVC+TextField.swift */; };
 		1E16028F284D00B40060E0C3 /* SearchVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16028E284D00B40060E0C3 /* SearchVC+TableView.swift */; };
 		1E160292284D01CD0060E0C3 /* SearchVC+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E160291284D01CD0060E0C3 /* SearchVC+TextField.swift */; };
 		1E24D06E283932A7005DFF28 /* timesAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E24D06D283932A7005DFF28 /* timesAgo.swift */; };
@@ -95,6 +96,7 @@
 /* Begin PBXFileReference section */
 		1E0BF628283BB5DF00A4B706 /* newTweet+PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "newTweet+PickerController.swift"; sourceTree = "<group>"; };
 		1E0C2EB9282464E100A2AE10 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		1E1579DE2858C0DD0016F6EA /* ChatVC+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC+TextField.swift"; sourceTree = "<group>"; };
 		1E16028E284D00B40060E0C3 /* SearchVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+TableView.swift"; sourceTree = "<group>"; };
 		1E160291284D01CD0060E0C3 /* SearchVC+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+TextField.swift"; sourceTree = "<group>"; };
 		1E24D06D283932A7005DFF28 /* timesAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timesAgo.swift; sourceTree = "<group>"; };
@@ -213,6 +215,17 @@
 				1E3FB48A2826A4EE007343D9 /* LoginVC+TextFieldDelegate.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1E1579DC2858C0900016F6EA /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				1EE5CE682857A7BF0019C95D /* Chat+TableView.swift */,
+				1EE5CE6B2857A86B0019C95D /* ChatTableViewCell.swift */,
+				1EE5CE6C2857A86B0019C95D /* ChatTableViewCell.xib */,
+				1E1579DE2858C0DD0016F6EA /* ChatVC+TextField.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		1E259C6D282D660A0082033A /* editProfile */ = {
@@ -422,17 +435,8 @@
 			children = (
 				1E31FA06282206D900FB18D6 /* Presenter */,
 				1E31FA05282206D400FB18D6 /* View */,
-				1E31FA04282206CD00FB18D6 /* Model */,
 			);
 			path = Messages;
-			sourceTree = "<group>";
-		};
-		1E31FA04282206CD00FB18D6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1E6E5062281AE3C00054FEA8 /* Message.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1E31FA05282206D400FB18D6 /* View */ = {
@@ -821,11 +825,9 @@
 		1EE5CE5B2857A0780019C95D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1E1579DC2858C0900016F6EA /* TableView */,
 				1EE5CE5E2857A09F0019C95D /* Chat.storyboard */,
 				1EE5CE612857A0C00019C95D /* ChatViewController.swift */,
-				1EE5CE682857A7BF0019C95D /* Chat+TableView.swift */,
-				1EE5CE6B2857A86B0019C95D /* ChatTableViewCell.swift */,
-				1EE5CE6C2857A86B0019C95D /* ChatTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -833,6 +835,7 @@
 		1EE5CE5C2857A07E0019C95D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1E6E5062281AE3C00054FEA8 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -994,6 +997,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1579DF2858C0DD0016F6EA /* ChatVC+TextField.swift in Sources */,
 				1E0BF629283BB5DF00A4B706 /* newTweet+PickerController.swift in Sources */,
 				1E7DE1C62813058A003CEE5D /* LoginViewController.swift in Sources */,
 				1E26D8C32825AE9900BDC7B5 /* SignUpPresenter.swift in Sources */,

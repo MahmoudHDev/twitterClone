@@ -41,7 +41,8 @@ extension StartAChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedUser = filterdUser[indexPath.row]
-        let storyB = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID")
+        let storyB = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID") as! ChatViewController
+        storyB.messageReciver = selectedUser
         self.navigationController?.pushViewController(storyB, animated: true)
     }
 

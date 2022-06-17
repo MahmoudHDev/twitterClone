@@ -41,12 +41,13 @@ struct K {
         static let time             = "time"
     }
     
-    
-    struct BrandColors{
-        static let blueColor        = "BrandPurple"
-        static let lghtPurple       = "BrandLightPurple"
-        static let blue             = "BrandLightBlue"
+    struct FStore {
+        static let collectionMsgName = "messages"
+        static let senderName        = "senderName"
+        static let senderID          = "senderID"
+        static let date              = "time"
+        static let messageContent    = "messageContent"
+        static let receiverID        = "receiverID"
         
     }
-
 }

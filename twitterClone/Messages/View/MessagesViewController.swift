@@ -37,8 +37,7 @@ class MessagesViewController: UIViewController {
         // Composs a message
         let storyBoard = UIStoryboard(name: "StartAChat", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "searchForAUser")
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func settingsBtn(_ sender: UIBarButtonItem) {
@@ -59,11 +58,14 @@ class MessagesViewController: UIViewController {
 extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessagesTableViewCell
+        cell.senderUsername.text = "Chris Pratt"
+        cell.senderMessage.text  = "Hi, There!"
+        
         return cell
     }
     

@@ -34,6 +34,9 @@
                                                 <state key="normal" image="arrow.up.square" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sendPressed:" destination="1pQ-zz-aHK" eventType="touchUpInside" id="dWd-EE-SJ9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -77,6 +80,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="messageTextfield" destination="RzF-He-IZ7" id="w1T-Cv-KQZ"/>
+                        <outlet property="sendBtn" destination="zrX-ul-Ld0" id="6JW-al-6uI"/>
                         <outlet property="tableView" destination="frf-Ry-pPM" id="Eol-nS-yRG"/>
                     </connections>
                 </viewController>
