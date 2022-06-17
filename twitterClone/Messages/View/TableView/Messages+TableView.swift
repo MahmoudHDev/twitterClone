@@ -12,20 +12,20 @@ import UIKit
 extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mssgs.count
+        return loadedUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessagesTableViewCell
-        if mssgs.count < 0 {
-            cell.senderMessage.text = "No Messages Yet"
-        }else {
+        if loadedUsers.count > 0 {
             let messages = mssgs[indexPath.row]
-            cell.senderUsername.text = messages.receiverID
+            let users    = loadedUsers[indexPath.row]
+            cell.senderUsername.text = users.username ?? ""
             cell.senderMessage.text  = messages.messageContent
-        }
+        }else {
+            cell.senderMessage.text = "No Messages Yet"
 
-        
+        }        
         return cell
     }
     

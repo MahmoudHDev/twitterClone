@@ -73,9 +73,12 @@ class HomeViewController: UIViewController {
 
 //MARK:- Presenter
 extension HomeViewController: HomePresenterView  {
+    
     func emptyUsersArr() {
+        
         tweeterUsers = []
     }
+    
     func emptyTheArray() {
         //Empty the Array
         arrTweets = []
