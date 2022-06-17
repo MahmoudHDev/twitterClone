@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 //MARK:- UITableView dataSource
 
@@ -22,9 +23,17 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
             let users    = loadedUsers[indexPath.row]
             cell.senderUsername.text = users.username ?? ""
             cell.senderMessage.text  = messages.messageContent
+            if let imageURL = users.profilePhoto {
+                let db = Storage.storage()
+                db.reference(forURL: imageURL).getData(maxSize: 1 * 1024 * 1024) { (data, _) in
+                    guard let safeData = UIImage(data: data!) else { return}
+                    cell.senderImage.image = safeData
+                }
+            }
+            
         }else {
             cell.senderMessage.text = "No Messages Yet"
-
+            
         }        
         return cell
     }
@@ -35,10 +44,5 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
         print("go to chat")
         
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 72
-//    }
-    
-    
+
 }
