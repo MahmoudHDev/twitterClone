@@ -7,25 +7,39 @@
 
 import UIKit
 import SideMenu
+
+
 class MessagesViewController: UIViewController {
     //MARK:- Properties
     @IBOutlet weak var tableView    : UITableView!
     @IBOutlet weak var writeMssgBtn : UIButton!
     var menu                        : SideMenuNavigationController?
-
+    var presenter                   : MessagesPresenter?
+    var mssgs = [MessagesInfo]()
     //MARK:- view LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = MessagesPresenter(view: self)
+        presenter?.loadMessages()
         tableView.separatorStyle = .none
         menu = SideMenuNavigationController(rootViewController: RootSideMenuTVC())
         updateSideMenu()
+        updateUI()
+    }
+
+    //MARK:- Functions
+    
+    func updateSideMenu(){
+        menu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+    }
+    
+    private func updateUI() {
         writeMssgBtn.layer.cornerRadius = 0.5 * writeMssgBtn.bounds.size.width
         writeMssgBtn.layer.borderWidth = 0.5
         writeMssgBtn.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     }
-
-    //MARK:- Methods
-
     
     //MARK:- Actions
     @IBAction func sideMenuBtn(_ sender: UIBarButtonItem) {
@@ -44,37 +58,19 @@ class MessagesViewController: UIViewController {
         // Present the settings
         
     }
-    
-    func updateSideMenu(){
-        menu?.leftSide = true
-        SideMenuManager.default.leftMenuNavigationController = menu
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-    }
+
     
 }
 
-//MARK:- UITableView dataSource
+//MARK:- Presenter
 
-extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
+extension MessagesViewController: MessagesView {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+    func messagesLoaded(messages: MessagesInfo) {
+        mssgs.append(messages)
+        tableView.reloadData()
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessagesTableViewCell
-        cell.senderUsername.text = "Chris Pratt"
-        cell.senderMessage.text  = "Hi, There!"
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID") as! ChatViewController
-        self.navigationController?.pushViewController(storyBoard, animated: true)
-        print("go to chat")
-        
-    }
+
     
     
 }

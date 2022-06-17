@@ -700,12 +700,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Messages" id="35X-VW-iqM">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="ZR5-tp-nAN">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="person.circle" catalog="system" id="ZR5-tp-nAN">
                             <connections>
                                 <action selector="sideMenuBtn:" destination="8ZH-sP-J15" id="pWE-F8-geo"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="bqr-pR-ovM">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="bqr-pR-ovM">
                             <connections>
                                 <action selector="settingsBtn:" destination="8ZH-sP-J15" id="Eux-Oi-a1u"/>
                             </connections>
