@@ -8,6 +8,11 @@
 import UIKit
 
 extension ChatViewController: UITextFieldDelegate {
+   
+    func textFieldConfig() {
+        messageTextfield.delegate = self
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if  messageTextfield.text != "" {
             let date = Date()

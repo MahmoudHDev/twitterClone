@@ -15,8 +15,9 @@ class MessagesViewController: UIViewController {
     @IBOutlet weak var writeMssgBtn : UIButton!
     var menu                        : SideMenuNavigationController?
     var presenter                   : MessagesPresenter?
-    var mssgs       = [MessagesInfo]()
-    var loadedUsers = [TweeterUsers]()
+    var mssgs           = [MessagesInfo]()
+    var loadedUsers     = [TweeterUsers]()
+    var selectedUser    = TweeterUsers()
     
     //MARK:- view LifeCycle
     override func viewDidLoad() {

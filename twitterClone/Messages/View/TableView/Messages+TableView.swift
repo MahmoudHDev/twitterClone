@@ -26,20 +26,21 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
             if let imageURL = users.profilePhoto {
                 let db = Storage.storage()
                 db.reference(forURL: imageURL).getData(maxSize: 1 * 1024 * 1024) { (data, _) in
-                    guard let safeData = UIImage(data: data!) else { return}
+                    guard let safeData = UIImage(data: data!) else { return }
                     cell.senderImage.image = safeData
                 }
             }
-            
-        }else {
+        }else{
             cell.senderMessage.text = "No Messages Yet"
             
-        }        
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedUser = loadedUsers[indexPath.row]
         let storyBoard = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID") as! ChatViewController
+        storyBoard.user = selectedUser //edited
         self.navigationController?.pushViewController(storyBoard, animated: true)
         print("go to chat")
         

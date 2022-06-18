@@ -12,5 +12,5 @@ struct MessagesInfo {
     var senderID        : String?
     var messageContent  : String?
     var receiverID      : String?
-
+    var time            : Date?
 }

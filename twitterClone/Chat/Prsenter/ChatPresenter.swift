@@ -9,8 +9,9 @@ import Foundation
 import Firebase
 
 protocol ChatView {
-    func messageLoaded()
-    
+
+    func messageLoaded(messages: MessagesInfo)
+    func errorWhileLoading(error: String)
 }
 
 class ChatPresenter {
@@ -24,20 +25,33 @@ class ChatPresenter {
         self.view = view
     }
  
-    func loadMessages() {
-        let tweetRef = db.collection(K.FStore.collectionMsgName).addSnapshotListener { (querySnapshot, err) in
-            if let error = err {
-                print(error)
+    func loadMessages(id: String) {
+//        guard let userID = Auth.auth().currentUser?.uid else {return}
+        // Empty the array to avoid appending the messages over and over
+        // ID is the receiver ID
+        
+        db.collection(K.FStore.collectionMsgName).whereField(K.FStore.receiverID, isEqualTo: id).addSnapshotListener { (querySnapshot, er) in
+            if let err = er {
+                print("Error While Loading the Messages \(err)")
+                self.view?.errorWhileLoading(error: "\(err.localizedDescription)")
             }else{
-                if let docs = querySnapshot?.documents {
-                    for doc in docs {
-                        let data = doc.data()
-                        print(data[K.FStore.messageContent] as? String)
-                        self.view?.messageLoaded()
-                    }
+                guard let docs = querySnapshot?.documents else {return}
+                for doc in docs {
+                    let data        = doc.data()
+                    let message     = data[K.FStore.messageContent] as? String  ?? ""   // for message
+                    let receiverID  = data[K.FStore.receiverID] as? String      ?? ""   // for img
+                    let senderID    = data[K.FStore.senderID] as? String        ?? ""   // for sender
+//                    let time       = data[K.FStore.date] as? String ?? ""
+                    
+                    var messageInfo = MessagesInfo()
+                    
+                    messageInfo.receiverID      = receiverID
+                    messageInfo.senderID        = senderID
+                    messageInfo.messageContent  = message
+//                    messageInfo.time = time       // Date
+                    self.view?.messageLoaded(messages: messageInfo)
                 }
             }
-            
         }
     }
     

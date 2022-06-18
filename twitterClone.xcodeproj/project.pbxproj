@@ -229,7 +229,6 @@
 				1EE5CE682857A7BF0019C95D /* Chat+TableView.swift */,
 				1EE5CE6B2857A86B0019C95D /* ChatTableViewCell.swift */,
 				1EE5CE6C2857A86B0019C95D /* ChatTableViewCell.xib */,
-				1E1579DE2858C0DD0016F6EA /* ChatVC+TextField.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -851,6 +850,7 @@
 			isa = PBXGroup;
 			children = (
 				1E1579DC2858C0900016F6EA /* TableView */,
+				1E1579DE2858C0DD0016F6EA /* ChatVC+TextField.swift */,
 				1EE5CE5E2857A09F0019C95D /* Chat.storyboard */,
 				1EE5CE612857A0C00019C95D /* ChatViewController.swift */,
 			);

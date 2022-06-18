@@ -13,22 +13,21 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var sendBtn          : UIButton!
     @IBOutlet weak var tableView        : UITableView!
     @IBOutlet weak var messageTextfield : UITextField!
-    var messageReciver = TweeterUsers()
-    var presenter: ChatPresenter?
+    
+    var user            = TweeterUsers()
+    var userMessages    = [MessagesInfo]()
+    var messageReciver  = TweeterUsers()
+    var presenter       : ChatPresenter?
     
     //MARK:- View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
-        imageView.contentMode = .scaleAspectFit
-        let profileImg = UIImage(named: "twitterEgg")
-        imageView.image = profileImg
-        navigationItem.titleView = imageView
-        messageTextfield.delegate = self
         presenter = ChatPresenter(view: self)
-        presenter?.loadMessages()
+        guard let id = user.userID else {return}
+        loadMessages(id: id)
         tableViewConfig()
+        textFieldConfig()
     }
     
     //MARK:- Action
@@ -40,20 +39,40 @@ class ChatViewController: UIViewController {
         }else {
             print("Write anything to send")
         }
-
     }
 
 
     //MARK:- Action
 
+    func updateUI() {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        let profileImg = UIImage(named: "twitterEgg")
+        imageView.image = profileImg
+        navigationItem.titleView = imageView
+    }
+    
+    //MARK:- Functions
+    func loadMessages(id: String) {
+        presenter?.loadMessages(id: id)
+        
+    }
     
 }
 //MARK:- Presenter
 
 extension ChatViewController: ChatView {
-    func messageLoaded() {
-        print("Successfully sent")
+    
+    // Empty the array
+    
+    
+    func errorWhileLoading(error: String) {
+        print(error)
+    }
+    func messageLoaded(messages: MessagesInfo) {
         messageTextfield.text = ""
+        userMessages.append(messages)
+        tableView.reloadData()
     }
     
 }

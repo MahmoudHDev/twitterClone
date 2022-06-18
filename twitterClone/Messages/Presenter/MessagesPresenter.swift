@@ -51,7 +51,7 @@ class MessagesPresenter {
                         msg      = data[K.FStore.messageContent] as? String,
                         receiver = data[K.FStore.receiverID] as? String
                     let mssg = MessagesInfo(senderID: sender ?? "" , messageContent: msg ?? "", receiverID: receiver ?? "")
-                    
+                    print("sender: \(sender), Rec: \(receiver)")
                     self.appendData(id: receiver!)
                     self.view?.messagesLoaded(messages: mssg)
                     print("View. MEssages Laoded")
