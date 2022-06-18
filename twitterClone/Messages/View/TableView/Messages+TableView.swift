@@ -19,8 +19,8 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessagesTableViewCell
         if loadedUsers.count > 0 {
-            let messages = mssgs[indexPath.row]
-            let users    = loadedUsers[indexPath.row]
+            let messages             = mssgs[indexPath.row]
+            let users                = loadedUsers[indexPath.row]
             cell.senderUsername.text = users.username ?? ""
             cell.senderMessage.text  = messages.messageContent
             if let imageURL = users.profilePhoto {
@@ -32,7 +32,6 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }else{
             cell.senderMessage.text = "No Messages Yet"
-            
         }
         return cell
     }

@@ -24,6 +24,7 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = ChatPresenter(view: self)
+        print(messageReciver.userID ?? "")
         guard let id = user.userID else {return}
         loadMessages(id: id)
         tableViewConfig()
@@ -64,7 +65,9 @@ class ChatViewController: UIViewController {
 extension ChatViewController: ChatView {
     
     // Empty the array
-    
+    func emptyArray() {
+        
+    }
     
     func errorWhileLoading(error: String) {
         print(error)

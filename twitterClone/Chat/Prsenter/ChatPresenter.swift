@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 protocol ChatView {
-
+    func emptyArray()
     func messageLoaded(messages: MessagesInfo)
     func errorWhileLoading(error: String)
 }
