@@ -69,6 +69,7 @@ extension ChatViewController: ChatView {
     func errorWhileLoading(error: String) {
         print(error)
     }
+    
     func messageLoaded(messages: MessagesInfo) {
         messageTextfield.text = ""
         userMessages.append(messages)

@@ -39,7 +39,9 @@ class MessagesPresenter {
         guard let userID = Auth.auth().currentUser?.uid else {return}
         self.view?.emptyArrays()
         print("Empty the array")
-        db.collection(K.FStore.collectionMsgName).whereField(K.FStore.senderID, isEqualTo: userID).addSnapshotListener { (querySnapShot, error) in
+        db.collection(K.FStore.collectionMsgName)
+            .whereField(K.FStore.senderID, isEqualTo: userID)
+            .addSnapshotListener { (querySnapShot, error) in
             if let error = error {
                 print("There's no messages \(error)")
             }else {
@@ -47,11 +49,13 @@ class MessagesPresenter {
                 
                 for doc in docs {
                     let data = doc.data()
+                    
                     let sender   = data[K.FStore.senderID] as? String,
                         msg      = data[K.FStore.messageContent] as? String,
                         receiver = data[K.FStore.receiverID] as? String
+                    
                     let mssg = MessagesInfo(senderID: sender ?? "" , messageContent: msg ?? "", receiverID: receiver ?? "")
-                    print("sender: \(sender), Rec: \(receiver)")
+
                     self.appendData(id: receiver!)
                     self.view?.messagesLoaded(messages: mssg)
                     print("View. MEssages Laoded")

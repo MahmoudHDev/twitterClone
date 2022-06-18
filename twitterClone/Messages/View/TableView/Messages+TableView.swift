@@ -39,7 +39,13 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedUser = loadedUsers[indexPath.row]
+        let receiverMsg = mssgs[indexPath.row].receiverID!
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        print("receiver tapped: \(mssgs[indexPath.row].receiverID!) ,Sender tapped: \(mssgs[indexPath.row].senderID!)")
+        print(userID)
+        
         let storyBoard = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID") as! ChatViewController
+        storyBoard.messageReciver.userID = receiverMsg
         storyBoard.user = selectedUser //edited
         self.navigationController?.pushViewController(storyBoard, animated: true)
         print("go to chat")
