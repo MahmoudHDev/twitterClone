@@ -18,7 +18,7 @@ class ChatViewController: UIViewController {
     var userMessages    = [Message]()
     var messageReciver  = TweeterUsers()
     var presenter       : ChatPresenter?
-    
+    var messageInfo     = MessagesInfo()
     //MARK:- View Life Cycle
 
     override func viewDidLoad() {
@@ -28,8 +28,14 @@ class ChatViewController: UIViewController {
         textFieldConfig()
         title = messageReciver.username ?? "Chat"
         presenter?.currentUserInfo()
-        loadMessages(id: messageReciver.userID!)
-//        guard let id = user.userID else {return}
+        if messageReciver.userID == nil {
+            loadMessages(id: messageInfo.toId ?? "noID")
+
+        }else{
+            loadMessages(id: messageReciver.userID ?? "")
+
+        }
+        //        guard let id = user.userID else {return}
     }
     
     //MARK:- Action
