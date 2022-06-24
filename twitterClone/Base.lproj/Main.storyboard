@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7DI-d5-Kfg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msV-Gd-E4d">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -569,7 +569,7 @@
                 <viewControllerPlaceholder storyboardName="CreateATweet" referencedIdentifier="goToNewTweet" id="UPY-IV-abQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1I-Ac-cmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6220.8000000000002" y="-461.46926536731638"/>
+            <point key="canvasLocation" x="5221" y="-353"/>
         </scene>
         <!--ProfileFromSearch-->
         <scene sceneID="Wib-gw-uC5">
@@ -719,7 +719,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNk-CU-5Ob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="w5t-qv-CUO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4657" y="793"/>
+            <point key="canvasLocation" x="4542" y="793"/>
         </scene>
         <!--chatID-->
         <scene sceneID="Ehr-BN-UwT">
@@ -747,7 +747,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="goToProfile" id="yGX-a7-3dN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUV-zr-wSG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6220" y="-564.01799100449784"/>
+            <point key="canvasLocation" x="5220" y="-455"/>
         </scene>
         <!--goToEditProfile-->
         <scene sceneID="2tG-YA-ZKS">
@@ -755,7 +755,7 @@
                 <viewControllerPlaceholder storyboardName="EditProfile" referencedIdentifier="goToEditProfile" id="SJM-y6-L50" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNw-Yd-lD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6220.8000000000002" y="-533.43328335832086"/>
+            <point key="canvasLocation" x="5221" y="-425"/>
         </scene>
         <!--goToSettings-->
         <scene sceneID="mWe-W9-FYX">
@@ -763,7 +763,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="goToSettings" id="Br3-u4-0pz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35R-t0-R6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6220.8000000000002" y="-498.3508245877062"/>
+            <point key="canvasLocation" x="5221" y="-390"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="heh-i4-G9U">

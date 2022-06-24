@@ -17,14 +17,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kdi-XZ-Pbv">
-                        <rect key="frame" x="5" y="10" width="304.5" height="60"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wD7-8F-fnP">
+                        <rect key="frame" x="10" y="10" width="300" height="60"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterEgg" translatesAutoresizingMaskIntoConstraints="NO" id="NEP-Qa-p2d">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CU6-3n-Ebl"/>
+                                    <constraint firstAttribute="width" constant="40" id="L3H-Jb-Aup"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3m-t3-Vti">
-                                <rect key="frame" x="0.0" y="0.0" width="234.5" height="60"/>
+                                <rect key="frame" x="50" y="0.0" width="200" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOK-JM-RFA">
-                                        <rect key="frame" x="5" y="5" width="224.5" height="50"/>
+                                        <rect key="frame" x="10" y="10" width="180" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -32,40 +39,35 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstItem="dOK-JM-RFA" firstAttribute="width" secondItem="T3m-t3-Vti" secondAttribute="width" multiplier="0.957356" id="84s-kg-xZR"/>
-                                    <constraint firstItem="dOK-JM-RFA" firstAttribute="leading" secondItem="T3m-t3-Vti" secondAttribute="leading" constant="5" id="JT1-bY-Be4"/>
-                                    <constraint firstAttribute="bottom" secondItem="dOK-JM-RFA" secondAttribute="bottom" constant="5" id="KTK-Oz-QUc"/>
-                                    <constraint firstAttribute="height" constant="60" id="aqr-KR-4T2"/>
-                                    <constraint firstItem="dOK-JM-RFA" firstAttribute="top" secondItem="T3m-t3-Vti" secondAttribute="top" constant="5" id="iTm-P3-EFH"/>
-                                    <constraint firstItem="dOK-JM-RFA" firstAttribute="height" relation="greaterThanOrEqual" secondItem="T3m-t3-Vti" secondAttribute="height" multiplier="0.833333" id="jEY-JI-Gzw"/>
-                                    <constraint firstAttribute="trailing" secondItem="dOK-JM-RFA" secondAttribute="trailing" constant="5" id="vIW-X0-YM6"/>
+                                    <constraint firstItem="dOK-JM-RFA" firstAttribute="leading" secondItem="T3m-t3-Vti" secondAttribute="leading" constant="10" id="GCL-gy-Q0Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="dOK-JM-RFA" secondAttribute="bottom" constant="10" id="N2K-Vj-vVR"/>
+                                    <constraint firstAttribute="trailing" secondItem="dOK-JM-RFA" secondAttribute="trailing" constant="10" id="RlQ-eW-kSJ"/>
+                                    <constraint firstItem="dOK-JM-RFA" firstAttribute="top" secondItem="T3m-t3-Vti" secondAttribute="top" constant="10" id="dm7-rT-e2I"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterEgg" translatesAutoresizingMaskIntoConstraints="NO" id="LbR-tY-rfQ">
-                                <rect key="frame" x="244.5" y="0.0" width="60" height="60"/>
+                                <rect key="frame" x="260" y="0.0" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="1xb-Ls-pLa"/>
-                                    <constraint firstAttribute="width" constant="60" id="aGK-nq-Lji"/>
+                                    <constraint firstAttribute="height" constant="40" id="D6C-Rk-LCc"/>
+                                    <constraint firstAttribute="width" constant="40" id="RpV-ld-8TI"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="T3m-t3-Vti" firstAttribute="width" secondItem="Kdi-XZ-Pbv" secondAttribute="width" multiplier="0.77" id="sAw-7r-HuU"/>
-                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Kdi-XZ-Pbv" secondAttribute="bottom" constant="20" id="9Ae-Tm-My2"/>
-                    <constraint firstItem="Kdi-XZ-Pbv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="NHa-Pt-Bi6"/>
-                    <constraint firstAttribute="trailing" secondItem="Kdi-XZ-Pbv" secondAttribute="trailing" constant="5" id="RH1-m4-RSQ"/>
-                    <constraint firstItem="Kdi-XZ-Pbv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gXu-QF-Z0Y"/>
+                    <constraint firstItem="wD7-8F-fnP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="98l-Ox-r98"/>
+                    <constraint firstAttribute="trailing" secondItem="wD7-8F-fnP" secondAttribute="trailing" constant="10" id="LoF-bJ-SrA"/>
+                    <constraint firstAttribute="bottom" secondItem="wD7-8F-fnP" secondAttribute="bottom" constant="10" id="Q0o-w6-VDr"/>
+                    <constraint firstItem="wD7-8F-fnP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fq9-MK-do7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="imgProfile" destination="LbR-tY-rfQ" id="CSQ-Au-Nug"/>
                 <outlet property="messageContent" destination="dOK-JM-RFA" id="mca-9g-t0o"/>
                 <outlet property="messagePop" destination="T3m-t3-Vti" id="B5W-cr-tpK"/>
+                <outlet property="receiver" destination="NEP-Qa-p2d" id="rro-dH-mgS"/>
+                <outlet property="sender" destination="LbR-tY-rfQ" id="8l5-et-hqg"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="174.10714285714286"/>
         </tableViewCell>
