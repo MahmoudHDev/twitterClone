@@ -609,8 +609,8 @@
 		1E73C724285CA85100EC1B01 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				1E6E5065281AE6180054FEA8 /* MessagesTableViewCell.swift */,
 				1E73C719285CA4A100EC1B01 /* Messages+TableView.swift */,
+				1E6E5065281AE6180054FEA8 /* MessagesTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";

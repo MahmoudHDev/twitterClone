@@ -42,18 +42,12 @@ struct K {
     }
     
     struct FStore {
-        /*
-        static let senderName        = "senderName"
-        static let senderID          = "senderID"
-        static let date              = "time"
-        static let messageContent    = "messageContent"
-        static let receiverID        = "receiverID"
-        */
-        static let mssgCollection = "messages"
-        static let fromId = "fromId"
-        static let toId = "toId"
-        static let mssg = "mssg"
-        static let time = "time"
+        static let recentmssgs      = "recent_Messages"
+        static let mssgCollection   = "messages"
+        static let fromId           = "fromId"
+        static let toId             = "toId"
+        static let mssg             = "mssg"
+        static let time             = "time"
         
     }
 }

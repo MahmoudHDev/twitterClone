@@ -7,12 +7,16 @@
 
 import UIKit
 import Firebase
+
+
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableViewConfig() {
+        
         tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.delegate      = self
         tableView.dataSource    = self
         tableView.separatorStyle = .none
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

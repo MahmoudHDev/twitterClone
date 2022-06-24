@@ -8,9 +8,7 @@
 import Foundation
 
 struct MessagesInfo {
+
+    var mssg, toId, fromId, name: String?
     
-    var senderID        : String?
-    var messageContent  : String?
-    var receiverID      : String?
-    var time            : Date?
 }

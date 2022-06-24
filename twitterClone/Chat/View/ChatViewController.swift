@@ -27,6 +27,7 @@ class ChatViewController: UIViewController {
         tableViewConfig()
         textFieldConfig()
         title = messageReciver.username ?? "Chat"
+        presenter?.currentUserInfo()
         loadMessages(id: messageReciver.userID!)
 //        guard let id = user.userID else {return}
     }
@@ -62,12 +63,19 @@ class ChatViewController: UIViewController {
 //MARK:- Presenter
 
 extension ChatViewController: ChatView {
-        
-    func messageSent() {
-        messageTextfield.text = ""
+    
+    func currentUser(user: TweeterUsers) {
+        presenter?.myInfo = user
     }
+    
+    
     func emptyArray() {
         userMessages = []
+    }
+    
+    func messageSent() {
+        print("Message Sent to Firebase!")
+        messageTextfield.text = ""
     }
     
     func messageLoaded(messages: Message) {

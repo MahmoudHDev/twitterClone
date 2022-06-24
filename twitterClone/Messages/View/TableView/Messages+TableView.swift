@@ -14,13 +14,19 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
  
-        return 1
+        return mssgs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessagesTableViewCell
-        cell.senderUsername.text = "Text"
-        
+        if mssgs.count > 0 {
+            print(mssgs[indexPath.row])
+            cell.senderUsername.text = mssgs[indexPath.row].name
+            cell.senderMessage.text = mssgs[indexPath.row].mssg
+        }else {
+            cell.textLabel?.text = "No Messages yet"
+        }
+                
         return cell
     }
     

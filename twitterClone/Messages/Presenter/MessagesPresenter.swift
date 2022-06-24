@@ -18,13 +18,11 @@ protocol MessagesView {
 }
 
 //MARK:- Presenter
-
 class MessagesPresenter {
-    
     //MARK:- Properties
     var view    : MessagesView?
-    var db      = Firestore.firestore()      // Firestore
-    let ref     = Database.database().reference()  // DBRealTime
+    var ref     = Firestore.firestore()      // Firestore
+    let db      = Database.database().reference()  // DBRealTime
     var arrID   = [String]()
     
     //MARK:- Init
@@ -34,11 +32,34 @@ class MessagesPresenter {
     
     //MARK:- Methods
     func loadMessages() {
-        self.view?.emptyArrays()
-        
+        guard let userID = Auth.auth().currentUser else {return}
+        let document = ref.collection("recent_Messages")
+            .document(userID.uid)
+            .collection("messages")
+            .order(by: "timeStamp")
+        document.addSnapshotListener { (documentSnapshot, er) in
+            if let err = er {
+                print("error While loading the messages \(err.localizedDescription)")
+            }else {
+                self.view?.emptyArrays()
+                documentSnapshot?.documents.forEach({ (queryDocumentSnapshot) in
+                    let data = queryDocumentSnapshot.data()
+                    
+                    let text        = data["text"]      as? String
+                    let to          = data["toId"]      as? String
+                    let from        = data["fromId"]    as? String
+                    let name        = data["name"]      as? String
+                    
+                    let RMessages   = MessagesInfo(mssg: text, toId: to, fromId: from, name: name)
+                    
+                    self.view?.messagesLoaded(messages: RMessages)
+                    print(data)
+                })
+            }
+        }
     }
+    
 }
-
 //MARK:- Extensions
 // use this extension when you want to remove the duplicates
 extension Sequence where Iterator.Element: Hashable {
@@ -47,3 +68,4 @@ extension Sequence where Iterator.Element: Hashable {
         return filter { seen.insert($0).inserted }
     }
 }
+
