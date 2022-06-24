@@ -15,7 +15,7 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var messageTextfield : UITextField!
     
     var user            = TweeterUsers()
-    var userMessages    = [MessagesInfo]()
+    var userMessages    = [Message]()
     var messageReciver  = TweeterUsers()
     var presenter       : ChatPresenter?
     
@@ -26,16 +26,18 @@ class ChatViewController: UIViewController {
         presenter = ChatPresenter(view: self)
         tableViewConfig()
         textFieldConfig()
-        print(messageReciver.userID ?? "")
-        guard let id = user.userID else {return}
-        loadMessages(id: id)
+        title = messageReciver.username ?? "Chat"
+        loadMessages(id: messageReciver.userID!)
+//        guard let id = user.userID else {return}
     }
     
     //MARK:- Action
     
     @IBAction func sendPressed(_ sender: UIButton) {
         if let msgTextField = messageTextfield.text {
-            presenter?.sendMessage(txt: msgTextField, toID: user.userID ?? "", toName: user.username ?? "")
+            guard let id    = messageReciver.userID,
+                  let name  = messageReciver.username else {return}
+            presenter?.sendMessage(txt: msgTextField, toID: id, toName: name)
         }else {
             print("Write anything to send")
         }
@@ -56,23 +58,19 @@ class ChatViewController: UIViewController {
         presenter?.loadMessages(id: id)
         
     }
-    
 }
 //MARK:- Presenter
 
 extension ChatViewController: ChatView {
-    
-    // Empty the array
-    func emptyArray() {
         
-    }
-    
-    func errorWhileLoading(error: String) {
-        print(error)
-    }
-    
-    func messageLoaded(messages: MessagesInfo) {
+    func messageSent() {
         messageTextfield.text = ""
+    }
+    func emptyArray() {
+        userMessages = []
+    }
+    
+    func messageLoaded(messages: Message) {
         userMessages.append(messages)
         tableView.reloadData()
     }

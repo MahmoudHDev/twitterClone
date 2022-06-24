@@ -10,9 +10,8 @@ import Firebase
 
 protocol ChatView {
     func emptyArray()
-    func messageLoaded(messages: MessagesInfo)
+    func messageLoaded(messages: Message)
     func messageSent()
-    func errorWhileLoading(error: String)
 }
 
 class ChatPresenter {
@@ -30,7 +29,26 @@ class ChatPresenter {
     //MARK:- Methods
     
     func loadMessages(id: String) {
-        
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        ref.collection("messages")
+            .document(userID)
+            .collection(id)
+            .order(by:K.FStore.time)
+            .addSnapshotListener { (querySnapshot, err) in
+                if let er = err {
+                    print("Error while loading the messages \(er.localizedDescription)")
+                }else {
+                    self.view?.emptyArray()
+                    querySnapshot?.documents.forEach({ (queryDocumentSnapshot) in
+                        let data    = queryDocumentSnapshot.data()
+                        let mssg    = data[K.FStore.mssg] as? String ?? ""
+                        let toID    = data[K.FStore.toId] as? String ?? ""
+                        let fromID  = data[K.FStore.fromId] as? String ?? ""
+                        let messages = Message(toId: toID, fromId: fromID, mssg: mssg)
+                        self.view?.messageLoaded(messages: messages)
+                    })
+                }
+            }
     }
     
     // send a message
@@ -44,6 +62,7 @@ class ChatPresenter {
             K.FStore.mssg: txt,
             K.FStore.time: time
         ]
+        
         let document = ref.collection(K.FStore.mssgCollection)
             .document(userID.uid)
             .collection(toID)
@@ -66,15 +85,12 @@ class ChatPresenter {
         recepientMessageDocument.setData(data) { error in
             if let err = error {
                 print("Error has been occured \(err.localizedDescription)")
-            }else {
-                
+            }else{
                 // Persist the data to the second side
-
+                
                 self.view?.messageSent()
             }
-            
         }
     }
-    
     
 }

@@ -14,15 +14,12 @@ extension ChatViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if  messageTextfield.text != "" {
-            let date = Date()
-            guard let receiver = messageReciver.userID else {
-                return false
-            }
-            presenter?.sendMessage(messageContent: textField.text!, msgReciever: receiver, date: date)
+        if let text = messageTextfield.text {
+            guard let username = messageReciver.username,
+                  let id = messageReciver.userID else {return false}
+            presenter?.sendMessage(txt: text, toID: id, toName: username)
             return true
         }else{
-            
             return false
         }
     }

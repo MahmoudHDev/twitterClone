@@ -9,9 +9,7 @@ import Foundation
 
 struct Message {
     // Properties
-    var senderID        : String
-    var receiverID      : String
-    var messageContent  : String
-    var time            : Date
+    var toId, fromId, mssg: String?
+//    var time            : Date
     
 }
