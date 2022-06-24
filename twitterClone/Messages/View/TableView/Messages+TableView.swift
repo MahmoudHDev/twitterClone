@@ -13,41 +13,32 @@ import Firebase
 extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return loadedUsers.count
+ 
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessagesTableViewCell
-        if loadedUsers.count > 0 {
-            let messages             = mssgs[indexPath.row]
-            let users                = loadedUsers[indexPath.row]
-            cell.senderUsername.text = users.username ?? ""
-            cell.senderMessage.text  = messages.messageContent
-            if let imageURL = users.profilePhoto {
-                let db = Storage.storage()
-                db.reference(forURL: imageURL).getData(maxSize: 1 * 1024 * 1024) { (data, _) in
-                    guard let safeData = UIImage(data: data!) else { return }
-                    cell.senderImage.image = safeData
-                }
-            }
-        }else{
-            cell.senderMessage.text = "No Messages Yet"
-        }
+        cell.senderUsername.text = "Text"
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedUser = loadedUsers[indexPath.row]
-        let receiverMsg = mssgs[indexPath.row].receiverID!
-        guard let userID = Auth.auth().currentUser?.uid else {return}
-        print("receiver tapped: \(mssgs[indexPath.row].receiverID!) ,Sender tapped: \(mssgs[indexPath.row].senderID!)")
-        print(userID)
-        
-        let storyBoard = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID") as! ChatViewController
-        storyBoard.messageReciver.userID = receiverMsg
-        storyBoard.user = selectedUser //edited
-        self.navigationController?.pushViewController(storyBoard, animated: true)
-        print("go to chat")
+        /*
+         selectedUser = loadedUsers[indexPath.row]
+         let receiverMsg = mssgs[indexPath.row].receiverID!
+         guard let userID = Auth.auth().currentUser?.uid else {return}
+         print("receiver tapped: \(mssgs[indexPath.row].receiverID!) ,Sender tapped: \(mssgs[indexPath.row].senderID!)")
+         print(userID)
+         
+         let storyBoard = UIStoryboard.init(name: "Chat", bundle: nil).instantiateViewController(identifier: "chatID") as! ChatViewController
+         storyBoard.messageReciver.userID = receiverMsg
+         storyBoard.user = selectedUser //edited
+         self.navigationController?.pushViewController(storyBoard, animated: true)
+         print("go to chat")
+         
+         */
         
     }
 

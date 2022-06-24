@@ -273,7 +273,7 @@
 			children = (
 				1EE5CE5C2857A07E0019C95D /* Model */,
 				1EE5CE5B2857A0780019C95D /* View */,
-				1EE5CE5A2857A0710019C95D /* Prsenter */,
+				1EE5CE5A2857A0710019C95D /* Presenter */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -838,12 +838,12 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		1EE5CE5A2857A0710019C95D /* Prsenter */ = {
+		1EE5CE5A2857A0710019C95D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				1EE5CE652857A72C0019C95D /* ChatPresenter.swift */,
 			);
-			path = Prsenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		1EE5CE5B2857A0780019C95D /* View */ = {

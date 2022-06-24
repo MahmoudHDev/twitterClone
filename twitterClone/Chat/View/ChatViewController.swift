@@ -24,24 +24,22 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = ChatPresenter(view: self)
+        tableViewConfig()
+        textFieldConfig()
         print(messageReciver.userID ?? "")
         guard let id = user.userID else {return}
         loadMessages(id: id)
-        tableViewConfig()
-        textFieldConfig()
     }
     
     //MARK:- Action
+    
     @IBAction func sendPressed(_ sender: UIButton) {
-        guard let receiver = messageReciver.userID else {return}
         if let msgTextField = messageTextfield.text {
-            let date = Date()
-            presenter?.sendMessage(messageContent: msgTextField, msgReciever: receiver, date: date)
+            presenter?.sendMessage(txt: msgTextField, toID: user.userID ?? "", toName: user.username ?? "")
         }else {
             print("Write anything to send")
         }
     }
-
 
     //MARK:- Action
 

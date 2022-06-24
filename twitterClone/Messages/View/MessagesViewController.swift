@@ -15,9 +15,9 @@ class MessagesViewController: UIViewController {
     @IBOutlet weak var writeMssgBtn : UIButton!
     var menu                        : SideMenuNavigationController?
     var presenter                   : MessagesPresenter?
-    var mssgs           = [MessagesInfo]()
-    var loadedUsers     = [TweeterUsers]()
-    var selectedUser    = TweeterUsers()
+    var mssgs                       = [MessagesInfo]()
+    var loadedUsers                 = [TweeterUsers]()
+    var selectedUser                = TweeterUsers()
     
     //MARK:- view LifeCycle
     override func viewDidLoad() {
@@ -71,12 +71,14 @@ extension MessagesViewController: MessagesView {
     
     func emptyArrays() {
         print("Empty The Arrays of mssgs")
-    }
-    
-    func emptyUsers() {
-        print("Empty the users")
         mssgs = []
-        loadedUsers = []
+
+    }
+
+    func messagesLoaded(messages: MessagesInfo) {
+        mssgs.append(messages)
+        tableView.reloadData()
+
     }
     
     func loadUsers(users: TweeterUsers) {
@@ -85,11 +87,11 @@ extension MessagesViewController: MessagesView {
         print("Load Users")
     }
     
-    func messagesLoaded(messages: MessagesInfo) {
-        mssgs.append(messages)
-        tableView.reloadData()
-    }
 
+    func emptyUsers() {
+        print("Empty the users")
+        loadedUsers = []
+    }
     
     
 }
