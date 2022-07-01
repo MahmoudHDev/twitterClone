@@ -14,11 +14,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTxtField : UITextField!
     @IBOutlet weak var emailTxtField    : UITextField!
     @IBOutlet weak var errorLbl         : UILabel!
+    @IBOutlet weak var loginTopLbl      : UILabel!
     lazy var presenter = LoginPresenter(view: self)
 
     //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        localizedLang()
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
         signIn.layer.cornerRadius = 5
@@ -26,7 +28,12 @@ class LoginViewController: UIViewController {
     
     //MARK:- Functions
     
-
+    func localizedLang() {
+        signIn.setTitle( NSLocalizedString("signIn", comment: "sign in button"), for: .normal)
+        passwordTxtField.placeholder    = NSLocalizedString("signInPassword", comment: "password")
+        emailTxtField.placeholder       = NSLocalizedString("SignInEmail", comment: "Email")
+        loginTopLbl.text                = NSLocalizedString("loginTop", comment: "top Label")
+    }
     
     //MARK:- Actions
 
@@ -39,6 +46,7 @@ class LoginViewController: UIViewController {
 }
 
 //MARK:- Login Presenter Protocol
+
 extension LoginViewController: LoginPresenterProtocol {
     func showError(error: String) {
         // Show The Error
