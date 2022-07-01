@@ -17,21 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-a8-cEr">
-                                <rect key="frame" x="0.0" y="636" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="666" width="414" height="70"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xab-do-hYq">
-                                        <rect key="frame" x="10" y="5" width="394" height="85"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="25y-GC-Iiw">
+                                        <rect key="frame" x="10" y="10" width="394" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a Message .. " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RzF-He-IZ7">
-                                                <rect key="frame" x="0.0" y="0.0" width="295.66666666666669" height="85"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="dVm-0A-bdt"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-ul-Ld0">
-                                                <rect key="frame" x="315.66666666666669" y="0.0" width="78.333333333333314" height="85"/>
+                                                <rect key="frame" x="344" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.13714063169999999" green="0.53951340910000001" blue="0.92610400920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="44Y-vN-xVU"/>
+                                                    <constraint firstAttribute="width" constant="50" id="qYb-VS-jAn"/>
+                                                </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="arrow.up.square" catalog="system">
+                                                <state key="normal" image="arrow.up" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -39,21 +46,17 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="RzF-He-IZ7" firstAttribute="width" secondItem="xab-do-hYq" secondAttribute="width" multiplier="0.75" id="exT-p8-UJL"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="xab-do-hYq" firstAttribute="leading" secondItem="sH9-a8-cEr" secondAttribute="leading" constant="10" id="Dfi-TF-RyS"/>
-                                    <constraint firstItem="xab-do-hYq" firstAttribute="top" secondItem="sH9-a8-cEr" secondAttribute="top" constant="5" id="KZm-jA-8v0"/>
-                                    <constraint firstAttribute="trailing" secondItem="xab-do-hYq" secondAttribute="trailing" constant="10" id="i2H-pm-sMj"/>
-                                    <constraint firstAttribute="bottom" secondItem="xab-do-hYq" secondAttribute="bottom" constant="10" id="iIH-87-Uip"/>
-                                    <constraint firstAttribute="height" constant="100" id="yMq-jx-GJS"/>
+                                    <constraint firstItem="25y-GC-Iiw" firstAttribute="top" secondItem="sH9-a8-cEr" secondAttribute="top" constant="10" id="WHX-31-u6V"/>
+                                    <constraint firstAttribute="bottom" secondItem="25y-GC-Iiw" secondAttribute="bottom" constant="10" id="l5s-Mi-Dtt"/>
+                                    <constraint firstAttribute="trailing" secondItem="25y-GC-Iiw" secondAttribute="trailing" constant="10" id="naq-oV-Pxm"/>
+                                    <constraint firstItem="25y-GC-Iiw" firstAttribute="leading" secondItem="sH9-a8-cEr" secondAttribute="leading" constant="10" id="xov-Bh-bMc"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="frf-Ry-pPM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="636"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="T8W-KA-9b7">
@@ -74,6 +77,7 @@
                             <constraint firstItem="sH9-a8-cEr" firstAttribute="leading" secondItem="xx8-hl-0Ob" secondAttribute="leading" id="AuZ-ME-Sau"/>
                             <constraint firstItem="frf-Ry-pPM" firstAttribute="top" secondItem="xx8-hl-0Ob" secondAttribute="top" id="JoE-rY-VhS"/>
                             <constraint firstItem="sH9-a8-cEr" firstAttribute="trailing" secondItem="xx8-hl-0Ob" secondAttribute="trailing" id="cDj-gL-TiS"/>
+                            <constraint firstItem="sH9-a8-cEr" firstAttribute="height" secondItem="JZg-c5-amG" secondAttribute="height" multiplier="0.0951087" id="fqu-fb-WtC"/>
                             <constraint firstItem="frf-Ry-pPM" firstAttribute="leading" secondItem="xx8-hl-0Ob" secondAttribute="leading" id="xP6-YP-Z8O"/>
                             <constraint firstItem="sH9-a8-cEr" firstAttribute="top" secondItem="frf-Ry-pPM" secondAttribute="bottom" id="zEb-cc-72B"/>
                             <constraint firstItem="sH9-a8-cEr" firstAttribute="bottom" secondItem="xx8-hl-0Ob" secondAttribute="bottom" id="zhr-NU-bpe"/>
@@ -91,7 +95,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.up.square" catalog="system" width="128" height="114"/>
+        <image name="arrow.up" catalog="system" width="120" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

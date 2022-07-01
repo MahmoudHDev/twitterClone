@@ -19,6 +19,7 @@ class ChatViewController: UIViewController {
     var messageReciver  = TweeterUsers()
     var presenter       : ChatPresenter?
     var messageInfo     = MessagesInfo()
+    
     //MARK:- View Life Cycle
 
     override func viewDidLoad() {
@@ -27,15 +28,9 @@ class ChatViewController: UIViewController {
         tableViewConfig()
         textFieldConfig()
         title = messageReciver.username ?? "Chat"
+        sendBtn.layer.cornerRadius = 0.5 * sendBtn.frame.size.width
         presenter?.currentUserInfo()
-        if messageReciver.userID == nil {
-            loadMessages(id: messageInfo.toId ?? "noID")
-
-        }else{
-            loadMessages(id: messageReciver.userID ?? "")
-
-        }
-        //        guard let id = user.userID else {return}
+        loadChat()
     }
     
     //MARK:- Action
@@ -46,7 +41,23 @@ class ChatViewController: UIViewController {
                   let name  = messageReciver.username else {return}
             presenter?.sendMessage(txt: msgTextField, toID: id, toName: name)
         }else {
+            
             print("Write anything to send")
+        }
+    }
+
+    //MARK:- Functions
+    
+    func loadChat() {
+        if messageReciver.userID == nil {
+            loadMessages(id: messageInfo.toId ?? "noID")
+            title = messageInfo.name ?? "Chat"
+            messageReciver.userID = messageInfo.toId
+            messageReciver.username = messageInfo.name
+            
+        }else{
+            loadMessages(id: messageReciver.userID ?? "")
+
         }
     }
 
@@ -73,7 +84,6 @@ extension ChatViewController: ChatView {
     func currentUser(user: TweeterUsers) {
         presenter?.myInfo = user
     }
-    
     
     func emptyArray() {
         userMessages = []

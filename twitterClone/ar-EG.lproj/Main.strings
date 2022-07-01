@@ -1,0 +1,102 @@
+
+/* Class = "UINavigationItem"; title = "Messages"; ObjectID = "35X-VW-iqM"; */
+"35X-VW-iqM.title" = "Messages";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "3VS-bU-7FL"; */
+"3VS-bU-7FL.text" = "Login";
+
+/* Class = "UITextField"; placeholder = "re-type your password"; ObjectID = "3lg-yY-UFO"; */
+"3lg-yY-UFO.placeholder" = "re-type your password";
+
+/* Class = "UILabel"; text = "Example name"; ObjectID = "4ZA-hT-M6N"; */
+"4ZA-hT-M6N.text" = "Example name";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "56p-VT-3HI"; */
+"56p-VT-3HI.placeholder" = "Username";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "8u2-kO-3Mp"; */
+"8u2-kO-3Mp.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "99u-hD-C2q"; */
+"99u-hD-C2q.normalTitle" = "Sign In";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "A8D-vs-3MG"; */
+"A8D-vs-3MG.normalTitle" = "Sign Up";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "BZF-6p-ebi"; */
+"BZF-6p-ebi.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Hi Man How's it going! "; ObjectID = "DHp-DE-j0Z"; */
+"DHp-DE-j0Z.text" = "Hi Man How's it going! ";
+
+/* Class = "UITextField"; placeholder = "Email address"; ObjectID = "FZZ-N1-KiJ"; */
+"FZZ-N1-KiJ.placeholder" = "Email address";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Gje-T6-CNX"; */
+"Gje-T6-CNX.title" = "Item";
+
+/* Class = "UISegmentedControl"; HRy-zI-MSI.segmentTitles[0] = "All"; ObjectID = "HRy-zI-MSI"; */
+"HRy-zI-MSI.segmentTitles[0]" = "All";
+
+/* Class = "UISegmentedControl"; HRy-zI-MSI.segmentTitles[1] = "Mentions"; ObjectID = "HRy-zI-MSI"; */
+"HRy-zI-MSI.segmentTitles[1]" = "Mentions";
+
+/* Class = "UITextView"; text = "Get real-time updates about you interesting topics."; ObjectID = "Hub-3Q-X28"; */
+"Hub-3Q-X28.text" = "Get real-time updates about you interesting topics.";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "Kyx-pf-EyK"; */
+"Kyx-pf-EyK.title" = "Home";
+
+/* Class = "UITextField"; placeholder = "🔍  Search Twitter"; ObjectID = "QuC-q8-u1f"; */
+"QuC-q8-u1f.placeholder" = "🔍  Search Twitter";
+
+/* Class = "UILabel"; text = "Error has Been Occured"; ObjectID = "SQf-9O-dLP"; */
+"SQf-9O-dLP.text" = "Error has Been Occured";
+
+/* Class = "UITextField"; placeholder = "Type your email"; ObjectID = "VTG-Q8-tX5"; */
+"VTG-Q8-tX5.placeholder" = "Type your email";
+
+/* Class = "UITextField"; text = "222@222.com"; ObjectID = "VTG-Q8-tX5"; */
+"VTG-Q8-tX5.text" = "222@222.com";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "WZb-9v-YKD"; */
+"WZb-9v-YKD.normalTitle" = "Sign Up";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "X4W-jM-o0v"; */
+"X4W-jM-o0v.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "ZR5-tp-nAN"; */
+"ZR5-tp-nAN.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "a99-6M-hQe"; */
+"a99-6M-hQe.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "bqr-pR-ovM"; */
+"bqr-pR-ovM.title" = "Item";
+
+/* Class = "UILabel"; text = "Welcome to twitter"; ObjectID = "gXh-YW-2CG"; */
+"gXh-YW-2CG.text" = "Welcome to twitter";
+
+/* Class = "UITextField"; placeholder = "Your password"; ObjectID = "iw8-4k-vfg"; */
+"iw8-4k-vfg.placeholder" = "Your password";
+
+/* Class = "UITextField"; text = "123123"; ObjectID = "iw8-4k-vfg"; */
+"iw8-4k-vfg.text" = "123123";
+
+/* Class = "UILabel"; text = "Hi, There!"; ObjectID = "mBl-p3-Hbv"; */
+"mBl-p3-Hbv.text" = "Hi, There!";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "mLV-Tg-YD7"; */
+"mLV-Tg-YD7.normalTitle" = "Sign In";
+
+/* Class = "UINavigationItem"; title = "Notifications"; ObjectID = "w4u-Nf-bhm"; */
+"w4u-Nf-bhm.title" = "Notifications";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "xJe-bh-ksZ"; */
+"xJe-bh-ksZ.title" = "Item";
+
+/* Class = "UILabel"; text = "please write your email"; ObjectID = "yLR-LO-CHj"; */
+"yLR-LO-CHj.text" = "please write your email";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "ysX-jN-fDs"; */
+"ysX-jN-fDs.title" = "Item";

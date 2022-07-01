@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  twitterClone
+
+  Created by Mahmoud on 7/1/22.
+  
+*/
+
+// First ViewController
+
+"hello" = "مرحباً بك في تويتر";
+"desc" = "تابع اجدد الأحداث اول بأول";
+"signIn" = "تسجيل الدخول";
+"signUp" = "تسجيل جديد";
+"changeLang" = "تغيير اللغة";
+
+
+// Sign up SignUpViewController
+
+"signUp"        = "تسجيل";
+"email"         = "البريد الإلكتروني";
+"password"      = "كلمة المرور";
+"rePassword"    = "أعد كتابة كلمة المرور";
+"username"      = "إسم المستخدم";
+"hi"            = "مرحبا";
+
+// Sign In SignIn ViewController
+
+

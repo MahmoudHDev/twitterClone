@@ -18,19 +18,33 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordSTxtField: UITextField!
     @IBOutlet weak var passwordFTxtField: UITextField!
     @IBOutlet weak var username         : UITextField!
-
+    @IBOutlet weak var hiLbl            : UILabel!
+    
     //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldDelegate()
-        signUpBtn.isEnabled = false
-        signUpBtn.backgroundColor = #colorLiteral(red: 0, green: 0.7323547006, blue: 0.947804749, alpha: 0.5)
+        updateUI()
+        localizedLang()
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
         signUpBtn.layer.cornerRadius = 5
     }
-    //MARK:- Methods
+    //MARK:- Functions
+    func updateUI() {
+        signUpBtn.isEnabled = false
+        signUpBtn.backgroundColor = #colorLiteral(red: 0, green: 0.7323547006, blue: 0.947804749, alpha: 0.5)
+    }
 
+    func localizedLang() {
+        signUpBtn.setTitle(NSLocalizedString("signUp", comment: "signUp Button"), for: .normal)
+        hiLbl.text                      = NSLocalizedString("hi", comment: "Hi Message")
+        emailTxtField.placeholder       = NSLocalizedString("email", comment: "email TextField")
+        passwordSTxtField.placeholder   = NSLocalizedString("rePassword", comment: "")
+        passwordFTxtField.placeholder   = NSLocalizedString("password", comment: "")
+        username.placeholder            = NSLocalizedString("username", comment: "")
+        
+    }
     
     //MARK:- Actions
     @IBAction func signUpBtn(_ sender: UIButton) {

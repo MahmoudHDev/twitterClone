@@ -72,6 +72,8 @@
 		1ECC412128305CB2008B8AA6 /* TweetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECC412028305CB2008B8AA6 /* TweetDetailsPresenter.swift */; };
 		1ECC412428305D71008B8AA6 /* TweetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECC412328305D71008B8AA6 /* TweetDetailsViewController.swift */; };
 		1ECC412728306413008B8AA6 /* TweetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECC412628306413008B8AA6 /* TweetDetails.storyboard */; };
+		1ECCAA5A286F0978006044E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1ECCAA5C286F0978006044E1 /* Localizable.strings */; };
+		1ECCAA66286F184A006044E1 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECCAA65286F184A006044E1 /* ViewPresenter.swift */; };
 		1ED6F5812848FBB800FDEE0C /* editProfile+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6F5802848FBB800FDEE0C /* editProfile+Picker.swift */; };
 		1EDEED0C28361FF700D1ADCD /* TweetDetailsVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDEED0B28361FF700D1ADCD /* TweetDetailsVC+TableView.swift */; };
 		1EDEED102836207300D1ADCD /* TweetDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDEED0E2836207300D1ADCD /* TweetDetailsTableViewCell.swift */; };
@@ -164,6 +166,11 @@
 		1ECC412028305CB2008B8AA6 /* TweetDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsPresenter.swift; sourceTree = "<group>"; };
 		1ECC412328305D71008B8AA6 /* TweetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewController.swift; sourceTree = "<group>"; };
 		1ECC412628306413008B8AA6 /* TweetDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TweetDetails.storyboard; sourceTree = "<group>"; };
+		1ECCAA5B286F0978006044E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1ECCAA5D286F09A3006044E1 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Main.strings"; sourceTree = "<group>"; };
+		1ECCAA5E286F09A6006044E1 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1ECCAA5F286F09A8006044E1 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1ECCAA65286F184A006044E1 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
 		1ED6F5802848FBB800FDEE0C /* editProfile+Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "editProfile+Picker.swift"; sourceTree = "<group>"; };
 		1EDEED0B28361FF700D1ADCD /* TweetDetailsVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TweetDetailsVC+TableView.swift"; sourceTree = "<group>"; };
 		1EDEED0E2836207300D1ADCD /* TweetDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -216,7 +223,6 @@
 		1E1568C02815AFD200D7C605 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1E7DE1A02812F93C003CEE5D /* ViewController.swift */,
 				1E7DE1C52813058A003CEE5D /* LoginViewController.swift */,
 				1E3FB48A2826A4EE007343D9 /* LoginVC+TextFieldDelegate.swift */,
 			);
@@ -640,6 +646,7 @@
 				1E7DE19C2812F93C003CEE5D /* AppDelegate.swift */,
 				1E7DE19E2812F93C003CEE5D /* SceneDelegate.swift */,
 				1EEC20DA283A7F6100141CF2 /* TweeterUsers.swift */,
+				1ECCAA61286F0E13006044E1 /* FirstView */,
 				1E3FB4812826A314007343D9 /* SignUp */,
 				1E31F9DA2821F11D00FB18D6 /* login */,
 				1E31F9E22821FD7E00FB18D6 /* Home */,
@@ -659,6 +666,7 @@
 				1E7DE1A22812F93C003CEE5D /* Main.storyboard */,
 				1E7DE1AA2812F940003CEE5D /* Info.plist */,
 				1E7DE1B12812FA23003CEE5D /* GoogleService-Info.plist */,
+				1ECCAA5C286F0978006044E1 /* Localizable.strings */,
 			);
 			path = twitterClone;
 			sourceTree = "<group>";
@@ -787,6 +795,31 @@
 			isa = PBXGroup;
 			children = (
 				1ECC412028305CB2008B8AA6 /* TweetDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1ECCAA61286F0E13006044E1 /* FirstView */ = {
+			isa = PBXGroup;
+			children = (
+				1ECCAA63286F171B006044E1 /* View */,
+				1ECCAA68286F184E006044E1 /* Presenter */,
+			);
+			path = FirstView;
+			sourceTree = "<group>";
+		};
+		1ECCAA63286F171B006044E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E7DE1A02812F93C003CEE5D /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1ECCAA68286F184E006044E1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1ECCAA65286F184A006044E1 /* ViewPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -934,6 +967,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"ar-EG",
 			);
 			mainGroup = 1E7DE1902812F93C003CEE5D;
 			productRefGroup = 1E7DE19A2812F93C003CEE5D /* Products */;
@@ -960,6 +994,7 @@
 				1ECC412728306413008B8AA6 /* TweetDetails.storyboard in Resources */,
 				1EE4950E282C71DE00CB9C45 /* Settings.storyboard in Resources */,
 				1E3CC3E7284B79B200A33755 /* UsersProfile.storyboard in Resources */,
+				1ECCAA5A286F0978006044E1 /* Localizable.strings in Resources */,
 				1E9E4BDD284FFF60001B2C08 /* ProfileFromSearch.storyboard in Resources */,
 				1E7DE1A62812F940003CEE5D /* Assets.xcassets in Resources */,
 				1E259C76282D66B80082033A /* EditProfile.storyboard in Resources */,
@@ -1077,6 +1112,7 @@
 				1EFC73E0282717C90069A510 /* NewTweet+TextViewDelegate.swift in Sources */,
 				1E31F9EA282201D300FB18D6 /* HomePresenter.swift in Sources */,
 				1EB2F97928522A2400AA1BF4 /* TweetsProfileTableViewCell.swift in Sources */,
+				1ECCAA66286F184A006044E1 /* ViewPresenter.swift in Sources */,
 				1E7DE19F2812F93C003CEE5D /* SceneDelegate.swift in Sources */,
 				1ECBFC7528143F3900ABE9D6 /* MessagesViewController.swift in Sources */,
 				1E6E5063281AE3C00054FEA8 /* Message.swift in Sources */,
@@ -1098,6 +1134,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1E7DE1A32812F93C003CEE5D /* Base */,
+				1ECCAA5D286F09A3006044E1 /* ar-EG */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1106,8 +1143,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				1E7DE1A82812F940003CEE5D /* Base */,
+				1ECCAA5E286F09A6006044E1 /* ar-EG */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1ECCAA5C286F0978006044E1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1ECCAA5B286F0978006044E1 /* en */,
+				1ECCAA5F286F09A8006044E1 /* ar-EG */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1117,6 +1164,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1178,6 +1226,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

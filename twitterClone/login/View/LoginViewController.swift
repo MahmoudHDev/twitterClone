@@ -10,10 +10,10 @@ import UIKit
 class LoginViewController: UIViewController {
 
     //MARK:- Properties
-    @IBOutlet weak var signIn: UIButton!
-    @IBOutlet weak var passwordTxtField: UITextField!
-    @IBOutlet weak var emailTxtField: UITextField!
-    @IBOutlet weak var errorLbl : UILabel!
+    @IBOutlet weak var signIn           : UIButton!
+    @IBOutlet weak var passwordTxtField : UITextField!
+    @IBOutlet weak var emailTxtField    : UITextField!
+    @IBOutlet weak var errorLbl         : UILabel!
     lazy var presenter = LoginPresenter(view: self)
 
     //MARK:- View LifeCycle
@@ -24,17 +24,19 @@ class LoginViewController: UIViewController {
         signIn.layer.cornerRadius = 5
     }
     
-    //MARK:- Methods
+    //MARK:- Functions
     
 
     
     //MARK:- Actions
 
     @IBAction func loginBtn(_ sender: UIButton) {
-        
+
         presenter.login(email: emailTxtField.text!, password: passwordTxtField.text!)
-        }
+        
     }
+    
+}
 
 //MARK:- Login Presenter Protocol
 extension LoginViewController: LoginPresenterProtocol {

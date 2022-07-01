@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  twitterClone
+
+  Created by Mahmoud on 7/1/22.
+  
+*/
+
+// first ViewController
+
+"hello"         = "Welcome to twitter App";
+"desc"          = "Get real-time updates about you interesting topics.";
+"signIn"        = "Sign In";
+"signUp"        = "Sign Up";
+"changeLang"    = "Change the language";
+
+// Sign up SignUpViewController
+
+"signUp"        = "SignUp";
+"email"         = "Email";
+"password"      = "Password";
+"rePassword"    = "re-type your Password";
+"username"      = "Username";
+"hi"            = "Hi, There!";
+
+
+// Sign up SignInViewController
+
+
